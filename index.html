@@ -1219,6 +1219,27 @@ function clearFilter(){
   document.getElementById('personSel').value='all';
   applyFilter();
 }
+
+// ===== 列印修正：部分瀏覽器對 display:none→block 的@media print覆蓋不穩定，
+// 改為列印前用JS真正把所有分頁/子分頁加上active class（走一般顯示邏輯），列印後還原 =====
+let _beforePrintState = null;
+window.addEventListener('beforeprint', function(){
+  _beforePrintState = {
+    activePage: document.querySelector('.page.active') ? document.querySelector('.page.active').id : null,
+    activeSubpage: document.querySelector('.subpage.active') ? document.querySelector('.subpage.active').id : null
+  };
+  document.querySelectorAll('.page').forEach(p=>p.classList.add('active'));
+  document.querySelectorAll('.subpage').forEach(p=>p.classList.add('active'));
+});
+window.addEventListener('afterprint', function(){
+  if(!_beforePrintState) return;
+  document.querySelectorAll('.page').forEach(p=>{
+    if(p.id !== _beforePrintState.activePage) p.classList.remove('active');
+  });
+  document.querySelectorAll('.subpage').forEach(p=>{
+    if(p.id !== _beforePrintState.activeSubpage) p.classList.remove('active');
+  });
+});
 </script>
 
 </body>
