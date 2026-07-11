@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>臺北・囍｜工作人員流程總表</title>
+<style>
+  @page { size: A3 landscape; margin: 8mm; }
+  * { box-sizing: border-box; }
+  body{font-family:"Noto Sans CJK TC","Microsoft JhengHei",sans-serif;margin:0;padding:16px;background:#FAF6EE;color:#2b2b2b;}
+  h1{font-size:20px;color:#9E2B25;margin:0 0 2px;}
+  .sub{font-size:12px;color:#6b5b4d;margin-bottom:10px;}
+
+  /* Tabs */
+  .tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;}
+  .tab-btn{font-family:inherit;font-size:13px;padding:8px 16px;border-radius:8px 8px 0 0;
+    border:1px solid #9E2B25;background:#f0e2cf;color:#9E2B25;cursor:pointer;font-weight:bold;}
+  .tab-btn.active{background:#9E2B25;color:#fff;}
+  .page{display:none;}
+  .page.active{display:block;}
+
+  /* Toolbar */
+  .toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:#fff;border:1px solid #e0d3c0;
+    border-radius:8px;padding:8px 12px;margin-bottom:12px;font-size:12px;}
+  .toolbar label{font-weight:bold;color:#9E2B25;}
+  .toolbar select,.toolbar button{font-family:inherit;font-size:12px;padding:4px 8px;border-radius:5px;
+    border:1px solid #c9b8a3;background:#fff;cursor:pointer;}
+  .toolbar button.primary{background:#9E2B25;color:#fff;border-color:#9E2B25;}
+
+  /* Group cards */
+  .groupwrap{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px;}
+  .card{border:1px solid #c9b8a3;border-radius:8px;background:#fff;padding:12px 14px;flex:1;min-width:260px;}
+  .card h2{font-size:14px;margin:0 0 8px;padding-bottom:6px;border-bottom:2px solid;}
+  .card ul{margin:0;padding-left:18px;font-size:12.5px;line-height:1.6;}
+  .card .lead{font-weight:bold;}
+  .team-mgmt{border-left:6px solid #555;} h2.mgmt{color:#555;border-color:#555;}
+  .team-guide{border-left:6px solid #4C7A3D;} h2.guide{color:#4C7A3D;border-color:#4C7A3D;}
+  .team-reg{border-left:6px solid #B8860B;} h2.reg{color:#B8860B;border-color:#B8860B;}
+  .team-route{border-left:6px solid #5B7DB1;} h2.route{color:#5B7DB1;border-color:#5B7DB1;}
+
+  /* Tables (shared) */
+  table{width:100%;border-collapse:collapse;font-size:11.5px;table-layout:fixed;margin-bottom:20px;}
+  th,td{border:1px solid #c9b8a3;padding:5px 8px;vertical-align:top;text-align:left;}
+  th{background:#9E2B25;color:#fff;text-align:center;}
+  tr.section td.team{font-weight:bold;background:#F5E6D3;}
+  .risk{color:#B01010;font-weight:bold;}
+  .pa-note{color:#666;font-style:italic;font-size:11px;}
+
+  /* Main flow table columns */
+  col.c-phase{width:7%;} col.c-time{width:6%;} col.c-loc{width:9%;}
+  col.c-person{width:12%;} col.c-task{width:11%;} col.c-detail{width:41%;} col.c-item{width:12%;}
+  td.detail ol{margin:0;padding-left:15px;} td.detail li{margin-bottom:2px;}
+  .tag{display:inline-block;font-size:9.5px;padding:1px 5px;border-radius:3px;color:#fff;margin:1px 2px 1px 0;white-space:nowrap;}
+  .loc-reg{background:#B8860B;} .loc-rest{background:#8A6D3B;} .loc-stage{background:#C9772E;}
+  .loc-seat{background:#4C7A3D;} .loc-sideL{background:#3D6B7A;} .loc-sideR{background:#7A3D6B;}
+  .loc-door{background:#B01010;} .loc-mrt{background:#5B7DB1;} .loc-photo{background:#C08A2E;}
+  .loc-control{background:#555;} .loc-media{background:#6B4C9A;} .loc-all{background:#777;}
+  tr.phase-head td.phase{font-weight:bold;background:#F5E6D3;}
+  .critical{background:#FFF7E8;}
+  tr.hidden{display:none;}
+
+  /* PA / venue tables */
+  td.time{width:10%;text-align:center;font-weight:bold;background:#F5E6D3;}
+  .fill{color:#B01010;}
+
+  @media print{
+    .tabs, .toolbar{display:none;}
+    body{background:#fff;padding:0;}
+    .page{display:block !important; page-break-before: always;}
+    .page:first-child{page-break-before: auto;}
+    tr.hidden{display:table-row !important;}
+  }
+
+  .subtab-btn{font-family:inherit;font-size:12.5px;padding:6px 14px;border-radius:6px;
+    border:1px solid #C9A15A;background:#fff;color:#9E2B25;cursor:pointer;font-weight:bold;}
+  .subtab-btn.active{background:#C9A15A;color:#fff;}
+  .subpage{display:none;}
+  .subpage.active{display:block;}
+  @media print{
+    .subtabs{display:none;}
+    .subpage{display:block !important; page-break-before: always;}
+    .subpage:first-child{page-break-before: auto;}
+  }
+</style>
+</head>
+<body>
+
+<h1>臺北・囍｜臺北市第226場聯合婚禮 工作人員流程總表</h1>
+<div class="sub">2026.07.18（六）｜花博公園爭艷館｜單一文件包含：分組總表／流程表／PA音控提示表／場地方版（請用上方分頁切換）</div>
+
+<div class="tabs no-print">
+  <button class="tab-btn active" onclick="showPage('p1',this)">① 分組總表</button>
+  <button class="tab-btn" onclick="showPage('p2',this)">② 工作人員流程表</button>
+  <button class="tab-btn" onclick="showPage('p3',this)">③ PA音控提示表</button>
+  <button class="tab-btn" onclick="showPage('p4',this)">④ 場地方簡化版</button>
+  <button class="tab-btn" onclick="showPage('p5',this)">⑤ 7/17場布日</button>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 1：分組總表 -->
+<!-- ============================================================ -->
+<div id="p1" class="page active">
+
+<div class="groupwrap">
+  <div class="card team-mgmt">
+    <h2 class="mgmt">總管理／控台</h2>
+    <ul>
+      <li><span class="lead">朋喬</span>｜總場控，負責整個活動流程相關事務（舞台、周邊硬體）；統籌全場call機</li>
+      <li><span class="lead">劉芳</span>｜進場副控，協助朋喬處理進場相關事務與現場狀況</li>
+      <li><span class="lead">晉姍</span>｜負責新人聯繫、報到、市府聯繫窗口；未到新人主要由報到組（晉姍）負責追蹤</li>
+      <li><span class="lead">朋喬</span>｜控台投影：儀式畫面＋抽獎中獎號碼</li>
+      <li><span class="lead">Erin</span>｜總彩排主控；婚禮當天舞台右側，抽獎統籌指揮</li>
+    </ul>
+  </div>
+  <div class="card team-guide">
+    <h2 class="guide">新人指引組｜組長負責範圍</h2>
+    <ul>
+      <li><span class="lead">葉智凱</span>：手舉牌1-4（編號1、3、5、7、9、11、13、15、17、19、21、23、25、27、29、31、33、35、37、39）</li>
+      <li><span class="lead">Abby</span>：手舉牌5-9（編號41、43、45、47、49、51、53、55、57、59、61、63、65、67、69、71、73、75、77、79、81、83、85、87）</li>
+      <li><span class="lead">劉芳</span>：手舉牌1-4（編號2、6、8、10、12、14、16、18、20、22、24、26、28、30、32、34、36、38、40、42）</li>
+      <li><span class="lead">靜俞</span>：手舉牌5-9（編號46、48、50、52、54、56、58、60、62、64、66、68、70、72、74、76、78、80、82、84、86、88、89、90）</li>
+    </ul>
+    <p style="font-size:11.5px;color:#666;margin:8px 0 0;">※ 組長不計入組員配比，全程只負責自己範圍：認領、整隊、進場、發卡、合照皆同；異常先報所屬組長，組長回報朋喬／晉姍</p>
+  </div>
+  <div class="card team-reg">
+    <h2 class="reg">報到組｜組長</h2>
+    <ul>
+      <li><span class="lead">詩晴</span>：單號報到桌；活動後禮品發放／中獎兌換專責</li>
+      <li><span class="lead">丁丁</span>：雙號報到桌</li>
+    </ul>
+  </div>
+  <div class="card team-route">
+    <h2 class="route">動線＋拍照＋大門｜組長</h2>
+    <ul>
+      <li><span class="lead">黃筱涵</span>：動線指引組＋拍照區 統籌</li>
+    </ul>
+  </div>
+</div>
+
+<p style="font-size:12.5px;background:#fff;border:1px solid #c9b8a3;border-radius:6px;padding:10px 14px;margin:0 0 10px;line-height:1.7;">
+<b style="color:#9E2B25;">※ 人力結構：</b>每張手舉牌固定1位「專責」，每2–5張牌（依組長範圍切分）固定配1位「小幫手」共同支援。另有3位小幫手專職新人上下台時協助拉裙擺。所有人皆為固定任務，全程無自由機動時間。
+</p>
+<table>
+<colgroup><col style="width:9%"><col style="width:20%"><col style="width:16%"><col style="width:20%"><col style="width:35%"></colgroup>
+<tr><th colspan="5">新人指引組｜專責＋小幫手（共24人，不含組長）</th></tr>
+
+<tr><td class="team" rowspan="4">單號<br>（葉智凱）</td><td>單1排（手舉牌1：1、3、5、7、9）</td><td>董沁怡</td><td rowspan="4">陳嘉梅<span class="risk">（拉裙擺）</span></td><td rowspan="4">負責範圍：單1–4排全部（20對新人）；新人上下台時協助拉裙擺</td></tr>
+<tr><td>單2排（手舉牌2：11、13、15、17、19）</td><td>阮靜霓</td></tr>
+<tr><td>單3排（手舉牌3：21、23、25、27、29）</td><td>何俐穎</td></tr>
+<tr><td>單4排（手舉牌4：31、33、35、37、39）</td><td>或或</td></tr>
+
+<tr><td class="team" rowspan="3">單號<br>（Abby前段）</td><td>單5排（手舉牌5：41、43、45、47、49）</td><td>邱美晴</td><td rowspan="3">陳沛瑄<span class="risk">（拉裙擺＋支援）</span></td><td rowspan="3">負責範圍：單5–7排（15對新人）；新人上下台協助拉裙擺，平時支援報到帶位</td></tr>
+<tr><td>單6排（手舉牌6：51、53、55、57、59）</td><td>陳可馨</td></tr>
+<tr><td>單7排（手舉牌7：61、63、65、67、69）</td><td>李清嶽</td></tr>
+
+<tr><td class="team" rowspan="2">單號<br>（Abby後段）</td><td>單8排（手舉牌8：71、73、75、77、79）</td><td>彭鈺芳</td><td rowspan="2">李毓倫<span class="risk">（拉裙擺＋支援）</span></td><td rowspan="2">負責範圍：單8–9排（14對新人）；新人上下台協助拉裙擺，平時支援報到帶位</td></tr>
+<tr><td>單9排（手舉牌9：81、83、85、87，僅4對）</td><td>劉品瑗</td></tr>
+
+<tr><td class="team" rowspan="4">雙號<br>（劉芳）</td><td>雙1排（手舉牌1：2、6、8、10、12）</td><td>陳桂蓉</td><td rowspan="4">陳千薏<span class="risk">（拉裙擺）</span></td><td rowspan="4">負責範圍：雙1–4排全部（20對新人）；新人上下台時協助拉裙擺</td></tr>
+<tr><td>雙2排（手舉牌2：14、16、18、20、22）</td><td>孫正宣</td></tr>
+<tr><td>雙3排（手舉牌3：24、26、28、30、32）</td><td>董宗珂</td></tr>
+<tr><td>雙4排（手舉牌4：34、36、38、40、42）</td><td>黃郁婷</td></tr>
+
+<tr><td class="team" rowspan="5">雙號<br>（靜俞）</td><td>雙5排（手舉牌5：46、48、50、52、54）</td><td>李汶芯</td><td rowspan="5">黃筱詩<span class="risk">（拉裙擺）</span><br>＋伯特（支援）</td><td rowspan="5">負責範圍：雙5–9排全部（24對新人）；黃筱詩負責拉裙擺，伯特負責一般支援</td></tr>
+<tr><td>雙6排（手舉牌6：56、58、60、62、64）</td><td>黃釋惟</td></tr>
+<tr><td>雙7排（手舉牌7：66、68、70、72、74）</td><td>李權</td></tr>
+<tr><td>雙8排（手舉牌8：76、78、80、82、84）</td><td>歐馨喬</td></tr>
+<tr><td>雙9排（手舉牌9：86、88、89、90，僅4對）</td><td>王柏翔</td></tr>
+</table>
+
+
+<table>
+<colgroup><col style="width:11%"><col style="width:16%"><col style="width:38%"><col style="width:35%"></colgroup>
+<tr><th colspan="4">其他各組人力配置</th></tr>
+<tr><td class="team" rowspan="4">報到組</td><td>單號報到（13:00–13:40）</td><td>周胖、康筠</td><td>核對身分、發資料袋、提醒投抽獎聯；13:40後可視現場需要協助新人指引組合照整隊（非固定任務）</td></tr>
+<tr><td>雙號報到（13:00–13:40）</td><td>潘怡璇、徐柔婕</td><td>同上；13:40後可視現場需要協助新人指引組合照整隊（非固定任務）</td></tr>
+<tr><td>貴賓媒體報到</td><td>亞當＋劉芯薇</td><td>亞當核對名單；劉芯薇機動引導、發媒體禮30份</td></tr>
+<tr><td class="risk">⚠禮品發放／中獎家電兌換（15:00–17:00）</td><td class="risk">詩晴、晉姍</td><td class="risk">專責處理，不再由報到組全體負責</td></tr>
+<tr><td class="team" rowspan="2">動線指引組</td><td>捷運站外（12:50–13:40）</td><td>鍾丞宇</td><td>13:40起賓客到齊，轉入場館巡邏新人休息＆梳化區（專職）；黃筱涵全程統籌不站崗</td></tr>
+<tr><td class="risk">⚠大門查驗邀請函（12:50–13:50）</td><td class="risk">張凱涵、辛錫銘</td><td class="risk">賓客與新人皆入場後（約13:50）結束駐守，<span class="risk">之後支援新人指引組進場與合照整隊</span></td></tr>
+<tr><td class="team" rowspan="2">拍照區</td><td>主題拍照區A（點心吧側）</td><td>蘇純呈</td><td>14:30–15:00暫離，支援抽獎箱搬運</td></tr>
+<tr><td>主題拍照區B（大門側）</td><td>童莉崴</td><td>同上</td></tr>
+<tr><td class="team" rowspan="3">舞台組</td><td>左道具備妥（雙號側）</td><td>胡詩涵</td><td class="risk">13:00–14:00先支援新人指引組報到／進場；14:00起歸位舞台下方，備妥並檢查麥克風，交由禮賓遞交上台（⚠不含誓言卡，見流程表說明）</td></tr>
+<tr><td>右道具備妥（單號側）</td><td>趙芯巧</td><td class="risk">13:00–14:00先支援新人指引組報到／進場；14:00起歸位舞台下方，備妥並檢查禮物盒、書約版、獎項牌，交由禮賓遞交上台</td></tr>
+<tr><td>抽獎箱搬運／抽獎協助</td><td>蘇純呈、童莉崴</td><td>14:30前就位舞台右側，14:40抽獎桌上台</td></tr>
+<tr><td class="team" rowspan="2">短影音組</td><td>平面攝影</td><td>The Stage</td><td>進場分駐左右背板拍攝新人；不需另行排班管理</td></tr>
+<tr><td>動態錄影／轉播</td><td>臉紅紅</td><td>契約需全程錄影；不需另行排班管理</td></tr>
+<tr><td class="team">禮賓組</td><td class="risk">⚠儀式引導＋道具遞交</td><td class="risk">禮賓人員×6</td><td class="risk">編號1/2/3新人上下台、證婚人/介紹人引導；<b>所有麥克風及儀式道具由禮賓上台遞交</b>，舞台組僅於台下備妥</td></tr>
+<tr><td class="team">主持組</td><td>主持人</td><td>Eva、張華</td><td>—</td></tr>
+<tr><td class="team">醫護</td><td>護理師</td><td>外聘1名</td><td>醫護區駐點，需持有專業醫護證照</td></tr>
+</table>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 2：工作人員流程表 -->
+<!-- ============================================================ -->
+<div id="p2" class="page">
+
+<div class="toolbar no-print">
+  <label>大組：</label>
+  <select id="teamSel" onchange="applyFilter()">
+    <option value="all">全部大組</option>
+    <option value="管理控台">管理／控台</option>
+    <option value="報到組">報到組</option>
+    <option value="新人指引組">新人指引組</option>
+    <option value="動線拍照組">動線＋拍照組</option>
+    <option value="舞台組">舞台組</option>
+    <option value="短影音組">短影音組</option>
+    <option value="禮賓醫護">禮賓／醫護</option>
+  </select>
+
+  <label>個人：</label>
+  <select id="personSel" onchange="applyFilter()">
+    <option value="all">全部人員</option>
+    <optgroup label="管理／控台">
+      <option value="朋喬">朋喬</option><option value="晉姍">晉姍</option>
+      <option value="朋喬">朋喬</option><option value="Erin">Erin</option>
+    </optgroup>
+    <optgroup label="報到組">
+      <option value="詩晴">詩晴</option><option value="丁丁">丁丁</option>
+      <option value="周胖">周胖</option><option value="康筠">康筠</option>
+      <option value="潘怡璇">潘怡璇</option><option value="徐柔婕">徐柔婕</option>
+      <option value="劉芯薇">劉芯薇</option><option value="亞當">亞當</option>
+    </optgroup>
+    <optgroup label="新人指引組">
+      <option value="葉智凱">葉智凱</option><option value="Abby">Abby</option>
+      <option value="劉芳">劉芳</option><option value="靜俞">靜俞</option>
+      <option value="董沁怡">董沁怡（小幫手）</option><option value="陳沛瑄">陳沛瑄（小幫手）</option>
+      <option value="李毓倫">李毓倫（小幫手）</option><option value="黃郁婷">黃郁婷（小幫手）</option>
+      <option value="李權">李權（小幫手）</option>
+      <option value="陳嘉梅">陳嘉梅（拉裙擺）</option><option value="陳千薏">陳千薏（拉裙擺）</option>
+      <option value="伯特">伯特（支援）</option>
+      <option value="黃筱詩">黃筱詩（拉裙擺）</option>
+      <option value="或或">或或</option>
+      <option value="指引組全體">指引組全體</option>
+    </optgroup>
+    <optgroup label="動線拍照舞台">
+      <option value="黃筱涵">黃筱涵</option><option value="張凱涵">張凱涵</option>
+      <option value="辛錫銘">辛錫銘</option><option value="蘇純呈">蘇純呈</option>
+      <option value="鍾丞宇">鍾丞宇</option>
+      <option value="童莉崴">童莉崴</option><option value="胡詩涵">胡詩涵</option>
+      <option value="趙芯巧">趙芯巧</option>
+    </optgroup>
+    <optgroup label="攝影／禮賓／醫護/主持">
+      <option value="禮賓">禮賓</option><option value="護理">護理</option>
+      <option value="Eva">Eva</option><option value="張華">張華</option>
+    </optgroup>
+  </select>
+  <button class="primary" onclick="clearFilter()">清除篩選</button>
+  <span style="margin-left:auto;color:#999;">列印：Ctrl+P →橫向→縮放至頁面大小（篩選不影響列印，列印固定顯示全表）</span>
+</div>
+
+<table id="mainTable">
+<colgroup>
+  <col class="c-phase"><col class="c-time"><col class="c-loc">
+  <col class="c-person"><col class="c-task"><col class="c-detail"><col class="c-item">
+</colgroup>
+<thead>
+<tr><th>事件階段</th><th>時間</th><th>地點</th><th>人員</th><th>任務</th><th>動作細節</th><th>需要物品</th></tr>
+</thead>
+<tbody>
+
+<!-- ========== 會前準備 ========== -->
+<tr class="phase-head" data-team="管理控台" data-people="朋喬 晉姍">
+  <td class="phase" rowspan="4">會前準備</td>
+  <td>09:00</td><td><span class="tag loc-all">全場</span></td>
+  <td>朋喬、晉姍</td><td>開館＋場地最終檢查</td>
+  <td class="detail"><ol>
+    <li>核對7/17場布是否與場圖一致（舞台尺寸、座位排數、報到動線、大門位置）</li>
+    <li>檢查各區立牌、指示標示是否就位</li>
+  </ol></td>
+  <td>場圖、檢核表</td>
+</tr>
+
+<tr data-team="管理控台 新人指引組 報到組 動線拍照組" data-people="葉智凱 Abby 劉芳 靜俞 黃筱涵 詩晴 丁丁">
+  <td>09:00</td><td><span class="tag loc-control">場控區</span></td>
+  <td>各組組長：葉智凱、Abby、劉芳、靜俞、黃筱涵、詩晴、丁丁</td>
+  <td>組長行前會</td>
+  <td class="detail"><ol>
+    <li>朋喬主持，逐一確認各組負責範圍：<br>單號手舉牌1-4→葉智凱／單號手舉牌5-9→Abby／雙號手舉牌1-4→劉芳／雙號手舉牌5-9→靜俞</li>
+    <li>講解今年新增流程：雙側同步進場、誓言卡後場列隊發放、大門邀請函查驗</li>
+    <li>各組長回去向組員複講一次，10:30彩排時實測</li>
+  </ol></td>
+  <td>今年流程總表（本文件）</td>
+</tr>
+
+<tr data-team="新人指引組 報到組 動線拍照組 舞台組" data-people="指引組全體">
+  <td>09:30</td><td><span class="tag loc-all">全場</span></td>
+  <td>全體工作人員</td>
+  <td>工作人員報到＋大會</td>
+  <td class="detail"><ol>
+    <li>朋喬點名確認全員到齊，發放call機、手舉牌、識別證</li>
+    <li>各組長帶開分區講解：報到SOP／新人編號與座位對應／定點位置</li>
+  </ol></td>
+  <td>call機、手舉牌、識別證</td>
+</tr>
+
+<tr class="critical" data-team="舞台組 管理控台" data-people="胡詩涵 趙芯巧 蘇純呈 童莉崴 朋喬">
+  <td>09:30–10:30</td><td><span class="tag loc-stage">舞台</span> <span class="tag loc-control">控台</span></td>
+  <td>胡詩涵、趙芯巧、蘇純呈、童莉崴、朋喬</td>
+  <td>道具／設備就位</td>
+  <td class="detail"><ol>
+    <li>舞台左桌（胡詩涵）：麥克風×2；<span class="risk">胡詩涵13:00–14:00先支援新人指引組報到／進場，14:00起歸位舞台</span></li>
+    <li>舞台右桌（趙芯巧）：編號2書約版＋筆、編號3禮物盒、獎項牌×20（<span class="risk">⚠依抽獎順序排好</span>）；<span class="risk">趙芯巧13:00–14:00先支援新人指引組報到／進場，14:00起歸位舞台</span></li>
+    <li><span class="risk">⚠誓言卡不放舞台道具桌</span>：18袋分裝好後交由新人指引組各組組長保管，暫存於休息室／後場定點（見流程表「囍之宣言」段落說明）</li>
+    <li>朋喬測試投影：儀式流程畫面、抽獎中獎號碼版型</li>
+    <li class="pa-note">音樂/音效由PA自行測試，另有PA音控表，不列於此</li>
+  </ol></td>
+  <td>麥克風×2、誓言卡18袋、書約版、禮物盒、獎項牌×20、投影設備</td>
+</tr>
+
+<!-- ========== 總彩排 ========== -->
+<tr class="phase-head critical" data-team="新人指引組 舞台組 動線拍照組 管理控台" data-people="Erin 指引組全體">
+  <td class="phase" rowspan="3">總彩排<br><span class="risk">（全員場）</span></td>
+  <td>10:30</td><td><span class="tag loc-seat">觀禮席</span> <span class="tag loc-stage">舞台</span></td>
+  <td><span class="lead">Erin（總彩排主控）</span>＋新人指引組全體＋舞台組</td>
+  <td>⚠雙側進場輪轉實測</td>
+  <td class="detail"><ol>
+    <li><span class="risk">本場為婚禮當天全員彩排，全體48位工作人員皆到齊參與，與7/17小組長場布日彩排（僅小組長/內部團隊）性質不同</span></li>
+    <li>Erin統籌指揮本次彩排，模擬88對新人（用組員代替）走一次雙側同步上下台流程</li>
+    <li>確認節奏：右側拍照完成＝左側下台訊號，左右各自銜接不斷檔</li>
+    <li>組長計時，目標15分鐘內完成，超時則Erin現場檢討卡點並調整</li>
+  </ol></td>
+  <td>模擬新人牌／碼表</td>
+</tr>
+
+<tr class="critical" data-team="新人指引組 管理控台" data-people="Erin 指引組全體">
+  <td>11:00</td><td><span class="tag loc-seat">觀禮席後方</span></td>
+  <td><span class="lead">Erin（主控）</span>＋新人指引組全體</td>
+  <td>⚠誓言卡列隊發放實測</td>
+  <td class="detail"><ol>
+    <li>Erin指揮模擬「親恩永存」鞠躬起身瞬間，發卡組員（每組派2人，共18人）自觀禮席<span class="risk">「後方」</span>兩列同時出發（非舞台前）</li>
+    <li>沿觀禮席走道前進至各自負責排數，依號碼發放誓言卡（每人約5對10張）</li>
+    <li>發完立即由兩側／後方退場，<span class="risk">不可在舞台前方逗留或聚集，避免畫面雜亂</span></li>
+    <li>Erin計時，<span class="risk">目標90秒內完成</span>，超時則調整走位路線或人數配置</li>
+  </ol></td>
+  <td>誓言卡（模擬用）、碼表</td>
+</tr>
+
+<tr data-team="動線拍照組" data-people="蘇純呈 童莉崴">
+  <td>11:20</td><td><span class="tag loc-photo">拍照區</span></td>
+  <td>蘇純呈、童莉崴</td>
+  <td>擺放點心吧＋動線測試</td>
+  <td class="detail"><ol>
+    <li>協助點心吧擺設定位</li>
+    <li>實走一次14:30抽獎箱搬運路線（報到引導區→舞台右側）</li>
+  </ol></td>
+  <td>點心吧物件、抽獎箱</td>
+</tr>
+
+<!-- ========== 用餐輪替 ========== -->
+<tr class="phase-head" data-team="管理控台 報到組 新人指引組 動線拍照組 舞台組" data-people="全體">
+  <td class="phase">用餐輪替</td>
+  <td>12:00–12:50</td><td><span class="tag loc-all">全場</span></td>
+  <td>全體工作人員（分批）</td>
+  <td>輪流用餐</td>
+  <td class="detail"><ol>
+    <li>各組分兩批，錯開用餐，確保報到桌／大門不空站</li>
+    <li><span class="risk">⚠大門查驗2人（張凱涵、辛錫銘）用餐時由黃筱涵補位，全程不得低於2人駐守</span></li>
+  </ol></td>
+  <td>便當</td>
+</tr>
+
+<!-- ========== 就定位 ========== -->
+<tr class="phase-head" data-team="報到組 新人指引組" data-people="全體">
+  <td class="phase" rowspan="2">各組就定位</td>
+  <td>12:50</td><td><span class="tag loc-reg">報到區</span></td>
+  <td>報到組、新人指引組認領組員</td>
+  <td>就定位</td>
+  <td class="detail"><ol>
+    <li>報到組：單號詩晴／周胖／康筠 就左桌；雙號丁丁／潘怡璇／徐柔婕 就右桌；貴賓媒體：亞當＋劉芯薇</li>
+    <li>新人指引組每組派1人持手舉牌至報到桌前待命</li>
+  </ol></td>
+  <td>手舉牌、簽到表、資料袋</td>
+</tr>
+
+<tr class="critical" data-team="動線拍照組" data-people="張凱涵 辛錫銘 鍾丞宇 蘇純呈 童莉崴">
+  <td>12:50</td><td><span class="tag loc-door">大門</span> <span class="tag loc-mrt">捷運站外</span> <span class="tag loc-photo">拍照區</span></td>
+  <td>張凱涵、辛錫銘、鍾丞宇、蘇純呈、童莉崴</td>
+  <td>動線／查驗／拍照就位</td>
+  <td class="detail"><ol>
+    <li><span class="risk">⚠大門查驗邀請函：張凱涵＋辛錫銘駐守，至少2人</span>，親友需出示邀請卡方可入場，無卡者引導至貴賓媒體報到處由亞當確認；賓客與新人皆入場後（約13:50）結束駐守，之後可視現場需要協助收尾（非固定任務）</li>
+    <li>鍾丞宇於捷運站外帶立牌指引；<span class="risk">13:40賓客到齊後收立牌入館，轉為新人休息＆梳化區專職巡邏</span>（較熟悉場地動線）</li>
+    <li>蘇純呈（拍照區A）、童莉崴（拍照區B）就位服務</li>
+  </ol></td>
+  <td>立牌、邀請函核對清單</td>
+</tr>
+
+<!-- ========== 新人報到 ========== -->
+<tr class="phase-head" data-team="報到組 新人指引組 管理控台" data-people="晉姍">
+  <td class="phase" rowspan="3">新人報到</td>
+  <td>13:00–13:40</td><td><span class="tag loc-reg">報到區</span></td>
+  <td>報到組</td>
+  <td>核對＋發資料</td>
+  <td class="detail"><ol>
+    <li>核對新人身分→簽到→發資料袋→提醒投抽獎聯至抽獎箱</li>
+    <li>貴賓媒體：亞當核對名單，劉芯薇引導入座、發媒體禮30份</li>
+  </ol></td>
+  <td>簽到表、資料袋、抽獎聯、媒體禮</td>
+</tr>
+
+<tr data-team="新人指引組" data-people="指引組全體">
+  <td>13:00–13:40</td><td><span class="tag loc-reg">報到區</span> <span class="tag loc-rest">休息梳化區</span></td>
+  <td>新人指引組（各組1人認領＋2人帶位）</td>
+  <td>認領＋引導</td>
+  <td class="detail"><ol>
+    <li>各組派1人於報到桌持手舉牌認領自己組別新人</li>
+    <li>其餘2人帶新人至休息＆梳化區，告知：梳化/更衣動線、洗手間、抽獎箱位置、拍照區、點心吧</li>
+    <li>組長（葉智凱/Abby/劉芳/靜俞）巡邏自己負責範圍，確認新人已投抽獎聯</li>
+  </ol></td>
+  <td>動線說明卡</td>
+</tr>
+
+<tr data-team="管理控台" data-people="晉姍">
+  <td>13:20–13:50</td><td><span class="tag loc-control">場控區</span></td>
+  <td>晉姍</td>
+  <td>未到新人聯繫</td>
+  <td class="detail"><ol>
+    <li>13:20起電聯尚未報到之新人</li>
+    <li>13:50彙整報到與聯繫狀況，回報市府窗口</li>
+  </ol></td>
+  <td>新人名冊、電話清單</td>
+</tr>
+
+<!-- ========== 整隊集合 ========== -->
+<tr class="phase-head critical" data-team="新人指引組" data-people="指引組全體">
+  <td class="phase" rowspan="3">整隊集合</td>
+  <td>13:40–13:50</td><td><span class="tag loc-seat">觀禮席後方</span></td>
+  <td>新人指引組全體</td>
+  <td>雙側整隊</td>
+  <td class="detail"><ol>
+    <li>引導新人至兩側整隊，由後往前（大號在前）：雙號→面對舞台左側；單號→面對舞台右側</li>
+    <li><span class="risk">⚠89號在雙號側，勿誤置單號側</span></li>
+  </ol></td>
+  <td>編號手舉牌</td>
+</tr>
+
+<tr data-team="新人指引組 管理控台" data-people="葉智凱 Abby 劉芳 靜俞 朋喬">
+  <td>13:40–13:50</td><td><span class="tag loc-control">場控區</span></td>
+  <td>各組長→朋喬</td>
+  <td>未到／過號回報</td>
+  <td class="detail"><ol>
+    <li>各組長清點自己負責範圍組別，未到新人編號以call機回報朋喬；<span class="risk">未到新人主要由報到組（晉姍）負責追蹤聯繫</span></li>
+    <li>過號新人另排隊尾，進場結束後不補上台</li>
+  </ol></td>
+  <td>call機</td>
+</tr>
+
+<tr data-team="動線拍照組" data-people="鍾丞宇">
+  <td>13:40起</td><td><span class="tag loc-rest">休息梳化區</span></td>
+  <td>鍾丞宇</td>
+  <td>轉崗：休息區專職巡邏</td>
+  <td class="detail"><ol>
+    <li>賓客與新人皆已到齊，捷運站外立牌收回，改入館內</li>
+    <li>專職巡邏新人休息＆梳化區，留意：更衣室使用狀況、有無新人遲滯未歸隊、動線是否壅塞</li>
+    <li>發現新人未歸隊（未在整隊或進場名單中），主動通知該組組員或直接回報朋喬</li>
+    <li>持續巡邏至15:00新人整隊合照開始，之後視需要支援收尾</li>
+  </ol></td>
+  <td>call機</td>
+</tr>
+
+<!-- ========== 攜手入囍・幸福登場 ========== -->
+<tr class="phase-head critical" data-team="新人指引組 管理控台" data-people="指引組全體 陳千薏 劉芳">
+  <td class="phase" rowspan="4">攜手入囍<br>幸福登場</td>
+  <td>13:50</td><td><span class="tag loc-sideL">左側台</span></td>
+  <td>雙1排專責：陳桂蓉（陳千薏協助拉裙擺上下台）</td>
+  <td>90號上台就位</td>
+  <td class="detail"><ol>
+    <li>90號站定左側台入口，組員引導往前走至左背板前定位點拍照</li>
+    <li><span class="risk">劉芳（進場副控）全程協助朋喬掌控雙側節奏，處理現場突發狀況</span></li>
+  </ol></td>
+  <td>雙號新人手舉牌</td>
+</tr>
+
+<tr data-team="新人指引組" data-people="指引組全體 董沁怡 陳嘉梅">
+  <td>13:50</td><td><span class="tag loc-sideR">右側台</span></td>
+  <td>單1排專責：董沁怡（陳嘉梅協助拉裙擺上下台）</td>
+  <td>87號同步上台就位</td>
+  <td class="detail"><ol>
+    <li>與左側90號<span class="risk">同時上台</span>，站定右側台入口，組員引導至右背板前定位點拍照</li>
+  </ol></td>
+  <td>單號新人手舉牌</td>
+</tr>
+
+<tr class="critical" data-team="短影音組" data-people="">
+  <td>13:50–14:04</td><td><span class="tag loc-stage">舞台左＋右</span></td>
+  <td>The Stage（平面）＋臉紅紅（動態）</td>
+  <td>拍照＋節奏控制</td>
+  <td class="detail"><ol>
+    <li>左右背板前各自拍攝，每對約3-4張</li>
+    <li><span class="risk">⚠右側拍照完成＝左側下台訊號</span>，左側下台同時下一對接上，不停頓</li>
+    <li>以手勢示意「拍完可下台」，不用口語打斷</li>
+  </ol></td>
+  <td>相機×2、閃燈</td>
+</tr>
+
+<tr data-team="新人指引組" data-people="指引組全體">
+  <td>13:50–14:05<br>（持續輪替）</td><td><span class="tag loc-sideL">左</span> <span class="tag loc-sideR">右</span> <span class="tag loc-seat">觀禮席</span></td>
+  <td>新人指引組全體</td>
+  <td>雙側流水線輪轉＋入座</td>
+  <td class="detail"><ol>
+    <li>左側：90→89→88→86…（雙號）；右側：87→85→83…（單號），由後往前大號先行</li>
+    <li>每對在台約20秒；側台需隨時預備下一對，不得斷檔</li>
+    <li>下台新人由座位區組員依編號牌引導至對應座位入座</li>
+    <li>若新人未歸隊，組員回報組長跳號處理，過號者排至隊尾</li>
+    <li>14:04全體進場完畢，組員退至媒體高台後方待命；<span class="pa-note">音樂收尾與轉場由PA自行處理</span></li>
+  </ol></td>
+  <td>call機、跳號記錄表</td>
+</tr>
+
+<!-- ========== 幸福序曲 ========== -->
+<tr class="phase-head" data-team="舞台組 禮賓醫護 新人指引組" data-people="胡詩涵 禮賓 指引組全體">
+  <td class="phase" rowspan="2">幸福序曲<br>（陳佩賢演唱）</td>
+  <td>14:05–14:15</td><td><span class="tag loc-stage">舞台</span></td>
+  <td>禮賓人員（台上遞交）、胡詩涵（台下備妥）</td>
+  <td>協助演唱上下台</td>
+  <td class="detail"><ol>
+    <li>胡詩涵於台下備妥並檢查手持麥克風，交由禮賓人員遞交陳佩賢；演唱結束禮賓收回，交還胡詩涵</li>
+    <li>禮賓協助陳佩賢上下台動線，避免與地毯/線材絆倒</li>
+  </ol></td>
+  <td>手持麥克風</td>
+</tr>
+
+<tr data-team="新人指引組 報到組" data-people="指引組全體">
+  <td>14:05–14:15</td><td><span class="tag loc-seat">媒體高台後方</span> <span class="tag loc-reg">報到區</span></td>
+  <td>新人指引組全體、報到組</td>
+  <td>待命／禮品清點</td>
+  <td class="detail"><ol>
+    <li>指引組全體退至媒體高台後方待命，欣賞演唱</li>
+    <li>報到組轉入禮品準備：依清單清點單雙號新人禮品（家電）數量</li>
+  </ol></td>
+  <td>禮品清單</td>
+</tr>
+
+<!-- ========== 介紹人證婚人致詞 ========== -->
+<tr class="phase-head" data-team="禮賓醫護 舞台組" data-people="禮賓 胡詩涵 Eva 張華">
+  <td class="phase">介紹人、證婚人上台<br>致詞</td>
+  <td>14:15–14:25</td><td><span class="tag loc-stage">舞台</span></td>
+  <td>禮賓人員（台上引導＋遞交）、胡詩涵（台下備妥）</td>
+  <td>引導＋道具</td>
+  <td class="detail"><ol>
+    <li>禮賓引導介紹人、證婚人上台</li>
+    <li>胡詩涵台下備妥麥克風×1、椅子×2；禮賓上台遞麥克風給證婚人，並搬椅子×2至舞台上供其使用</li>
+    <li>主持人（Eva／張華）串場銜接下段儀式</li>
+  </ol></td>
+  <td>麥克風、椅子×2</td>
+</tr>
+
+<!-- ========== 三儀式 ========== -->
+<tr class="phase-head critical" data-team="新人指引組" data-people="指引組全體">
+  <td class="phase" rowspan="2">囍之宣言／約定／贈禮</td>
+  <td>14:20後</td><td><span class="tag loc-rest">後場休息室</span></td>
+  <td>發卡組員（每組2人，共18人）</td>
+  <td>⚠領取誓言卡＋後場待命</td>
+  <td class="detail"><ol>
+    <li><span class="risk">誓言卡不置於舞台道具桌，改由各組組長於後場休息室保管之18袋分裝卡發放給對應組員</span></li>
+    <li>發卡組員領取後，安靜持於手中，於<span class="risk">觀禮席「後方」</span>定點等候，不靠近舞台、不站前排，避免畫面雜亂</li>
+    <li>確認自己負責新人之卡（約5對10張）、號碼排序無誤</li>
+  </ol></td>
+  <td>誓言卡分袋×18</td>
+</tr>
+
+<tr data-team="舞台組 禮賓醫護" data-people="趙芯巧 禮賓">
+  <td>14:25–14:35</td><td><span class="tag loc-stage">舞台</span></td>
+  <td>禮賓人員（台上遞交），趙芯巧（台下備妥）</td>
+  <td>編號1/2/3儀式道具</td>
+  <td class="detail"><ol>
+    <li>趙芯巧於台下備妥並檢查新人麥克風、書約版＋筆、禮物盒，逐項交由禮賓遞送上台</li>
+    <li>編號1新人上台：禮賓引導，遞新人麥克風宣讀誓言，結束收回交還趙芯巧</li>
+    <li>編號2新人上台：禮賓遞書約版＋筆簽署證書，結束收回</li>
+    <li>編號3新人上台：禮賓遞禮物盒領取贈禮，結束收回</li>
+  </ol></td>
+  <td>新人麥克風、書約版＋筆、禮物盒</td>
+</tr>
+
+<!-- ========== 親恩永存→合喜為囍→愛的印記 ========== -->
+<tr class="phase-head critical" data-team="新人指引組" data-people="指引組全體">
+  <td class="phase" rowspan="3">親恩永存<br>合喜為囍<br>愛的印記</td>
+  <td>14:35</td><td><span class="tag loc-seat">觀禮席走道</span></td>
+  <td>發卡組員兩列（18人）</td>
+  <td>⚠誓言卡發放</td>
+  <td class="detail"><ol>
+    <li>待新人向父母鞠躬「起身」瞬間，兩列同時<span class="risk">從觀禮席「後方」出發</span>（非舞台側），往前走至各自負責排數</li>
+    <li>依號碼發放誓言卡（新郎新娘各半囍卡），發完立即由兩側／後方退場</li>
+    <li><span class="risk">全程目標90秒內完成</span>，主持人（Eva／張華）以「合喜為囍」引言覆蓋發卡時間</li>
+    <li><span class="risk">⚠不可在舞台前方或走道前段逗留聚集，避免畫面雜亂</span></li>
+    <li>誓言卡發放後由新人自留（※不回收，待你確認）</li>
+  </ol></td>
+  <td>誓言卡分袋×18</td>
+</tr>
+
+<tr data-team="新人指引組" data-people="指引組全體">
+  <td>14:35–14:45</td><td><span class="tag loc-seat">觀禮席</span></td>
+  <td>新人指引組全體</td>
+  <td>秩序維持</td>
+  <td class="detail"><ol>
+    <li>發卡完畢後全體退至外圍定點：組員站觀禮席走道兩側後方，維持儀式秩序</li>
+  </ol></td>
+  <td>—</td>
+</tr>
+
+<tr data-team="動線拍照組" data-people="蘇純呈 童莉崴">
+  <td>14:40</td><td><span class="tag loc-photo">拍照區</span> <span class="tag loc-stage">舞台</span></td>
+  <td>蘇純呈、童莉崴</td>
+  <td>抽獎桌上台</td>
+  <td class="detail"><ol>
+    <li>「愛的印記」（Kiss Ending）結束後，立即將抽獎桌搬上舞台</li>
+  </ol></td>
+  <td>抽獎桌</td>
+</tr>
+
+<!-- ========== 抽獎+大合照 ========== -->
+<tr class="phase-head critical" data-team="管理控台 動線拍照組" data-people="Erin 蘇純呈 童莉崴 朋喬">
+  <td class="phase" rowspan="2">城市驚喜<br>幸運共享（抽獎20組）</td>
+  <td>14:45–15:00</td><td><span class="tag loc-stage">舞台右側</span></td>
+  <td>Erin（指揮）、蘇純呈、童莉崴</td>
+  <td>抽獎執行</td>
+  <td class="detail"><ol>
+    <li>Erin於舞台右側統籌抽獎流程與站位指揮</li>
+    <li>蘇純呈、童莉崴依序遞出獎項牌，協助中獎新人第一二排站位排序</li>
+    <li><span class="risk">⚠僅唱號不唱名</span>，朋喬同步投影中獎號碼</li>
+    <li>第一排中間留市長／局長位置；朋喬遞拍照手拿板給長官</li>
+  </ol></td>
+  <td>獎項牌×20、投影</td>
+</tr>
+
+<tr data-team="新人指引組" data-people="指引組全體">
+  <td>14:45–15:00</td><td><span class="tag loc-seat">觀禮席</span></td>
+  <td>新人指引組全體</td>
+  <td>中獎新人引導</td>
+  <td class="detail"><ol>
+    <li>負責新人中獎時，該組組員舉手引導至舞台右側Erin處集合</li>
+    <li>抽獎結束後全體退至後方，準備下一階段編號手舉牌</li>
+  </ol></td>
+  <td>編號手舉牌</td>
+</tr>
+
+<!-- ========== 新人及家屬合照 ========== -->
+<tr class="phase-head" data-team="新人指引組 短影音組" data-people="指引組全體">
+  <td class="phase" rowspan="3">新人及家屬合照</td>
+  <td>15:00–16:00</td><td><span class="tag loc-seat">觀禮席</span> <span class="tag loc-stage">舞台</span></td>
+  <td>新人指引組全體</td>
+  <td>整隊＋上台協助</td>
+  <td class="detail"><ol>
+    <li>各組2人自編號1開始，每次整隊5組新人於觀禮區中間走道</li>
+    <li>各組1人協助新人上台、整理裙擺</li>
+    <li>不參與合照者，組長call機回報朋喬登記</li>
+  </ol></td>
+  <td>編號手舉牌</td>
+</tr>
+
+<tr data-team="短影音組" data-people="">
+  <td>15:00–16:00</td><td><span class="tag loc-stage">舞台</span></td>
+  <td>The Stage（平面）</td>
+  <td>分組合照＋獨照</td>
+  <td class="detail"><ol>
+    <li>拍攝新人分組合照（依機關確認之分組方式）</li>
+    <li>合照後帶至背板前拍攝新人獨照</li>
+  </ol></td>
+  <td>相機、背板</td>
+</tr>
+
+<tr class="critical" data-team="報到組 管理控台" data-people="詩晴 晉姍">
+  <td>15:00–17:00</td><td><span class="tag loc-reg">報到區</span> <span class="tag loc-media">貴賓媒體區</span></td>
+  <td>詩晴、晉姍</td>
+  <td>⚠禮品發放專責</td>
+  <td class="detail"><ol>
+    <li>報到處：新人禮品簽收、確認寄件地址、填寫意見回饋表</li>
+    <li>貴賓媒體處：中獎家電憑兌換券兌換</li>
+    <li>其餘報到組人員（周胖、康筠、潘怡璇、徐柔婕）此時段已轉支援新人指引組合照整隊，不需留守報到區</li>
+  </ol></td>
+  <td>簽收單、回饋表、兌換券</td>
+</tr>
+
+<!-- ========== 收尾 ========== -->
+<tr class="phase-head" data-team="管理控台 報到組 舞台組 新人指引組" data-people="全體">
+  <td class="phase" rowspan="2">收尾</td>
+  <td>16:00–17:00</td><td><span class="tag loc-all">全場</span></td>
+  <td>全體工作人員</td>
+  <td>收尾清點</td>
+  <td class="detail"><ol>
+    <li>報到組：簽收單、簽到表、回饋表彙整交朋喬</li>
+    <li>舞台組：道具清點回收</li>
+    <li>各組：協助未離場新人、引導離場動線</li>
+  </ol></td>
+  <td>—</td>
+</tr>
+
+<tr class="critical" data-team="管理控台" data-people="朋喬">
+  <td>婚禮結束後1小時內</td><td><span class="tag loc-control">場控區</span></td>
+  <td>朋喬</td>
+  <td>⚠新聞照片提供</td>
+  <td class="detail"><ol>
+    <li>提供10張照片電子檔供市府新聞發布用</li>
+  </ol></td>
+  <td>照片電子檔</td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 3：PA音控提示表 -->
+<!-- ============================================================ -->
+<div id="p3" class="page">
+<p class="sub" style="margin-top:0;">僅供PA廠商參考，不含工作人員流程細節</p>
+<table>
+<tr><th>時間</th><th>階段</th><th>音樂／音效</th><th>備註</th></tr>
+<tr><td class="time">13:00</td><td>新人報到</td><td class="fill">〔待補：background BGM〕</td><td>輕柔背景音樂，音量約30%</td></tr>
+<tr><td class="time">13:50</td><td>攜手入囍・幸福登場</td><td class="fill">〔待補：進場曲〕</td><td>新人整隊完畢即播放，音量隨進場人數漸強</td></tr>
+<tr><td class="time">14:04</td><td>進場尾聲→序曲銜接</td><td class="fill">〔待補：轉場音效／淡出〕</td><td>與陳佩賢演唱前奏銜接</td></tr>
+<tr><td class="time">14:05</td><td>幸福序曲</td><td>陳佩賢 現場演唱（麥克風已備）</td><td>演唱曲目由歌手方提供</td></tr>
+<tr><td class="time">14:15</td><td>介紹人、證婚人上台</td><td class="fill">〔待補：莊重背景樂或無〕</td><td>致詞時建議降至極低音量或靜音</td></tr>
+<tr><td class="time">14:25</td><td>囍之宣言／約定／贈禮</td><td class="fill">〔待補：儀式背景樂〕</td><td>三段儀式共用或分段皆可</td></tr>
+<tr><td class="time">14:35</td><td>親恩永存</td><td class="fill">〔待補：溫馨樂曲〕</td><td>鞠躬橋段建議放慢節奏樂曲</td></tr>
+<tr><td class="time">14:35</td><td>合喜為囍（誓言卡發放90秒）</td><td class="fill">〔待補：延續同一首或無縫接續〕</td><td>此橋段時間短，不建議中途換曲</td></tr>
+<tr><td class="time">14:40</td><td>愛的印記（Kiss Ending）</td><td class="fill">〔待補：高潮樂段〕</td><td>可搭配燈光或煙霧效果（如有）</td></tr>
+<tr><td class="time">14:45</td><td>城市驚喜 幸運共享（抽獎）</td><td class="fill">〔待補：抽獎音效／緊張感樂曲〕</td><td>每次唱號建議加短音效（鼓聲/鈴聲）</td></tr>
+<tr><td class="time">15:00</td><td>新人及家屬合照</td><td class="fill">〔待補：輕快背景樂〕</td><td>持續至16:00，音量不影響拍照溝通</td></tr>
+<tr><td class="time">16:00</td><td>活動尾聲</td><td class="fill">〔待補：送客樂曲〕</td><td>—</td></tr>
+</table>
+<p style="color:#B01010;font-size:12px;">※ 紅字曲目/音效待朋喬提供實際音檔清單後補上，PA收到本表後請自行確認播放設備與cue點時機，工作人員流程不涉入音控細節。</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 4：場地方簡化版 -->
+<!-- ============================================================ -->
+<div id="p4" class="page">
+<p class="sub" style="margin-top:0;">提供場地管理單位參考</p>
+<table>
+<tr><th>時間</th><th>事項</th><th>場地相關需求</th></tr>
+<tr><td class="time">7/17 08:00–17:00</td><td>場地布置</td><td>舞台搭建、座椅排列、地毯鋪設、大門/報到區設置</td></tr>
+<tr><td class="time">07:30–08:00</td><td>開館</td><td>工作人員入場檢查</td></tr>
+<tr><td class="time">12:50</td><td>各區就定位</td><td>大門管制開始（憑邀請函入場）</td></tr>
+<tr><td class="time">13:00–13:40</td><td>新人報到</td><td>報到區人流、貴賓媒體區入場</td></tr>
+<tr><td class="time">13:50–14:05</td><td>攜手入囍・幸福登場</td><td>舞台燈光／音響全開，觀禮席滿座</td></tr>
+<tr><td class="time">14:05–14:45</td><td>成婚儀式（含演唱、致詞、儀式、誓言卡）</td><td>舞台燈光聚焦，觀眾席秩序維持</td></tr>
+<tr><td class="time">14:45–15:00</td><td>抽獎＋大合照</td><td>舞台人流增加（抽獎新人上台）</td></tr>
+<tr><td class="time">15:00–16:00</td><td>新人及家屬合照</td><td>觀禮席走道人流疏散、拍照區使用</td></tr>
+<tr><td class="time">16:00–17:00</td><td>賓客離場＋收尾</td><td>大門人流疏散、場地清潔準備</td></tr>
+<tr><td class="time">17:00後</td><td>撤場</td><td>依契約規範辦理清潔、廢棄物清運</td></tr>
+</table>
+<p style="color:#666;font-size:12px;">※ 本表為簡化版，僅列場地相關資訊；完整工作人員分工與細部動作請見①②分頁。</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 5：7/17場布日 -->
+<!-- ============================================================ -->
+<div id="p5" class="page">
+<p class="sub" style="margin-top:0;">2026.07.17（五）08:00–17:00｜花博公園爭艷館｜場布日廠商進場＋內部確認事項</p>
+
+<div class="subtabs no-print" style="display:flex;gap:6px;margin:10px 0 16px;flex-wrap:wrap;">
+  <button class="subtab-btn active" onclick="showSubPage('sp1',this)">時程總覽</button>
+  <button class="subtab-btn" onclick="showSubPage('sp2',this)">定位圖／地貼施工圖</button>
+  <button class="subtab-btn" onclick="showSubPage('sp3',this)">輸出物清單</button>
+  <button class="subtab-btn" onclick="showSubPage('sp4',this)">座位對照表</button>
+</div>
+
+<div id="sp1" class="subpage active">
+
+
+<table>
+<colgroup><col style="width:9%"><col style="width:16%"><col style="width:16%"><col style="width:24%"><col style="width:35%"></colgroup>
+<tr><th>時間</th><th>廠商／人員</th><th>項目</th><th>動作細節</th><th>需要物品</th></tr>
+
+<tr class="critical">
+  <td class="time">08:00</td>
+  <td>朋喬、晉姍</td>
+  <td>⚠場地點交</td>
+  <td class="detail"><ol>
+    <li>與花博場館管理單位進行點交，確認場地現況、水電、動線無異常</li>
+    <li>點交完成後才開放各廠商進場施工</li>
+  </ol></td>
+  <td>點交清單</td>
+</tr>
+
+<tr>
+  <td class="time">08:00</td>
+  <td>樂群</td>
+  <td>舞台進場</td>
+  <td class="detail"><ol>
+    <li>舞台／燈光／音響（同一廠商）開始搭建</li>
+    <li><span class="risk">預計11:00完工</span>，完工後才能進行新人站位定位作業</li>
+  </ol></td>
+  <td>—</td>
+</tr>
+
+<tr>
+  <td class="time">09:00</td>
+  <td>靠設計</td>
+  <td>背板、展板進場</td>
+  <td class="detail"><ol>
+    <li>舞台背板、婚禮流程背板、廣告背板、花博平面圖、主視覺牆等各式背板進場架設</li>
+  </ol></td>
+  <td>—</td>
+</tr>
+
+<tr class="critical">
+  <td class="time">10:00</td>
+  <td>比旺</td>
+  <td>桌椅進場（不含圓桌）</td>
+  <td class="detail"><ol>
+    <li>優先排父母觀禮區＋親友觀禮區座椅</li>
+    <li><span class="risk">目標中午（12:00）前排定完成</span>，完成後才能進行椅貼作業</li>
+    <li>父母席：每排7組，每組4個位置，間隔60cm；可由柱子前1米開始排；第一排與新人站位貼紙需間隔3米；多留1位子給分局人員（與2號座位間隔30cm），後排依間距同步拉寬，避免分局人員位子凸出</li>
+    <li>親友觀禮區：共7排，各排組數不均（靠牆側縮減），每組5個位置，間隔60cm；由第1排（靠父母席）往外排，實際組數依「座位對照表」為準</li>
+  </ol></td>
+  <td>座椅、編號椅貼（父母每組4張、親友每組5張）</td>
+</tr>
+
+<tr>
+  <td class="time">10:00</td>
+  <td>奧司卡</td>
+  <td>圓桌進場</td>
+  <td class="detail"><ol>
+    <li>新人休息區＋工作人員休息區圓桌進場擺放</li>
+  </ol></td>
+  <td>—</td>
+</tr>
+
+<tr class="critical">
+  <td class="time">10:00</td>
+  <td>內部團隊到場</td>
+  <td>想樂＋WeddingDay＋靜俞（共14人）</td>
+  <td class="detail"><ol>
+    <li>想樂：Erin、朋喬、劉芳、或或、杜杜、定瀚、Abby（伯特7/17不到場，7/18當天以新人指引組組員身分參與，支援靜俞範圍）</li>
+    <li>WeddingDay：晉姍、亞當、詩晴、丁丁、周胖、小昇</li>
+    <li>＋靜俞（想樂工作人員，7/17、7/18兩天皆出席）</li>
+    <li>今日僅內部團隊到場，不含PT新人指引組等外部工作人員</li>
+  </ol></td>
+  <td>—</td>
+</tr>
+
+<tr class="critical">
+  <td class="time">11:00起</td>
+  <td>單號：晉姍、丁丁、周胖、Abby、詩晴<br>雙號：亞當、劉芳、定瀚、朋喬、靜俞<br>備援：杜杜、或或</td>
+  <td>⚠任務1：新人站位定位</td>
+  <td class="detail"><ol>
+    <li>舞台完工後開始；每側5人一人站一個定位點，全員共持大捲尺，貼齊捲尺上緣，貼完同步往後退至下一排</li>
+    <li>中央縱向捲尺對排距（每排90cm），確保每排整齊不歪斜</li>
+    <li>粉紅底色數字對應貼紙數字，灰底色數字為間距公分數（自舞台中心點起算，兩側各150/275/400/525/650/775/900/1025/1150/1275/1400/1525cm）</li>
+    <li>單號站位對應編號：1.3.5.7.9／11.13.15.17.19／…／81.83.85.87（共9排）</li>
+    <li>雙號站位對應編號：2.6.8.10.12／14.16.18.20.22／…／86.88.89.90（共9排）</li>
+    <li>Erin、小昇不參與此作業；杜杜此時段無拍攝任務可支援</li>
+  </ol></td>
+  <td>捲尺×3、新人編號地貼（10cm圓形，1–90號，4號、44號不需要）</td>
+</tr>
+
+<tr class="critical">
+  <td class="time">12:00起</td>
+  <td>杜杜、或或（專責）；任務1人力完成後陸續加入</td>
+  <td>⚠任務2：父母／親友椅貼</td>
+  <td class="detail"><ol>
+    <li>比旺完成排椅後開始；父母觀禮區每組4張、親友觀禮區每組5張編號椅貼，<span class="risk">依下方「座位對照表」由第1排（靠近舞台）往後排依序黏貼</span></li>
+    <li>父母椅貼含新人雙方姓名＋數字＋父母席；親友椅貼含新人雙方姓名＋數字＋親友席</li>
+    <li>杜杜、或或先行開始；晉姍、丁丁、周胖、Abby、詩晴、亞當、定瀚、靜俞完成任務1後陸續加入支援，加快進度</li>
+    <li><span class="risk">朋喬不參與此任務執行，當日需保留彈性時間處理各廠商現場問題</span></li>
+  </ol></td>
+  <td>父母編號椅貼、親友編號椅貼（各1–90號，4號、44號不需要）</td>
+</tr>
+
+<tr>
+  <td class="time">10:00起</td>
+  <td>朋喬</td>
+  <td>任務3：報到區／休息區定位</td>
+  <td class="detail"><ol>
+    <li>比旺、奧司卡桌椅到位後，確認單／雙號報到桌位置、新人休息＆梳化區、貴賓休息室定位</li>
+    <li>對照設計清單核對桌立牌（報到處單/雙、獎品領取區單/雙、媒體報到處、貴賓報到處）擺放位置</li>
+  </ol></td>
+  <td>場地配置圖、桌立牌</td>
+</tr>
+
+<tr>
+  <td class="time">13:00</td>
+  <td>KS Design、堤奧斯</td>
+  <td>佈置（拍照背板）進場</td>
+  <td class="detail"><ol>
+    <li>主題拍照區背板／拍照牆佈置架設</li>
+  </ol></td>
+  <td>—</td>
+</tr>
+
+<tr class="critical">
+  <td class="time">13:00</td>
+  <td>定瀚（專責對接）</td>
+  <td>更衣間＋全身鏡進場</td>
+  <td class="detail"><ol>
+    <li>雅美圖進場架設更衣間、全身鏡</li>
+    <li><span class="risk">定瀚在場確認到貨數量、簽收，並核對定位是否符合場地配置圖（100×100cm 4間、85×85cm 6間）</span></li>
+    <li><span class="risk">朋喬不需在場，定瀚處理後回報朋喬即可</span></li>
+  </ol></td>
+  <td>場地配置圖、簽收單</td>
+</tr>
+
+<tr>
+  <td class="time">13:00</td>
+  <td>義丞</td>
+  <td>電視牆進場</td>
+  <td class="detail"><ol>
+    <li>會場150吋電視牆×2進場架設</li>
+  </ol></td>
+  <td>—</td>
+</tr>
+
+<tr class="critical">
+  <td class="time">13:00–15:00</td>
+  <td>朋喬（統籌）</td>
+  <td>⚠任務5：所有輸出物位置確認</td>
+  <td class="detail"><ol>
+    <li><span class="risk">對照下方「📦輸出物清單＋定位」逐項核對每個物件是否就位且內容正確</span></li>
+    <li>市長進場紅龍：自鐵捲門前拉一條紅龍通道至舞台側邊斜坡，距離拉好後所有紅龍靠邊擺放（等市長到再往前放），總共備18支</li>
+    <li>IBM桌巾顏色核對：梳化區黑色16張、雙號/單號/貴賓報到桌香檳金各4/4/2張、Candy Bar／贊助廠商／拍拍印印卡讚／醫護區白色8/12/4/2張</li>
+    <li><span class="risk">須在15:00彩排開始前完成初步確認</span></li>
+  </ol></td>
+  <td>設計清單、桌巾</td>
+</tr>
+
+<tr class="critical">
+  <td class="time">15:00–17:00</td>
+  <td>朋喬（統籌）、Erin（主控）、指引組小組長（葉智凱、Abby、劉芳、靜俞）、內部團隊</td>
+  <td>⚠總彩排（小組長場）</td>
+  <td class="detail"><ol>
+    <li><span class="risk">本場僅小組長＋內部團隊參與，用組員代替88對新人先跑一次動線，抓場地卡點；7/18當天10:30另有一場全員彩排（全體48位工作人員參與），兩場性質不同、皆須進行</span></li>
+    <li>流程同②工作人員流程表「總彩排」段落：雙側進場輪轉實測、誓言卡列隊發放實測</li>
+    <li>此時段各廠商佈置作業可自行繼續進行，不需朋喬另外管理（僅剩餘尾端收尾工作，不影響彩排動線）</li>
+  </ol></td>
+  <td>模擬新人牌、碼表</td>
+</tr>
+
+<tr class="critical">
+  <td class="time">17:00</td>
+  <td>全體廠商</td>
+  <td>⚠交場</td>
+  <td class="detail"><ol>
+    <li>所有廠商17:00前完成施工並交場，朋喬、晉姍最終巡場確認</li>
+  </ol></td>
+  <td>—</td>
+</tr>
+
+</table>
+
+
+
+</div>
+
+<div id="sp2" class="subpage">
+<h3 style="color:#9E2B25;font-size:15px;margin:24px 0 10px;">🗺️ 總定位圖（依今年場地配置繪製，單一大圖）</h3>
+<p style="font-size:12px;color:#666;margin:0 0 10px;">觀禮區編號＋休息區桌號全部在同一張圖上，工作人員可直接對照相對位置。休息區每桌4對新人（對應雙面三角桌牌）。列印時建議A3橫向單獨印此頁。</p>
+<div style="margin-bottom:12px;padding:8px 12px;background:#FFF4E5;border:1px solid #C9A15A;border-radius:6px;font-size:12.5px;color:#8a6a2e;">
+📄 <b>列印提醒：</b>本圖版面較寬，列印時請在瀏覽器列印對話框手動選擇「橫向」，並將縮放設為「縮放至頁面大小」以避免內容被裁切或過小。
+</div>
+<div style="margin-bottom:28px;overflow-x:auto;">
+<div style="font-weight:bold;color:#9E2B25;margin-bottom:6px;font-size:14px;">總定位圖｜臺北・囍 全場配置＋編號（面對舞台方向）</div>
+<svg viewBox="-640 0 3040 1600" xmlns="http://www.w3.org/2000/svg" style="width:100%;min-width:2280px;border:1px solid #c9b8a3;border-radius:6px;background:#FDFAF4;">
+<defs><marker id="bigarr" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,1 L9,5 L0,9 z" fill="#4472C4"/></marker></defs>
+<rect x="890.0" y="20" width="620" height="70" rx="8" fill="#B03A3A" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1200.0" y="58" text-anchor="middle" font-size="24" fill="#fff" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">舞台（W1260cm）</text><rect x="1130.0" y="110" width="140" height="46" rx="4" fill="#C9A15A" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1200.0" y="138" text-anchor="middle" font-size="14" fill="#fff" font-family="Microsoft JhengHei, sans-serif">延伸台</text><text x="984.0" y="186" text-anchor="middle" font-size="15" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">雙號新人席（W900cm，排間距90cm）</text><text x="1416.0" y="186" text-anchor="middle" font-size="15" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">單號新人席（W900cm，排間距90cm）</text><rect x="828.0" y="200" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="856.0" y="224.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">12</text><rect x="892.0" y="200" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="920.0" y="224.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">10</text><rect x="956.0" y="200" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="984.0" y="224.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">8</text><rect x="1020.0" y="200" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1048.0" y="224.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">6</text><rect x="1084.0" y="200" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1112.0" y="224.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">2</text><rect x="828.0" y="246" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="856.0" y="270.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">22</text><rect x="892.0" y="246" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="920.0" y="270.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">20</text><rect x="956.0" y="246" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="984.0" y="270.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">18</text><rect x="1020.0" y="246" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1048.0" y="270.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">16</text><rect x="1084.0" y="246" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1112.0" y="270.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">14</text><rect x="828.0" y="292" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="856.0" y="316.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">32</text><rect x="892.0" y="292" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="920.0" y="316.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">30</text><rect x="956.0" y="292" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="984.0" y="316.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">28</text><rect x="1020.0" y="292" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1048.0" y="316.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">26</text><rect x="1084.0" y="292" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1112.0" y="316.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">24</text><rect x="828.0" y="338" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="856.0" y="362.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">42</text><rect x="892.0" y="338" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="920.0" y="362.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">40</text><rect x="956.0" y="338" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="984.0" y="362.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">38</text><rect x="1020.0" y="338" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1048.0" y="362.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">36</text><rect x="1084.0" y="338" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1112.0" y="362.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">34</text><rect x="828.0" y="384" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="856.0" y="408.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">54</text><rect x="892.0" y="384" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="920.0" y="408.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">52</text><rect x="956.0" y="384" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="984.0" y="408.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">50</text><rect x="1020.0" y="384" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1048.0" y="408.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">48</text><rect x="1084.0" y="384" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1112.0" y="408.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">46</text><rect x="828.0" y="430" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="856.0" y="454.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">64</text><rect x="892.0" y="430" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="920.0" y="454.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">62</text><rect x="956.0" y="430" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="984.0" y="454.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">60</text><rect x="1020.0" y="430" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1048.0" y="454.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">58</text><rect x="1084.0" y="430" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1112.0" y="454.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">56</text><rect x="828.0" y="476" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="856.0" y="500.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">74</text><rect x="892.0" y="476" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="920.0" y="500.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">72</text><rect x="956.0" y="476" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="984.0" y="500.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">70</text><rect x="1020.0" y="476" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1048.0" y="500.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">68</text><rect x="1084.0" y="476" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1112.0" y="500.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">66</text><rect x="828.0" y="522" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="856.0" y="546.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">84</text><rect x="892.0" y="522" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="920.0" y="546.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">82</text><rect x="956.0" y="522" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="984.0" y="546.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">80</text><rect x="1020.0" y="522" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1048.0" y="546.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">78</text><rect x="1084.0" y="522" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1112.0" y="546.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">76</text><rect x="892.0" y="568" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="920.0" y="592.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">90</text><rect x="956.0" y="568" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="984.0" y="592.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">89</text><rect x="1020.0" y="568" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1048.0" y="592.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">88</text><rect x="1084.0" y="568" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1112.0" y="592.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">86</text><rect x="1260.0" y="200" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1288.0" y="224.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">1</text><rect x="1324.0" y="200" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1352.0" y="224.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">3</text><rect x="1388.0" y="200" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1416.0" y="224.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">5</text><rect x="1452.0" y="200" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1480.0" y="224.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">7</text><rect x="1516.0" y="200" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1544.0" y="224.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">9</text><rect x="1260.0" y="246" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1288.0" y="270.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">11</text><rect x="1324.0" y="246" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1352.0" y="270.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">13</text><rect x="1388.0" y="246" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1416.0" y="270.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">15</text><rect x="1452.0" y="246" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1480.0" y="270.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">17</text><rect x="1516.0" y="246" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1544.0" y="270.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">19</text><rect x="1260.0" y="292" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1288.0" y="316.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">21</text><rect x="1324.0" y="292" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1352.0" y="316.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">23</text><rect x="1388.0" y="292" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1416.0" y="316.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">25</text><rect x="1452.0" y="292" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1480.0" y="316.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">27</text><rect x="1516.0" y="292" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1544.0" y="316.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">29</text><rect x="1260.0" y="338" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1288.0" y="362.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">31</text><rect x="1324.0" y="338" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1352.0" y="362.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">33</text><rect x="1388.0" y="338" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1416.0" y="362.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">35</text><rect x="1452.0" y="338" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1480.0" y="362.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">37</text><rect x="1516.0" y="338" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1544.0" y="362.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">39</text><rect x="1260.0" y="384" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1288.0" y="408.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">41</text><rect x="1324.0" y="384" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1352.0" y="408.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">43</text><rect x="1388.0" y="384" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1416.0" y="408.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">45</text><rect x="1452.0" y="384" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1480.0" y="408.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">47</text><rect x="1516.0" y="384" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1544.0" y="408.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">49</text><rect x="1260.0" y="430" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1288.0" y="454.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">51</text><rect x="1324.0" y="430" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1352.0" y="454.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">53</text><rect x="1388.0" y="430" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1416.0" y="454.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">55</text><rect x="1452.0" y="430" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1480.0" y="454.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">57</text><rect x="1516.0" y="430" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1544.0" y="454.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">59</text><rect x="1260.0" y="476" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1288.0" y="500.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">61</text><rect x="1324.0" y="476" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1352.0" y="500.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">63</text><rect x="1388.0" y="476" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1416.0" y="500.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">65</text><rect x="1452.0" y="476" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1480.0" y="500.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">67</text><rect x="1516.0" y="476" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1544.0" y="500.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">69</text><rect x="1260.0" y="522" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1288.0" y="546.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">71</text><rect x="1324.0" y="522" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1352.0" y="546.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">73</text><rect x="1388.0" y="522" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1416.0" y="546.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">75</text><rect x="1452.0" y="522" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1480.0" y="546.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">77</text><rect x="1516.0" y="522" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1544.0" y="546.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">79</text><rect x="1260.0" y="568" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1288.0" y="592.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">81</text><rect x="1324.0" y="568" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1352.0" y="592.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">83</text><rect x="1388.0" y="568" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1416.0" y="592.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">85</text><rect x="1452.0" y="568" width="56" height="38" rx="5" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1480.0" y="592.0" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">87</text><text x="1200.0" y="403.0" text-anchor="middle" font-size="16" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">走</text><text x="1200.0" y="427.0" text-anchor="middle" font-size="16" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">道</text><rect x="924.0" y="618" width="120" height="30" rx="4" fill="#5BA870" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="984.0" y="638" text-anchor="middle" font-size="13" fill="#fff" font-family="Microsoft JhengHei, sans-serif">媒體高台</text><rect x="1356.0" y="618" width="120" height="30" rx="4" fill="#5BA870" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1416.0" y="638" text-anchor="middle" font-size="13" fill="#fff" font-family="Microsoft JhengHei, sans-serif">媒體高台</text><text x="586.0" y="186" text-anchor="middle" font-size="14" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">雙號父母席（每排7組、每組4席，W750cm）</text><text x="1814.0" y="186" text-anchor="middle" font-size="14" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">單號父母席（每排7組、每組4席，W750cm）</text><rect x="414.0" y="200" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="436.0" y="225.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">16</text><rect x="464.0" y="200" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="486.0" y="225.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">14</text><rect x="514.0" y="200" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="536.0" y="225.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">12</text><rect x="564.0" y="200" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="586.0" y="225.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">10</text><rect x="614.0" y="200" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="636.0" y="225.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">8</text><rect x="664.0" y="200" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="686.0" y="225.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">6</text><rect x="714.0" y="200" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="736.0" y="225.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">2</text><rect x="414.0" y="252" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="436.0" y="277.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">30</text><rect x="464.0" y="252" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="486.0" y="277.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">28</text><rect x="514.0" y="252" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="536.0" y="277.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">26</text><rect x="564.0" y="252" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="586.0" y="277.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">24</text><rect x="614.0" y="252" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="636.0" y="277.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">22</text><rect x="664.0" y="252" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="686.0" y="277.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">20</text><rect x="714.0" y="252" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="736.0" y="277.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">18</text><rect x="414.0" y="304" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="436.0" y="329.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">46</text><rect x="464.0" y="304" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="486.0" y="329.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">42</text><rect x="514.0" y="304" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="536.0" y="329.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">40</text><rect x="564.0" y="304" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="586.0" y="329.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">38</text><rect x="614.0" y="304" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="636.0" y="329.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">36</text><rect x="664.0" y="304" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="686.0" y="329.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">34</text><rect x="714.0" y="304" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="736.0" y="329.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">32</text><rect x="414.0" y="356" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="436.0" y="381.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">60</text><rect x="464.0" y="356" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="486.0" y="381.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">58</text><rect x="514.0" y="356" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="536.0" y="381.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">56</text><rect x="564.0" y="356" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="586.0" y="381.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">54</text><rect x="614.0" y="356" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="636.0" y="381.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">52</text><rect x="664.0" y="356" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="686.0" y="381.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">50</text><rect x="714.0" y="356" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="736.0" y="381.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">48</text><rect x="414.0" y="408" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="436.0" y="433.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">74</text><rect x="464.0" y="408" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="486.0" y="433.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">72</text><rect x="514.0" y="408" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="536.0" y="433.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">70</text><rect x="564.0" y="408" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="586.0" y="433.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">68</text><rect x="614.0" y="408" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="636.0" y="433.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">66</text><rect x="664.0" y="408" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="686.0" y="433.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">64</text><rect x="714.0" y="408" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="736.0" y="433.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">62</text><rect x="414.0" y="460" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="436.0" y="485.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">88</text><rect x="464.0" y="460" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="486.0" y="485.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">86</text><rect x="514.0" y="460" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="536.0" y="485.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">84</text><rect x="564.0" y="460" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="586.0" y="485.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">82</text><rect x="614.0" y="460" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="636.0" y="485.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">80</text><rect x="664.0" y="460" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="686.0" y="485.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">78</text><rect x="714.0" y="460" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="736.0" y="485.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">76</text><rect x="664.0" y="512" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="686.0" y="537.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">90</text><rect x="714.0" y="512" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="736.0" y="537.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">89</text><rect x="1642.0" y="200" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1664.0" y="225.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">1</text><rect x="1692.0" y="200" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1714.0" y="225.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">3</text><rect x="1742.0" y="200" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1764.0" y="225.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">5</text><rect x="1792.0" y="200" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1814.0" y="225.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">7</text><rect x="1842.0" y="200" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1864.0" y="225.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">9</text><rect x="1892.0" y="200" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1914.0" y="225.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">11</text><rect x="1942.0" y="200" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1964.0" y="225.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">13</text><rect x="1642.0" y="252" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1664.0" y="277.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">15</text><rect x="1692.0" y="252" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1714.0" y="277.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">17</text><rect x="1742.0" y="252" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1764.0" y="277.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">19</text><rect x="1792.0" y="252" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1814.0" y="277.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">21</text><rect x="1842.0" y="252" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1864.0" y="277.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">23</text><rect x="1892.0" y="252" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1914.0" y="277.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">25</text><rect x="1942.0" y="252" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1964.0" y="277.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">27</text><rect x="1642.0" y="304" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1664.0" y="329.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">29</text><rect x="1692.0" y="304" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1714.0" y="329.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">31</text><rect x="1742.0" y="304" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1764.0" y="329.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">33</text><rect x="1792.0" y="304" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1814.0" y="329.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">35</text><rect x="1842.0" y="304" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1864.0" y="329.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">37</text><rect x="1892.0" y="304" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1914.0" y="329.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">39</text><rect x="1942.0" y="304" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1964.0" y="329.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">41</text><rect x="1642.0" y="356" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1664.0" y="381.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">43</text><rect x="1692.0" y="356" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1714.0" y="381.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">45</text><rect x="1742.0" y="356" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1764.0" y="381.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">47</text><rect x="1792.0" y="356" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1814.0" y="381.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">49</text><rect x="1842.0" y="356" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1864.0" y="381.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">51</text><rect x="1892.0" y="356" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1914.0" y="381.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">53</text><rect x="1942.0" y="356" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1964.0" y="381.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">55</text><rect x="1642.0" y="408" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1664.0" y="433.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">57</text><rect x="1692.0" y="408" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1714.0" y="433.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">59</text><rect x="1742.0" y="408" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1764.0" y="433.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">61</text><rect x="1792.0" y="408" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1814.0" y="433.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">63</text><rect x="1842.0" y="408" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1864.0" y="433.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">65</text><rect x="1892.0" y="408" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1914.0" y="433.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">67</text><rect x="1942.0" y="408" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1964.0" y="433.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">69</text><rect x="1642.0" y="460" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1664.0" y="485.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">71</text><rect x="1692.0" y="460" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1714.0" y="485.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">73</text><rect x="1742.0" y="460" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1764.0" y="485.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">75</text><rect x="1792.0" y="460" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1814.0" y="485.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">77</text><rect x="1842.0" y="460" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1864.0" y="485.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">79</text><rect x="1892.0" y="460" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1914.0" y="485.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">81</text><rect x="1942.0" y="460" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1964.0" y="485.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">83</text><rect x="1642.0" y="512" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1664.0" y="537.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">85</text><rect x="1692.0" y="512" width="44" height="40" rx="5" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1714.0" y="537.0" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">87</text><rect x="766.0" y="200" width="34" height="40" rx="5" fill="#9BB7E0" stroke="#3D5B8A" stroke-width="1" opacity="1"/><text x="783.0" y="216" text-anchor="middle" font-size="10" fill="#1e3a5c" font-family="Microsoft JhengHei, sans-serif">分局</text><text x="783.0" y="230" text-anchor="middle" font-size="10" fill="#1e3a5c" font-family="Microsoft JhengHei, sans-serif">人員</text><text x="175.0" y="186" text-anchor="middle" font-size="13" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">雙號親友觀禮區（共7排，組數不均，W800cm）</text><text x="2225.0" y="186" text-anchor="middle" font-size="13" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">單號親友觀禮區（共7排，組數不均，W800cm）</text><rect x="100.0" y="200" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="123.0" y="225.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">12</text><rect x="152.0" y="200" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="175.0" y="225.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">10</text><rect x="204.0" y="200" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="227.0" y="225.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">8</text><rect x="256.0" y="200" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="279.0" y="225.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">6</text><rect x="308.0" y="200" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="331.0" y="225.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">2</text><rect x="-4.0" y="252" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="19.0" y="277.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">26</text><rect x="48.0" y="252" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="71.0" y="277.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">24</text><rect x="100.0" y="252" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="123.0" y="277.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">22</text><rect x="152.0" y="252" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="175.0" y="277.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">20</text><rect x="204.0" y="252" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="227.0" y="277.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">18</text><rect x="256.0" y="252" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="279.0" y="277.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">16</text><rect x="308.0" y="252" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="331.0" y="277.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">14</text><rect x="-4.0" y="304" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="19.0" y="329.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">40</text><rect x="48.0" y="304" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="71.0" y="329.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">38</text><rect x="100.0" y="304" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="123.0" y="329.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">36</text><rect x="152.0" y="304" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="175.0" y="329.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">34</text><rect x="204.0" y="304" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="227.0" y="329.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">32</text><rect x="256.0" y="304" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="279.0" y="329.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">30</text><rect x="308.0" y="304" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="331.0" y="329.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">28</text><rect x="-4.0" y="356" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="19.0" y="381.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">56</text><rect x="48.0" y="356" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="71.0" y="381.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">54</text><rect x="100.0" y="356" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="123.0" y="381.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">52</text><rect x="152.0" y="356" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="175.0" y="381.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">50</text><rect x="204.0" y="356" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="227.0" y="381.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">48</text><rect x="256.0" y="356" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="279.0" y="381.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">46</text><rect x="308.0" y="356" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="331.0" y="381.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">42</text><rect x="48.0" y="408" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="71.0" y="433.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">68</text><rect x="100.0" y="408" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="123.0" y="433.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">66</text><rect x="152.0" y="408" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="175.0" y="433.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">64</text><rect x="204.0" y="408" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="227.0" y="433.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">62</text><rect x="256.0" y="408" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="279.0" y="433.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">60</text><rect x="308.0" y="408" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="331.0" y="433.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">58</text><rect x="48.0" y="460" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="71.0" y="485.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">80</text><rect x="100.0" y="460" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="123.0" y="485.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">78</text><rect x="152.0" y="460" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="175.0" y="485.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">76</text><rect x="204.0" y="460" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="227.0" y="485.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">74</text><rect x="256.0" y="460" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="279.0" y="485.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">72</text><rect x="308.0" y="460" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="331.0" y="485.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">70</text><rect x="48.0" y="512" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="71.0" y="537.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">90</text><rect x="100.0" y="512" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="123.0" y="537.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">89</text><rect x="152.0" y="512" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="175.0" y="537.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">88</text><rect x="204.0" y="512" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="227.0" y="537.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">86</text><rect x="256.0" y="512" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="279.0" y="537.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">84</text><rect x="308.0" y="512" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="331.0" y="537.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">82</text><rect x="2046.0" y="200" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2069.0" y="225.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">1</text><rect x="2098.0" y="200" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2121.0" y="225.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">3</text><rect x="2150.0" y="200" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2173.0" y="225.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">5</text><rect x="2202.0" y="200" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2225.0" y="225.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">7</text><rect x="2254.0" y="200" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2277.0" y="225.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">9</text><rect x="2306.0" y="200" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2329.0" y="225.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">11</text><rect x="2358.0" y="200" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2381.0" y="225.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">13</text><rect x="2046.0" y="252" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2069.0" y="277.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">15</text><rect x="2098.0" y="252" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2121.0" y="277.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">17</text><rect x="2150.0" y="252" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2173.0" y="277.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">19</text><rect x="2202.0" y="252" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2225.0" y="277.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">21</text><rect x="2254.0" y="252" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2277.0" y="277.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">23</text><rect x="2306.0" y="252" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2329.0" y="277.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">25</text><rect x="2358.0" y="252" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2381.0" y="277.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">27</text><rect x="2046.0" y="304" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2069.0" y="329.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">29</text><rect x="2098.0" y="304" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2121.0" y="329.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">31</text><rect x="2150.0" y="304" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2173.0" y="329.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">33</text><rect x="2202.0" y="304" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2225.0" y="329.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">35</text><rect x="2254.0" y="304" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2277.0" y="329.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">37</text><rect x="2306.0" y="304" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2329.0" y="329.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">39</text><rect x="2046.0" y="356" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2069.0" y="381.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">41</text><rect x="2098.0" y="356" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2121.0" y="381.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">43</text><rect x="2150.0" y="356" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2173.0" y="381.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">45</text><rect x="2202.0" y="356" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2225.0" y="381.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">47</text><rect x="2254.0" y="356" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2277.0" y="381.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">49</text><rect x="2306.0" y="356" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2329.0" y="381.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">51</text><rect x="2046.0" y="408" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2069.0" y="433.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">53</text><rect x="2098.0" y="408" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2121.0" y="433.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">55</text><rect x="2150.0" y="408" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2173.0" y="433.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">57</text><rect x="2202.0" y="408" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2225.0" y="433.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">59</text><rect x="2254.0" y="408" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2277.0" y="433.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">61</text><rect x="2306.0" y="408" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2329.0" y="433.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">63</text><rect x="2046.0" y="460" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2069.0" y="485.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">65</text><rect x="2098.0" y="460" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2121.0" y="485.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">67</text><rect x="2150.0" y="460" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2173.0" y="485.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">69</text><rect x="2202.0" y="460" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2225.0" y="485.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">71</text><rect x="2254.0" y="460" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2277.0" y="485.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">73</text><rect x="2306.0" y="460" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2329.0" y="485.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">75</text><rect x="2046.0" y="512" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2069.0" y="537.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">77</text><rect x="2098.0" y="512" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2121.0" y="537.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">79</text><rect x="2150.0" y="512" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2173.0" y="537.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">81</text><rect x="2202.0" y="512" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2225.0" y="537.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">83</text><rect x="2254.0" y="512" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2277.0" y="537.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">85</text><rect x="2306.0" y="512" width="46" height="40" rx="5" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="2329.0" y="537.0" text-anchor="middle" font-size="13" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">87</text><text x="384.0" y="420" text-anchor="middle" font-size="12" fill="#999" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 384.0 420)">走道</text><text x="793.0" y="420" text-anchor="middle" font-size="12" fill="#999" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 793.0 420)">走道</text><text x="2016.0" y="420" text-anchor="middle" font-size="12" fill="#999" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 2016.0 420)">走道</text><text x="1607.0" y="420" text-anchor="middle" font-size="12" fill="#999" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 1607.0 420)">走道</text><rect x="-44.0" y="676" width="2488.0" height="26" rx="4" fill="#EDDCC8" stroke="none" stroke-width="1" opacity="1"/><text x="1200.0" y="694" text-anchor="middle" font-size="13" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">主走道（2m）</text><text x="425.0" y="750" text-anchor="middle" font-size="16" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">單號新人休息區（11桌，每桌4對新人，桌牌對應）</text><circle cx="141.0" cy="812" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="141.0" y="802" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">1·3</text><text x="141.0" y="822" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">5·7</text><text x="141.0" y="838" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="259.0" cy="812" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="259.0" y="802" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">9·11</text><text x="259.0" y="822" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">13·15</text><text x="259.0" y="838" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="377.0" cy="812" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="377.0" y="802" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">17·19</text><text x="377.0" y="822" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">21·23</text><text x="377.0" y="838" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="495.0" cy="812" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="495.0" y="802" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">25·27</text><text x="495.0" y="822" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">29·31</text><text x="495.0" y="838" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="613.0" cy="812" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="613.0" y="802" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">33·35</text><text x="613.0" y="822" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">37·39</text><text x="613.0" y="838" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="731.0" cy="812" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="731.0" y="802" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">41·43</text><text x="731.0" y="822" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">45·47</text><text x="731.0" y="838" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="141.0" cy="932" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="141.0" y="922" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">49·51</text><text x="141.0" y="942" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">53·55</text><text x="141.0" y="958" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="259.0" cy="932" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="259.0" y="922" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">57·59</text><text x="259.0" y="942" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">61·63</text><text x="259.0" y="958" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="377.0" cy="932" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="377.0" y="922" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">65·67</text><text x="377.0" y="942" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">69·71</text><text x="377.0" y="958" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="495.0" cy="932" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="495.0" y="922" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">73·75</text><text x="495.0" y="942" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">77·79</text><text x="495.0" y="958" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="613.0" cy="932" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="613.0" y="922" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">81·83</text><text x="613.0" y="942" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">85·87</text><text x="613.0" y="958" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><text x="425.0" y="1050" text-anchor="middle" font-size="16" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">雙號新人休息區（11桌，每桌4對新人，桌牌對應）</text><circle cx="141.0" cy="1112" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="141.0" y="1102" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">2·6</text><text x="141.0" y="1122" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">8·10</text><text x="141.0" y="1138" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="259.0" cy="1112" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="259.0" y="1102" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">12·14</text><text x="259.0" y="1122" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">16·18</text><text x="259.0" y="1138" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="377.0" cy="1112" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="377.0" y="1102" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">20·22</text><text x="377.0" y="1122" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">24·26</text><text x="377.0" y="1138" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="495.0" cy="1112" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="495.0" y="1102" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">28·30</text><text x="495.0" y="1122" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">32·34</text><text x="495.0" y="1138" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="613.0" cy="1112" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="613.0" y="1102" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">36·38</text><text x="613.0" y="1122" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">40·42</text><text x="613.0" y="1138" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="731.0" cy="1112" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="731.0" y="1102" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">46·48</text><text x="731.0" y="1122" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">50·52</text><text x="731.0" y="1138" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="141.0" cy="1232" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="141.0" y="1222" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">54·56</text><text x="141.0" y="1242" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">58·60</text><text x="141.0" y="1258" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="259.0" cy="1232" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="259.0" y="1222" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">62·64</text><text x="259.0" y="1242" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">66·68</text><text x="259.0" y="1258" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="377.0" cy="1232" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="377.0" y="1222" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">70·72</text><text x="377.0" y="1242" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">74·76</text><text x="377.0" y="1258" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="495.0" cy="1232" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="495.0" y="1222" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">78·80</text><text x="495.0" y="1242" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">82·84</text><text x="495.0" y="1258" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><circle cx="613.0" cy="1232" r="46" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><text x="613.0" y="1222" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">86·88</text><text x="613.0" y="1242" text-anchor="middle" font-size="14" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">89·90</text><text x="613.0" y="1258" text-anchor="middle" font-size="9" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">4對/桌</text><rect x="-45" y="766" width="110" height="300" rx="6" fill="#D8CBBB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="10" y="916" text-anchor="middle" font-size="15" fill="#5b4a3a" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 10 916)">梳化區</text><rect x="-45" y="1096" width="110" height="160" rx="6" fill="#D8CBBB" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="10" y="1181" text-anchor="middle" font-size="13" fill="#5b4a3a" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 10 1181)">更衣室</text><rect x="985.0" y="796" width="90" height="170" rx="6" fill="#4C8A7A" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1030.0" y="876" text-anchor="middle" font-size="13" fill="#fff" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 1030.0 876)">新人報到區</text><text x="1030.0" y="896" text-anchor="middle" font-size="11" fill="#fff" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 1030.0 896)">（單號）</text><rect x="985.0" y="1036" width="90" height="170" rx="6" fill="#4C8A7A" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1030.0" y="1116" text-anchor="middle" font-size="13" fill="#fff" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 1030.0 1116)">新人報到區</text><text x="1030.0" y="1136" text-anchor="middle" font-size="11" fill="#fff" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 1030.0 1136)">（雙號）</text><circle cx="935.0" cy="986" r="24" fill="#A0522D"/><text x="935.0" y="1036" text-anchor="middle" font-size="12" fill="#5b2020" font-family="Microsoft JhengHei, sans-serif">抽獎箱</text><rect x="1115.0" y="856" width="300" height="300" rx="8" fill="#BFDCE8" stroke="#7AAAC0" stroke-width="1" opacity="0.85"/><text x="1265.0" y="996" text-anchor="middle" font-size="20" fill="#3D6B7A" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">單雙號</text><text x="1265.0" y="1026" text-anchor="middle" font-size="20" fill="#3D6B7A" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">報到引導區</text><rect x="1455.0" y="776" width="150" height="60" rx="6" fill="#C9A15A" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1530.0" y="812" text-anchor="middle" font-size="14" fill="#fff" font-family="Microsoft JhengHei, sans-serif">主題拍照區</text><rect x="1455.0" y="856" width="150" height="46" rx="6" fill="#B9A8D8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1530.0" y="886" text-anchor="middle" font-size="14" fill="#fff" font-family="Microsoft JhengHei, sans-serif">醫護區</text><rect x="1455.0" y="922" width="150" height="60" rx="6" fill="#8FB8D8" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1530.0" y="950" text-anchor="middle" font-size="13" fill="#fff" font-family="Microsoft JhengHei, sans-serif">貴賓媒體</text><text x="1530.0" y="968" text-anchor="middle" font-size="13" fill="#fff" font-family="Microsoft JhengHei, sans-serif">報到處</text><rect x="1455.0" y="1002" width="150" height="60" rx="6" fill="#C9A15A" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1530.0" y="1038" text-anchor="middle" font-size="14" fill="#fff" font-family="Microsoft JhengHei, sans-serif">主題拍照區</text><rect x="1165.0" y="1530" width="200" height="30" rx="4" fill="#5BA870" stroke="#9E2B25" stroke-width="1" opacity="1"/><text x="1265.0" y="1552" text-anchor="middle" font-size="14" fill="#fff" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">大門（出入口）</text><path d="M 1265.0 1520 L 1265.0 1176" stroke="#4472C4" stroke-width="3" marker-end="url(#bigarr)"/><rect x="-420" y="250" width="340" height="500" rx="6" fill="#E5E5E5" stroke="#999" stroke-width="1" opacity="1"/><text x="-250.0" y="280" text-anchor="middle" font-size="18" fill="#666" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">工作人員區域</text><circle cx="-330" cy="390" r="26" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><circle cx="-296.0" cy="390.0" r="4" fill="#C9A15A"/><circle cx="-306.0" cy="414.0" r="4" fill="#C9A15A"/><circle cx="-330.0" cy="424.0" r="4" fill="#C9A15A"/><circle cx="-354.0" cy="414.0" r="4" fill="#C9A15A"/><circle cx="-364.0" cy="390.0" r="4" fill="#C9A15A"/><circle cx="-354.0" cy="366.0" r="4" fill="#C9A15A"/><circle cx="-330.0" cy="356.0" r="4" fill="#C9A15A"/><circle cx="-306.0" cy="366.0" r="4" fill="#C9A15A"/><circle cx="-170" cy="430" r="26" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><circle cx="-136.0" cy="430.0" r="4" fill="#C9A15A"/><circle cx="-146.0" cy="454.0" r="4" fill="#C9A15A"/><circle cx="-170.0" cy="464.0" r="4" fill="#C9A15A"/><circle cx="-194.0" cy="454.0" r="4" fill="#C9A15A"/><circle cx="-204.0" cy="430.0" r="4" fill="#C9A15A"/><circle cx="-194.0" cy="406.0" r="4" fill="#C9A15A"/><circle cx="-170.0" cy="396.0" r="4" fill="#C9A15A"/><circle cx="-146.0" cy="406.0" r="4" fill="#C9A15A"/><circle cx="-310" cy="590" r="26" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><circle cx="-276.0" cy="590.0" r="4" fill="#C9A15A"/><circle cx="-286.0" cy="614.0" r="4" fill="#C9A15A"/><circle cx="-310.0" cy="624.0" r="4" fill="#C9A15A"/><circle cx="-334.0" cy="614.0" r="4" fill="#C9A15A"/><circle cx="-344.0" cy="590.0" r="4" fill="#C9A15A"/><circle cx="-334.0" cy="566.0" r="4" fill="#C9A15A"/><circle cx="-310.0" cy="556.0" r="4" fill="#C9A15A"/><circle cx="-286.0" cy="566.0" r="4" fill="#C9A15A"/><circle cx="-160" cy="650" r="26" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><circle cx="-126.0" cy="650.0" r="4" fill="#C9A15A"/><circle cx="-136.0" cy="674.0" r="4" fill="#C9A15A"/><circle cx="-160.0" cy="684.0" r="4" fill="#C9A15A"/><circle cx="-184.0" cy="674.0" r="4" fill="#C9A15A"/><circle cx="-194.0" cy="650.0" r="4" fill="#C9A15A"/><circle cx="-184.0" cy="626.0" r="4" fill="#C9A15A"/><circle cx="-160.0" cy="616.0" r="4" fill="#C9A15A"/><circle cx="-136.0" cy="626.0" r="4" fill="#C9A15A"/><path d="M -59 250.0 L -71 289.4 L -59 328.8 L -71 368.2 L -59 407.7 L -71 447.1 L -59 486.5 L -71 525.9 L -59 565.3 L -71 604.8 L -59 644.2 L -71 683.6 L -59 723.0 L -71 762.4 L -59 801.8 L -71 841.2 L -59 880.7 L -71 920.1 L -59 959.5 L -71 998.9 L -59 1038.3 L -71 1077.8 L -59 1117.2 L -71 1156.6 L -59 1196.0" stroke="#C9A15A" stroke-width="4" fill="none" opacity="0.9"/><circle cx="-59" cy="250.0" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-71" cy="289.4" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-59" cy="328.8" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-71" cy="368.2" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-59" cy="407.7" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-71" cy="447.1" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-59" cy="486.5" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-71" cy="525.9" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-59" cy="565.3" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-71" cy="604.8" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-59" cy="644.2" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-71" cy="683.6" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-59" cy="723.0" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-71" cy="762.4" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-59" cy="801.8" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-71" cy="841.2" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-59" cy="880.7" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-71" cy="920.1" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-59" cy="959.5" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-71" cy="998.9" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-59" cy="1038.3" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-71" cy="1077.8" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-59" cy="1117.2" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-71" cy="1156.6" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><circle cx="-59" cy="1196.0" r="6" fill="#8a6a2e" stroke="#5b4a1a" stroke-width="1"/><text x="-43" y="723.0" text-anchor="middle" font-size="13" fill="#8a6a2e" font-weight="bold" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 -43 723.0)">隔離紅龍×25（工作人員區域／公共區）</text><path d="M -34.0 154.0 L 120.0 146.0 L 274.0 154.0 L 428.0 146.0 L 582.0 154.0 L 736.0 146.0 L 890.0 154.0" stroke="#7a1a1a" stroke-width="5" fill="none" opacity="0.9"/><circle cx="-34.0" cy="154.0" r="7" fill="#7a1a1a" stroke="#4a0f0f" stroke-width="1"/><circle cx="120.0" cy="146.0" r="7" fill="#7a1a1a" stroke="#4a0f0f" stroke-width="1"/><circle cx="274.0" cy="154.0" r="7" fill="#7a1a1a" stroke="#4a0f0f" stroke-width="1"/><circle cx="428.0" cy="146.0" r="7" fill="#7a1a1a" stroke="#4a0f0f" stroke-width="1"/><circle cx="582.0" cy="154.0" r="7" fill="#7a1a1a" stroke="#4a0f0f" stroke-width="1"/><circle cx="736.0" cy="146.0" r="7" fill="#7a1a1a" stroke="#4a0f0f" stroke-width="1"/><circle cx="890.0" cy="154.0" r="7" fill="#7a1a1a" stroke="#4a0f0f" stroke-width="1"/><text x="-44.0" y="134" text-anchor="end" font-size="14" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">鐵捲門</text><text x="428.0" y="134" text-anchor="middle" font-size="13" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">紅龍×7（約10米，防止賓客衝向舞台，市長進場動線）</text><text x="1200.0" y="1586" text-anchor="middle" font-size="13" fill="#B01010" font-family="Microsoft JhengHei, sans-serif">※ 面對舞台：雙號左／單號右；親友觀禮區每排組數不均（見座位對照表）；89號在雙號側 ※ 尺寸標註待現場確認</text>
+</svg></div>
+
+<div style="margin-bottom:28px;">
+<div style="font-weight:bold;color:#9E2B25;margin-bottom:6px;font-size:14px;">地貼定位施工圖｜新人站位編號貼（捲尺作業）</div>
+<svg viewBox="0 0 2000 1150" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;border:1px solid #c9b8a3;border-radius:6px;background:#FDFAF4;">
+<text x="80" y="50" text-anchor="start" font-size="20" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">作業方式（同去年）</text><text x="80" y="92" text-anchor="start" font-size="15" fill="#333" font-family="Microsoft JhengHei, sans-serif">・每側5人，一人站一個定位點，全員共持大捲尺</text><text x="80" y="122" text-anchor="start" font-size="15" fill="#333" font-family="Microsoft JhengHei, sans-serif">・貼紙貼齊在捲尺「上緣」，貼完全排一起往後退一排</text><text x="80" y="152" text-anchor="start" font-size="15" fill="#333" font-family="Microsoft JhengHei, sans-serif">・往後退到下一排位置後，同步貼下一排（中央縱向捲尺對排距）</text><text x="80" y="182" text-anchor="start" font-size="15" fill="#333" font-family="Microsoft JhengHei, sans-serif">・粉紅底數字＝貼紙編號；灰底數字＝距離公分數</text><text x="80" y="212" text-anchor="start" font-size="15" fill="#333" font-family="Microsoft JhengHei, sans-serif">・單號側5人：晉姍、丁丁、周胖、Abby、詩晴</text><text x="80" y="242" text-anchor="start" font-size="15" fill="#333" font-family="Microsoft JhengHei, sans-serif">・雙號側5人：亞當、劉芳、定瀚、朋喬、靜俞</text><rect x="80" y="320" width="460" height="16" rx="3" fill="#F5C518" stroke="#B8860B" stroke-width="1"/><text x="310" y="375" text-anchor="middle" font-size="13" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">橫向捲尺（貼齊上緣）</text><circle cx="120" cy="306" r="9" fill="#5b2020"/><circle cx="120" cy="286" r="7" fill="none" stroke="#C9772E" stroke-width="2"/><circle cx="210" cy="306" r="9" fill="#5b2020"/><circle cx="210" cy="286" r="7" fill="none" stroke="#C9772E" stroke-width="2"/><circle cx="300" cy="306" r="9" fill="#5b2020"/><circle cx="300" cy="286" r="7" fill="none" stroke="#C9772E" stroke-width="2"/><circle cx="390" cy="306" r="9" fill="#5b2020"/><circle cx="390" cy="286" r="7" fill="none" stroke="#C9772E" stroke-width="2"/><circle cx="480" cy="306" r="9" fill="#5b2020"/><circle cx="480" cy="286" r="7" fill="none" stroke="#C9772E" stroke-width="2"/><rect x="300" y="336" width="14" height="220" rx="3" fill="#F5C518" stroke="#B8860B" stroke-width="1"/><text x="340" y="450" text-anchor="start" font-size="12" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">中央縱向捲尺</text><rect x="70" y="600" width="490" height="260" rx="8" fill="#FFF4F0" stroke="#B01010" stroke-width="1.5"/><text x="90" y="634" text-anchor="start" font-size="16" fill="#B01010" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">⚠ 尺寸建議值（待朋喬確認後定案）</text><text x="90" y="670" text-anchor="start" font-size="14" fill="#5b2020" font-family="Microsoft JhengHei, sans-serif">・欄位（橫向）：自中央走道中心線起</text><text x="90" y="700" text-anchor="start" font-size="14" fill="#5b2020" font-family="Microsoft JhengHei, sans-serif">　190／370／550／730／910 cm（間距180cm）</text><text x="90" y="730" text-anchor="start" font-size="14" fill="#5b2020" font-family="Microsoft JhengHei, sans-serif">・排數（縱向）：自舞台前緣起</text><text x="90" y="760" text-anchor="start" font-size="14" fill="#5b2020" font-family="Microsoft JhengHei, sans-serif">　150／240／330／420／510／600／690／780／870 cm</text><text x="90" y="790" text-anchor="start" font-size="14" fill="#5b2020" font-family="Microsoft JhengHei, sans-serif">　（第1排150cm，之後每排＋90cm）</text><text x="90" y="820" text-anchor="start" font-size="14" fill="#5b2020" font-family="Microsoft JhengHei, sans-serif">・依據：新人席每側W900cm、排間距90cm、走道2m</text><text x="815.0" y="60" text-anchor="middle" font-size="18" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">雙號側</text><text x="1275.0" y="60" text-anchor="middle" font-size="18" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">單號側</text><text x="1045.0" y="60" text-anchor="middle" font-size="15" fill="#B03A3A" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">舞台↑</text><rect x="640" y="94" width="62" height="30" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="671.0" y="115" text-anchor="middle" font-size="14" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">910</text><rect x="1100" y="94" width="62" height="30" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="1131.0" y="115" text-anchor="middle" font-size="14" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">190</text><rect x="712" y="94" width="62" height="30" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="743.0" y="115" text-anchor="middle" font-size="14" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">730</text><rect x="1172" y="94" width="62" height="30" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="1203.0" y="115" text-anchor="middle" font-size="14" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">370</text><rect x="784" y="94" width="62" height="30" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="815.0" y="115" text-anchor="middle" font-size="14" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">550</text><rect x="1244" y="94" width="62" height="30" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="1275.0" y="115" text-anchor="middle" font-size="14" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">550</text><rect x="856" y="94" width="62" height="30" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="887.0" y="115" text-anchor="middle" font-size="14" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">370</text><rect x="1316" y="94" width="62" height="30" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="1347.0" y="115" text-anchor="middle" font-size="14" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">730</text><rect x="928" y="94" width="62" height="30" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="959.0" y="115" text-anchor="middle" font-size="14" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">190</text><rect x="1388" y="94" width="62" height="30" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="1419.0" y="115" text-anchor="middle" font-size="14" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">910</text><text x="815.0" y="84" text-anchor="middle" font-size="11" fill="#666" font-family="Microsoft JhengHei, sans-serif">距中心線公分數 →</text><rect x="640" y="140" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="671.0" y="167.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">12</text><rect x="712" y="140" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="743.0" y="167.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">10</text><rect x="784" y="140" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="815.0" y="167.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">8</text><rect x="856" y="140" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="887.0" y="167.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">6</text><rect x="928" y="140" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="959.0" y="167.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">2</text><rect x="1100" y="140" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1131.0" y="167.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">1</text><rect x="1172" y="140" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1203.0" y="167.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">3</text><rect x="1244" y="140" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1275.0" y="167.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">5</text><rect x="1316" y="140" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1347.0" y="167.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">7</text><rect x="1388" y="140" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1419.0" y="167.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">9</text><rect x="1007.0" y="142" width="76" height="38" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="1045.0" y="166.0" text-anchor="middle" font-size="15" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">150</text><rect x="640" y="196" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="671.0" y="223.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">22</text><rect x="712" y="196" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="743.0" y="223.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">20</text><rect x="784" y="196" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="815.0" y="223.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">18</text><rect x="856" y="196" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="887.0" y="223.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">16</text><rect x="928" y="196" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="959.0" y="223.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">14</text><rect x="1100" y="196" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1131.0" y="223.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">11</text><rect x="1172" y="196" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1203.0" y="223.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">13</text><rect x="1244" y="196" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1275.0" y="223.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">15</text><rect x="1316" y="196" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1347.0" y="223.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">17</text><rect x="1388" y="196" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1419.0" y="223.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">19</text><rect x="1007.0" y="198" width="76" height="38" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="1045.0" y="222.0" text-anchor="middle" font-size="15" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">240</text><rect x="640" y="252" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="671.0" y="279.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">32</text><rect x="712" y="252" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="743.0" y="279.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">30</text><rect x="784" y="252" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="815.0" y="279.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">28</text><rect x="856" y="252" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="887.0" y="279.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">26</text><rect x="928" y="252" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="959.0" y="279.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">24</text><rect x="1100" y="252" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1131.0" y="279.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">21</text><rect x="1172" y="252" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1203.0" y="279.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">23</text><rect x="1244" y="252" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1275.0" y="279.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">25</text><rect x="1316" y="252" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1347.0" y="279.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">27</text><rect x="1388" y="252" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1419.0" y="279.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">29</text><rect x="1007.0" y="254" width="76" height="38" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="1045.0" y="278.0" text-anchor="middle" font-size="15" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">330</text><rect x="640" y="308" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="671.0" y="335.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">42</text><rect x="712" y="308" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="743.0" y="335.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">40</text><rect x="784" y="308" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="815.0" y="335.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">38</text><rect x="856" y="308" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="887.0" y="335.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">36</text><rect x="928" y="308" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="959.0" y="335.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">34</text><rect x="1100" y="308" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1131.0" y="335.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">31</text><rect x="1172" y="308" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1203.0" y="335.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">33</text><rect x="1244" y="308" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1275.0" y="335.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">35</text><rect x="1316" y="308" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1347.0" y="335.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">37</text><rect x="1388" y="308" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1419.0" y="335.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">39</text><rect x="1007.0" y="310" width="76" height="38" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="1045.0" y="334.0" text-anchor="middle" font-size="15" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">420</text><rect x="640" y="364" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="671.0" y="391.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">54</text><rect x="712" y="364" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="743.0" y="391.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">52</text><rect x="784" y="364" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="815.0" y="391.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">50</text><rect x="856" y="364" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="887.0" y="391.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">48</text><rect x="928" y="364" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="959.0" y="391.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">46</text><rect x="1100" y="364" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1131.0" y="391.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">41</text><rect x="1172" y="364" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1203.0" y="391.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">43</text><rect x="1244" y="364" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1275.0" y="391.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">45</text><rect x="1316" y="364" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1347.0" y="391.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">47</text><rect x="1388" y="364" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1419.0" y="391.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">49</text><rect x="1007.0" y="366" width="76" height="38" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="1045.0" y="390.0" text-anchor="middle" font-size="15" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">510</text><rect x="640" y="420" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="671.0" y="447.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">64</text><rect x="712" y="420" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="743.0" y="447.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">62</text><rect x="784" y="420" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="815.0" y="447.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">60</text><rect x="856" y="420" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="887.0" y="447.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">58</text><rect x="928" y="420" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="959.0" y="447.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">56</text><rect x="1100" y="420" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1131.0" y="447.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">51</text><rect x="1172" y="420" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1203.0" y="447.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">53</text><rect x="1244" y="420" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1275.0" y="447.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">55</text><rect x="1316" y="420" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1347.0" y="447.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">57</text><rect x="1388" y="420" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1419.0" y="447.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">59</text><rect x="1007.0" y="422" width="76" height="38" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="1045.0" y="446.0" text-anchor="middle" font-size="15" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">600</text><rect x="640" y="476" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="671.0" y="503.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">74</text><rect x="712" y="476" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="743.0" y="503.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">72</text><rect x="784" y="476" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="815.0" y="503.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">70</text><rect x="856" y="476" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="887.0" y="503.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">68</text><rect x="928" y="476" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="959.0" y="503.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">66</text><rect x="1100" y="476" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1131.0" y="503.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">61</text><rect x="1172" y="476" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1203.0" y="503.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">63</text><rect x="1244" y="476" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1275.0" y="503.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">65</text><rect x="1316" y="476" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1347.0" y="503.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">67</text><rect x="1388" y="476" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1419.0" y="503.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">69</text><rect x="1007.0" y="478" width="76" height="38" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="1045.0" y="502.0" text-anchor="middle" font-size="15" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">690</text><rect x="640" y="532" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="671.0" y="559.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">84</text><rect x="712" y="532" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="743.0" y="559.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">82</text><rect x="784" y="532" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="815.0" y="559.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">80</text><rect x="856" y="532" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="887.0" y="559.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">78</text><rect x="928" y="532" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="959.0" y="559.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">76</text><rect x="1100" y="532" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1131.0" y="559.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">71</text><rect x="1172" y="532" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1203.0" y="559.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">73</text><rect x="1244" y="532" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1275.0" y="559.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">75</text><rect x="1316" y="532" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1347.0" y="559.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">77</text><rect x="1388" y="532" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1419.0" y="559.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">79</text><rect x="1007.0" y="534" width="76" height="38" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="1045.0" y="558.0" text-anchor="middle" font-size="15" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">780</text><rect x="712" y="588" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="743.0" y="615.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">90</text><rect x="784" y="588" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="815.0" y="615.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">89</text><rect x="856" y="588" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="887.0" y="615.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">88</text><rect x="928" y="588" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="959.0" y="615.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">86</text><rect x="1100" y="588" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1131.0" y="615.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">81</text><rect x="1172" y="588" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1203.0" y="615.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">83</text><rect x="1244" y="588" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1275.0" y="615.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">85</text><rect x="1316" y="588" width="62" height="42" rx="5" fill="#F4B8BC" stroke="#9E2B25" stroke-width="1"/><text x="1347.0" y="615.0" text-anchor="middle" font-size="17" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">87</text><rect x="1007.0" y="590" width="76" height="38" rx="4" fill="#D9D9D9" stroke="#999" stroke-width="1"/><text x="1045.0" y="614.0" text-anchor="middle" font-size="15" fill="#333" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">870</text><text x="1045.0" y="660" text-anchor="middle" font-size="12" fill="#666" font-family="Microsoft JhengHei, sans-serif">↑ 距舞台前緣公分數（中央縱向捲尺讀值）</text><line x1="630" y1="161.0" x2="1460" y2="161.0" stroke="#bbb" stroke-width="0.8" stroke-dasharray="4,4"/><line x1="630" y1="217.0" x2="1460" y2="217.0" stroke="#bbb" stroke-width="0.8" stroke-dasharray="4,4"/><line x1="630" y1="273.0" x2="1460" y2="273.0" stroke="#bbb" stroke-width="0.8" stroke-dasharray="4,4"/><line x1="630" y1="329.0" x2="1460" y2="329.0" stroke="#bbb" stroke-width="0.8" stroke-dasharray="4,4"/><line x1="630" y1="385.0" x2="1460" y2="385.0" stroke="#bbb" stroke-width="0.8" stroke-dasharray="4,4"/><line x1="630" y1="441.0" x2="1460" y2="441.0" stroke="#bbb" stroke-width="0.8" stroke-dasharray="4,4"/><line x1="630" y1="497.0" x2="1460" y2="497.0" stroke="#bbb" stroke-width="0.8" stroke-dasharray="4,4"/><line x1="630" y1="553.0" x2="1460" y2="553.0" stroke="#bbb" stroke-width="0.8" stroke-dasharray="4,4"/><line x1="630" y1="609.0" x2="1460" y2="609.0" stroke="#bbb" stroke-width="0.8" stroke-dasharray="4,4"/><text x="1000.0" y="1126" text-anchor="middle" font-size="14" fill="#B01010" font-family="Microsoft JhengHei, sans-serif">※ 每貼點＝1對新人（地貼各2張：左新娘右新郎或依習慣）；89號在雙號側最後排；4、44號無貼紙</text>
+</svg></div>
+
+
+
+</div>
+
+<div id="sp3" class="subpage">
+<h3 style="color:#9E2B25;font-size:15px;margin:24px 0 10px;">📦 輸出物清單＋定位＋負責人</h3>
+<p style="font-size:12px;color:#666;margin:0 0 10px;">依設計清單整理，按場地區域分類；各負責人於完成本身任務後順道核對，非額外站崗。</p>
+
+<div style="margin-bottom:28px;">
+<div style="font-weight:bold;color:#9E2B25;margin-bottom:6px;font-size:14px;">輸出物定位地圖（簡化版，依區域分工）</div>
+<svg viewBox="0 0 1900 1000" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;border:1px solid #c9b8a3;border-radius:6px;background:#FDFAF4;">
+<rect x="650" y="20" width="600" height="150" rx="8" fill="#B03A3A" stroke="#7a1f1f" stroke-width="1.2"/><text x="950" y="50" text-anchor="middle" font-size="17" fill="#fff" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">舞台區</text><text x="950" y="78" text-anchor="middle" font-size="12.5" fill="#ffe8e0" font-family="Microsoft JhengHei, sans-serif">舞台背板／司儀台／標語拍照手拿牌</text><text x="950" y="98" text-anchor="middle" font-size="12.5" fill="#ffe8e0" font-family="Microsoft JhengHei, sans-serif">誓言手拿板／書約版／頒獎牌</text><text x="950" y="118" text-anchor="middle" font-size="12.5" fill="#ffe8e0" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">負責：Abby、劉芳</text>
+<rect x="650" y="830" width="600" height="150" rx="8" fill="#5BA870" stroke="#2f6b48" stroke-width="1.2"/><text x="950" y="860" text-anchor="middle" font-size="17" fill="#fff" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">大門／場外</text><text x="950" y="888" text-anchor="middle" font-size="12.5" fill="#e8f5ec" font-family="Microsoft JhengHei, sans-serif">捷運站外帆布／立地指引牌×3</text><text x="950" y="908" text-anchor="middle" font-size="12.5" fill="#e8f5ec" font-family="Microsoft JhengHei, sans-serif">活動場地配置圖／市長紅龍18支</text><text x="950" y="928" text-anchor="middle" font-size="12.5" fill="#e8f5ec" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">負責：亞當、詩晴</text>
+<rect x="40" y="300" width="540" height="270" rx="8" fill="#D8CBBB" stroke="#8a6a4a" stroke-width="1.2"/><text x="310" y="330" text-anchor="middle" font-size="16" fill="#3a2a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">休息區／梳化區／更衣室</text><text x="310" y="360" text-anchor="middle" font-size="12.5" fill="#3a2a1a" font-family="Microsoft JhengHei, sans-serif">新人休息區立牌（單右雙左雙箭頭）</text><text x="310" y="381" text-anchor="middle" font-size="12.5" fill="#3a2a1a" font-family="Microsoft JhengHei, sans-serif">雙面三角桌牌（單雙各11張，對應桌號）</text><text x="310" y="402" text-anchor="middle" font-size="12.5" fill="#3a2a1a" font-family="Microsoft JhengHei, sans-serif">貴賓休息區立牌／新人梳化區立牌</text><text x="310" y="423" text-anchor="middle" font-size="12.5" fill="#3a2a1a" font-family="Microsoft JhengHei, sans-serif">IBM桌巾：梳化區黑16、休息區白／香檳金各桌</text><text x="310" y="444" text-anchor="middle" font-size="12.5" fill="#3a2a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">負責：定瀚（順道雅美圖進場一併確認）</text>
+<rect x="1320" y="300" width="540" height="270" rx="8" fill="#8FB8D8" stroke="#3D6B7A" stroke-width="1.2"/><text x="1590" y="330" text-anchor="middle" font-size="16" fill="#fff" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">拍照區／醫護／貴賓媒體</text><text x="1590" y="360" text-anchor="middle" font-size="12.5" fill="#eaf3fa" font-family="Microsoft JhengHei, sans-serif">拍照背板（KS Design＋堤奧斯佈置）</text><text x="1590" y="381" text-anchor="middle" font-size="12.5" fill="#eaf3fa" font-family="Microsoft JhengHei, sans-serif">⚠拍照手拿牌3款×2、相片沖洗框-拍拍印/印卡讚</text><text x="1590" y="402" text-anchor="middle" font-size="12.5" fill="#eaf3fa" font-family="Microsoft JhengHei, sans-serif">廠商背板-拍拍印／印卡讚</text><text x="1590" y="423" text-anchor="middle" font-size="12.5" fill="#eaf3fa" font-family="Microsoft JhengHei, sans-serif">醫護區立牌／貴賓媒體報到區立牌／媒體區椅貼／貴賓椅貼</text><text x="1590" y="444" text-anchor="middle" font-size="12.5" fill="#eaf3fa" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">負責：晉姍、靜俞</text>
+<rect x="650" y="300" width="540" height="120" rx="8" fill="#4C8A7A" stroke="#2f5a4d" stroke-width="1.2"/><text x="920" y="330" text-anchor="middle" font-size="16" fill="#fff" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">報到區</text><text x="920" y="358" text-anchor="middle" font-size="12.5" fill="#e5f2ee" font-family="Microsoft JhengHei, sans-serif">報到區立牌（單／雙）／桌立牌（報到／獎品領取／貴賓媒體）</text><text x="920" y="378" text-anchor="middle" font-size="12.5" fill="#e5f2ee" font-family="Microsoft JhengHei, sans-serif">抽獎券／獎品兌換券／抽獎箱貼紙／IBM桌巾香檳金</text><text x="920" y="398" text-anchor="middle" font-size="12.5" fill="#e5f2ee" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">負責：丁丁、周胖</text>
+<rect x="650" y="450" width="540" height="120" rx="8" fill="#F0C8CB" stroke="#B24A6E" stroke-width="1.2"/><text x="920" y="480" text-anchor="middle" font-size="16" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">觀禮席（新人／父母／親友）</text><text x="920" y="508" text-anchor="middle" font-size="12.5" fill="#5b2020" font-family="Microsoft JhengHei, sans-serif">觀禮區立牌（父母/親友，單雙）／編號地貼／編號椅貼／編號手舉牌</text><text x="920" y="528" text-anchor="middle" font-size="12.5" fill="#5b2020" font-family="Microsoft JhengHei, sans-serif">廣告背板1、2／主視覺牆／花博平面圖／媒體區椅貼</text><text x="920" y="548" text-anchor="middle" font-size="12.5" fill="#5b2020" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">負責：見「任務1新人站位定位」＋「任務2椅貼」小組</text>
+<text x="950" y="984" text-anchor="middle" font-size="13" fill="#B01010" font-family="Microsoft JhengHei, sans-serif">※ 各區負責人於完成本身任務後順道核對，非額外全天站崗；發現缺漏請立即回報朋喬</text>
+</svg></div>
+
+<table>
+<colgroup><col style="width:12%"><col style="width:26%"><col style="width:10%"><col style="width:12%"><col style="width:40%"></colgroup>
+<tr><th colspan="5">舞台區｜負責：Abby、劉芳</th></tr>
+<tr><td class="team">舞台</td><td>舞台背板（三分區：左右城市景＋中間新人＋贊助品牌）</td><td>1式</td><td>Abby</td><td>舞台主視覺，左右不含新人、只留城市線稿</td></tr>
+<tr><td></td><td>婚禮流程背板（6米，含流程＋場地配置圖）</td><td>1式</td><td>Abby</td><td>舞台側或主視覺牆位置</td></tr>
+<tr><td></td><td>司儀台（含背貼）</td><td>1式</td><td>劉芳</td><td>舞台前方主持位置</td></tr>
+<tr><td></td><td>1號新人結婚誓言手拿板／2號簽結婚書約版</td><td>各1</td><td>劉芳</td><td>舞台儀式道具，由舞台組保管</td></tr>
+<tr><td></td><td>標語拍照手拿牌</td><td>1式</td><td>Abby</td><td>舞台旁</td></tr>
+<tr><td></td><td>頒獎牌（10個獎項）</td><td>1式</td><td>劉芳</td><td>抽獎環節，舞台右側</td></tr>
+
+<tr><th colspan="5">大門／場外｜負責：亞當、詩晴</th></tr>
+<tr><td class="team">大門／場外</td><td>場外指引-主視覺（帆布，捷運站外）</td><td>1</td><td>詩晴</td><td>捷運站外，含往前箭頭</td></tr>
+<tr><td></td><td>立地指引牌（活動指引）</td><td>3</td><td>詩晴</td><td>大門／場館入口動線，含箭頭黏貼</td></tr>
+<tr><td></td><td>活動場地配置圖（A1橫式）</td><td>1</td><td>亞當</td><td>大門入口張貼</td></tr>
+<tr><td></td><td>市長進場紅龍</td><td>18支</td><td>亞當</td><td>鐵捲門前至舞台側邊斜坡，靠邊擺放待市長到場</td></tr>
+
+<tr><th colspan="5">報到區｜負責：丁丁、周胖</th></tr>
+<tr><td class="team">報到區</td><td>新人報到區立牌（單／雙）</td><td>各1</td><td>周胖</td><td>單／雙號報到桌前，需標注單／雙號</td></tr>
+<tr><td></td><td>婚禮流程立牌</td><td>1</td><td>丁丁</td><td>報到區入口附近</td></tr>
+<tr><td></td><td>桌立牌：報到處（單／雙，A4）</td><td>各1</td><td>周胖</td><td>報到桌面</td></tr>
+<tr><td></td><td>桌立牌：獎品領取區（單／雙，A4）</td><td>各1</td><td>丁丁</td><td>報到桌面（15:00後兌換用）</td></tr>
+<tr><td></td><td>桌立牌：貴賓報到處／媒體報到處（A4）</td><td>各1</td><td>丁丁</td><td>貴賓媒體報到桌面</td></tr>
+<tr><td></td><td>抽獎券</td><td>依人數</td><td>周胖</td><td>報到時隨資料袋發放</td></tr>
+<tr><td></td><td>獎品兌換券</td><td>依獎項</td><td>丁丁</td><td>報到／兌換處使用</td></tr>
+<tr><td></td><td>抽獎箱貼紙</td><td>1</td><td>周胖</td><td>貼於抽獎箱本體</td></tr>
+
+<tr><th colspan="5">觀禮席／舞台周邊｜負責：任務1/2小組（見前）</th></tr>
+<tr><td class="team">觀禮席</td><td>父母觀禮區立牌（單／雙）</td><td>各1</td><td>—</td><td>父母席入口，標注單／雙號</td></tr>
+<tr><td></td><td>親友觀禮區立牌（單／雙）</td><td>各1</td><td>—</td><td>親友席入口，標注單／雙號</td></tr>
+<tr><td></td><td>新人編號地貼（1–90號，4、44號除外）</td><td>88點</td><td>—</td><td>新人站位，見「地貼定位施工圖」</td></tr>
+<tr><td></td><td>父母編號椅貼／親友編號椅貼／新人編號椅貼</td><td>各88組</td><td>—</td><td>對應座位，見「座位對照表」</td></tr>
+<tr><td></td><td>編號手舉牌（單／雙各9張）</td><td>18張</td><td>—</td><td>新人指引組使用，不固定於場地</td></tr>
+<tr><td></td><td>主視覺牆</td><td>1</td><td>晉姍</td><td>如場地配置圖標示位置</td></tr>
+<tr><td></td><td>花博平面圖</td><td>2座</td><td>晉姍</td><td>入口兩側，標示吸菸區＋洗手間</td></tr>
+<tr><td></td><td>廣告背板1／廣告背板2（贊助品牌牆）</td><td>各1</td><td>晉姍</td><td>觀禮席外側，如場圖標示</td></tr>
+<tr><td></td><td>側版（一般背板／舞台背板用）</td><td>12＋2</td><td>晉姍</td><td>各背板側邊收邊</td></tr>
+
+<tr><th colspan="5">拍照區／醫護／貴賓媒體｜負責：晉姍、靜俞</th></tr>
+<tr><td class="team">拍照區等</td><td>拍照背板（主題拍照區）</td><td>1式</td><td>靜俞</td><td>主題拍照區×2</td></tr>
+<tr><td></td><td class="risk">⚠拍照手拿牌（囍字／鑽戒／Yes!，各2個）</td><td class="risk">3款×2</td><td class="risk">靜俞</td><td class="risk">放置於拍照背板處（不放舞台）</td></tr>
+<tr><td></td><td>廠商背板-拍拍印／印卡讚</td><td>各1</td><td>靜俞</td><td>相片沖洗區</td></tr>
+<tr><td></td><td>相片沖洗框-拍拍印／印卡讚（電子檔）</td><td>—</td><td>靜俞</td><td>提供廠商電子檔即可，無需現場張貼</td></tr>
+<tr><td></td><td>醫護區立牌</td><td>1</td><td>晉姍</td><td>醫護區</td></tr>
+<tr><td></td><td>貴賓／媒體報到區立牌</td><td>1</td><td>晉姍</td><td>貴賓媒體報到處</td></tr>
+<tr><td></td><td>媒體區椅貼／貴賓椅貼</td><td>1式</td><td>晉姍</td><td>媒體區／貴賓席</td></tr>
+
+<tr><th colspan="5">休息區／梳化區／更衣室｜負責：定瀚</th></tr>
+<tr><td class="team">休息區</td><td>新人休息區立牌（單／雙，雙箭頭指引）</td><td>各1</td><td>定瀚</td><td>休息區入口，右單左雙</td></tr>
+<tr><td></td><td>雙面三角桌牌（每桌4對編號）</td><td>單雙各11張</td><td>定瀚</td><td>新人休息區各桌，對應桌號</td></tr>
+<tr><td></td><td>貴賓休息區立牌</td><td>1</td><td>定瀚</td><td>貴賓休息室</td></tr>
+<tr><td></td><td>新人梳化區立牌</td><td>1</td><td>定瀚</td><td>梳化區入口</td></tr>
+<tr><td></td><td>IBM桌巾：梳化區黑16／報到桌香檳金4+4+2／Candy Bar白8／贊助白12／拍拍印印卡讚白4／醫護白2</td><td>共46張</td><td>定瀚</td><td>對應各桌</td></tr>
+</table>
+
+
+</div>
+
+<div id="sp4" class="subpage">
+<h3 style="color:#9E2B25;font-size:15px;margin:24px 0 10px;">📋 座位對照表｜父母席／親友席每排對應新人編號</h3>
+<p style="font-size:12px;color:#666;margin:0 0 10px;">父母席：每排7組（4人/組），共7排。親友觀禮區：實際依場地圖核對為7排（每排組數不均，靠牆側略縮減），非固定8組/排。第1排最靠近舞台，往後遞增。與新人座位網格（每排5號、對應手舉牌）為不同排列方式，故分開對照。</p>
+
+<table>
+<colgroup><col style="width:8%"><col style="width:46%"><col style="width:46%"></colgroup>
+<tr><th colspan="3">單號 父母席（每排7組，共7排）</th></tr>
+<tr><td class="time">第1排</td><td colspan="2">1、3、5、7、9、11、13</td></tr>
+<tr><td class="time">第2排</td><td colspan="2">15、17、19、21、23、25、27</td></tr>
+<tr><td class="time">第3排</td><td colspan="2">29、31、33、35、37、39、41</td></tr>
+<tr><td class="time">第4排</td><td colspan="2">43、45、47、49、51、53、55</td></tr>
+<tr><td class="time">第5排</td><td colspan="2">57、59、61、63、65、67、69</td></tr>
+<tr><td class="time">第6排</td><td colspan="2">71、73、75、77、79、81、83</td></tr>
+<tr><td class="time">第7排</td><td colspan="2" class="risk">85、87（僅2組，最後一排）</td></tr>
+</table>
+
+<table>
+<colgroup><col style="width:8%"><col style="width:46%"><col style="width:46%"></colgroup>
+<tr><th colspan="3">單號 親友觀禮區（共7排，依實際場圖核對）</th></tr>
+<tr><td class="time">第1排</td><td colspan="2">1、3、5、7、9、11、13</td></tr>
+<tr><td class="time">第2排</td><td colspan="2">15、17、19、21、23、25、27</td></tr>
+<tr><td class="time">第3排</td><td colspan="2">29、31、33、35、37、39</td></tr>
+<tr><td class="time">第4排</td><td colspan="2">41、43、45、47、49、51</td></tr>
+<tr><td class="time">第5排</td><td colspan="2">53、55、57、59、61、63</td></tr>
+<tr><td class="time">第6排</td><td colspan="2">65、67、69、71、73、75</td></tr>
+<tr><td class="time">第7排</td><td colspan="2" class="risk">77、79、81、83、85、87</td></tr>
+</table>
+
+<table>
+<colgroup><col style="width:8%"><col style="width:46%"><col style="width:46%"></colgroup>
+<tr><th colspan="3">雙號 父母席（每排7組，共7排）</th></tr>
+<tr><td class="time">第1排</td><td colspan="2">2、6、8、10、12、14、16</td></tr>
+<tr><td class="time">第2排</td><td colspan="2">18、20、22、24、26、28、30</td></tr>
+<tr><td class="time">第3排</td><td colspan="2">32、34、36、38、40、42、46</td></tr>
+<tr><td class="time">第4排</td><td colspan="2">48、50、52、54、56、58、60</td></tr>
+<tr><td class="time">第5排</td><td colspan="2">62、64、66、68、70、72、74</td></tr>
+<tr><td class="time">第6排</td><td colspan="2">76、78、80、82、84、86、88</td></tr>
+<tr><td class="time">第7排</td><td colspan="2" class="risk">89、90（僅2組，最後一排）</td></tr>
+</table>
+
+<table>
+<colgroup><col style="width:8%"><col style="width:46%"><col style="width:46%"></colgroup>
+<tr><th colspan="3">雙號 親友觀禮區（共7排，依實際場圖核對）</th></tr>
+<tr><td class="time">第1排</td><td colspan="2" class="risk">2、6、8、10、12</td></tr>
+<tr><td class="time">第2排</td><td colspan="2">14、16、18、20、22、24、26</td></tr>
+<tr><td class="time">第3排</td><td colspan="2">28、30、32、34、36、38、40</td></tr>
+<tr><td class="time">第4排</td><td colspan="2">42、46、48、50、52、54、56</td></tr>
+<tr><td class="time">第5排</td><td colspan="2">58、60、62、64、66、68</td></tr>
+<tr><td class="time">第6排</td><td colspan="2">70、72、74、76、78、80</td></tr>
+<tr><td class="time">第7排</td><td colspan="2">82、84、86、88、89、90</td></tr>
+</table>
+
+<p style="color:#B01010;font-size:12px;">※ 樂群（舞台）11:00完工、比旺（桌椅）目標12:00前完工，任務1、2依此為觸發點；若廠商延遲，後續任務需順延。15:00–17:00為總彩排時段，佈置類作業與彩排並行、無需朋喬同時管理。</p>
+
+</div>
+
+</div>
+
+<script>
+function showPage(id, btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function showSubPage(id, btn){
+  document.querySelectorAll('.subpage').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.subtab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function applyFilter(){
+  const team = document.getElementById('teamSel').value;
+  const person = document.getElementById('personSel').value;
+  const rows = document.querySelectorAll('#mainTable tbody tr');
+  rows.forEach(r=>{
+    const teams = (r.getAttribute('data-team')||'');
+    const people = (r.getAttribute('data-people')||'');
+    const teamOK = (team==='all') || teams.includes(team);
+    const personOK = (person==='all') || people.includes(person) || people.includes('全體');
+    if(teamOK && personOK){ r.classList.remove('hidden'); } else { r.classList.add('hidden'); }
+  });
+}
+function clearFilter(){
+  document.getElementById('teamSel').value='all';
+  document.getElementById('personSel').value='all';
+  applyFilter();
+}
+</script>
+
+</body>
+</html>
