@@ -112,9 +112,15 @@
     border-radius:6px;margin-bottom:7px;}
   .personal-item .p-time{min-width:70px;font-weight:bold;color:#B01010;font-size:13px;}
   .personal-item .p-body{flex:1;}
-  .personal-item .p-loc{color:#8a6a4a;font-size:11px;margin-bottom:1px;}
+  .personal-item .p-loc{margin-bottom:3px;}
+  .personal-item .p-loc .tag{font-size:11px;padding:2px 7px;}
+  .timeline-action{color:#3a2a1a;font-weight:normal;}
+  .timeline-action .risk{color:#B01010;font-weight:bold;}
+  .timeline-action b{color:#3a2a1a;}
   .personal-item .p-task{color:#3a2a1a;font-weight:bold;font-size:13px;}
-  .personal-item .p-action{color:#B01010;font-weight:bold;margin-top:2px;font-size:12.5px;}
+  .personal-item .p-action{color:#3a2a1a;font-weight:normal;margin-top:2px;font-size:12.5px;}
+  .personal-item .p-action .risk{color:#B01010;font-weight:bold;}
+  .personal-item .p-action b{color:#3a2a1a;}
   .personal-item .p-items{color:#666;font-size:11px;margin-top:2px;}
   .personal-empty{color:#999;font-style:italic;padding:10px 0;}
 
@@ -251,7 +257,7 @@
 <tr><td>主題拍照區B（大門側）</td><td>童莉崴</td><td>同上</td></tr>
 <tr><td class="team" rowspan="3">舞台組<br><span style="font-size:10.5px;color:#888;">（胡詩涵→朋喬；趙芯巧→伯特）</span></td><td>左道具備妥（雙號側）</td><td>胡詩涵</td><td class="risk">13:00–14:00先支援新人指引組報到／進場；14:00起歸位舞台下方，備妥並檢查麥克風，交由禮賓遞交上台（⚠不含誓言卡，見流程表說明）</td></tr>
 <tr><td>右道具備妥（單號側）</td><td>趙芯巧</td><td class="risk">13:00–14:00先支援新人指引組報到／進場；14:00起歸位舞台下方，備妥並檢查禮物盒、書約版、獎項牌，交由禮賓遞交上台</td></tr>
-<tr><td>抽獎箱搬運／抽獎協助</td><td>蘇純呈、童莉崴</td><td>14:30前就位舞台右側，14:40抽獎桌上台</td></tr>
+<tr><td>抽獎箱搬運</td><td>蘇純呈、童莉崴</td><td>14:30前就位舞台右側，14:40抽獎桌上台；不再參與抽獎現場協助（獎項牌改伯特一人處理）</td></tr>
 <tr><td class="team" rowspan="2">短影音組</td><td>平面攝影</td><td>The Stage</td><td>進場分駐左右背板拍攝新人；不需另行排班管理</td></tr>
 <tr><td>動態錄影／轉播</td><td>臉紅紅</td><td>契約需全程錄影；不需另行排班管理</td></tr>
 <tr><td class="team">禮賓組</td><td class="risk">⚠儀式引導＋道具遞交</td><td class="risk">禮賓人員×6</td><td class="risk">編號1/2/3新人上下台、證婚人/介紹人引導；<b>所有麥克風及儀式道具由禮賓上台遞交</b>，舞台組僅於台下備妥</td></tr>
@@ -404,12 +410,12 @@
   <td>道具／設備就位</td>
   <td class="detail"><ol>
     <li>舞台左桌（胡詩涵）：麥克風×2；<span class="risk">胡詩涵13:00–14:00先支援新人指引組報到／進場，14:00起歸位舞台</span></li>
-    <li>舞台右桌（趙芯巧）：編號2書約版＋筆、編號3禮物盒、獎項牌×20（<span class="risk">⚠依抽獎順序排好</span>）；<span class="risk">趙芯巧13:00–14:00先支援新人指引組報到／進場，14:00起歸位舞台</span></li>
+    <li>舞台右桌（趙芯巧）：編號2書約版＋筆、編號3禮物盒、獎項牌×26（依中獎新人數量，數量待確認）（<span class="risk">⚠依抽獎順序排好</span>）；<span class="risk">趙芯巧13:00–14:00先支援新人指引組報到／進場，14:00起歸位舞台</span></li>
     <li><span class="risk">⚠誓言卡不放舞台道具桌</span>：18袋分裝好後交由新人指引組各組組長保管，站在觀禮席後方定點（不是休息室，見流程表「囍之宣言」段落說明）</li>
     <li>朋喬測試投影：儀式流程畫面、抽獎中獎號碼版型</li>
     <li class="pa-note">音樂/音效由PA自行測試，另有PA音控表，不列於此</li>
   </ol></td>
-  <td>麥克風×2、誓言卡18袋、書約版、禮物盒、獎項牌×20、投影設備</td>
+  <td>麥克風×2、誓言卡18袋、書約版、禮物盒、獎項牌×26（依中獎新人數量，數量待確認）、投影設備</td>
 </tr>
 
 <!-- ========== 總彩排 ========== -->
@@ -680,7 +686,7 @@
   <td>康筠、徐柔婕、林頌恩、李毓倫、王亭玥、陳沛瑄</td>
   <td>⚠誓言卡檢查整理</td>
   <td class="detail"><ol>
-    <li><span class="risk">6位小幫手依自己負責範圍，協助對應排數的專責人員檢查、整理誓言卡（核對編號順序、有無缺漏），固定分工如下：</span>
+    <li>6位小幫手依自己負責範圍，協助對應排數的專責人員檢查、整理誓言卡（核對編號順序、有無缺漏），固定分工如下：
       <br>・康筠：單1–4排（編號1、3、5、7、9、11、13、15、17、19、21、23、25、27、29、31、33、35、37、39）
       <br>・徐柔婕：單5–7排（編號41、43、45、47、49、51、53、55、57、59、61、63、65、67、69）
       <br>・林頌恩：單8–9排（編號71、73、75、77、79、81、83、85、87）
@@ -698,11 +704,11 @@
   <td>各排專責人員（每排1人，共18人）</td>
   <td>⚠領取誓言卡＋後方待命</td>
   <td class="detail"><ol>
-    <li><span class="risk">誓言卡不置於舞台道具桌，改由各組組長保管之18袋分裝卡，於觀禮席後方發放給對應組員</span></li>
+    <li>誓言卡不置於舞台道具桌，改由各組組長保管之18袋分裝卡，於<span class="risk">觀禮席後方</span>發放給對應組員</li>
     <li>各排專責人員領取後，安靜持於手中，於<span class="risk">觀禮席「後方」</span>定點等候（不是休息室，就是站在最後方，避免站前排入鏡），不靠近舞台、不站前排，避免畫面雜亂</li>
     <li>確認自己負責新人之卡（約5對10張）、號碼排序無誤</li>
-    <li><span class="risk">⚠站位一般規則：男方拿米白底（PEI）站左邊，女方拿紅色底（TAI）站右邊（男左女右）</span></li>
-    <li><span class="risk">30號兩位新人皆為男性（李俊緯、許俊傑），套用同一套「依卡片顏色定站位」邏輯，非依性別：李俊緯拿米白底（PEI）站左邊，許俊傑拿紅色底（TAI）站右邊；雙3排屬劉芳範圍，由劉芳小組長協助確認</span></li>
+    <li>站位一般規則：男方拿米白底（PEI）站左邊，女方拿紅色底（TAI）站右邊（<span class="risk">男左女右</span>）</li>
+    <li>30號兩位新人皆為男性（李俊緯、許俊傑），套用同一套「依卡片顏色定站位」邏輯，非依性別：<span class="risk">李俊緯站左邊，許俊傑站右邊</span>；雙3排屬劉芳範圍，由劉芳小組長協助確認</li>
   </ol></td>
   <td>誓言卡分袋×18</td>
 </tr>
@@ -778,29 +784,51 @@
 </tr>
 
 <!-- ========== 抽獎+大合照 ========== -->
-<tr class="phase-head critical" data-team="管理控台 動線拍照組" data-people="伯特 蘇純呈 童莉崴 朋喬">
-  <td class="phase" rowspan="2">城市驚喜<br>幸運共享（抽獎20組）</td>
+<tr class="phase-head critical" data-team="管理控台" data-people="伯特 朋喬">
+  <td class="phase" rowspan="4">城市驚喜<br>幸運共享（抽獎10項，共26對中獎）</td>
   <td>14:45–15:00</td><td><span class="tag loc-stage">舞台單號側</span></td>
-  <td>伯特、蘇純呈、童莉崴</td>
+  <td>伯特</td>
   <td>抽獎執行</td>
   <td class="detail"><ol>
-    <li><span class="risk">伯特於舞台單號側協助中獎新人上台站位引導（頂替Erin位置；Erin當天正式活動不排任務）</span></li>
-    <li>蘇純呈、童莉崴依序遞出獎項牌，協助中獎新人第一二排站位排序</li>
-    <li><span class="risk">⚠僅唱號不唱名</span>，<span class="risk">中獎號碼投影由PA協助操作，朋喬於控台同步核對畫面正確</span></li>
-    <li>第一排中間留市長／局長位置；朋喬遞拍照手拿板給長官</li>
+    <li><span class="risk">⚠依序抽出10項獎項，金額由小到大：①TIGER微電腦電子鍋×9 ②HERAN免治馬桶×2 ③正負零三合一無線洗地機×3 ④L'AMOUR婚鑽戒珠寶（IGI證書30分裸鑽）×3 ⑤LG掃拖機器人×2 ⑥Dyson空氣清淨機×2 ⑦Panasonic桌上型洗碗機×1 ⑧唯你婚紗單拍婚紗包套A方案×2 ⑨LG洗脫烘滾筒洗衣機×1 ⑩阿丹旅遊居民島方案買一送一×1，一次抽完一項再進行下一項</span></li>
+    <li><span class="risk">伯特於舞台單號側協助中獎新人上台站位引導（頂替Erin位置；Erin當天正式活動不排任務），並依序遞出對應獎項牌給中獎新人</span></li>
+    <li><span class="risk">⚠僅唱號不唱名；投影僅顯示「目前抽獎項目」名稱，不投影中獎號碼</span>，中獎號碼由主持人口頭唱號公布</li>
   </ol></td>
-  <td>獎項牌×20、投影</td>
+  <td>獎項牌（依26對中獎新人準備，數量待確認）、投影</td>
 </tr>
 
-<tr data-team="新人指引組" data-people="指引組全體">
+<tr class="critical" data-team="新人指引組" data-people="董沁怡 阮靜霓 何俐穎 或或 邱美晴 陳可馨 李清嶽 彭鈺芳 劉品瑗 陳桂蓉 孫正宣 董宗珂 黃郁婷 李汶芯 黃釋惟 李權 歐馨喬 王柏翔 康筠 徐柔婕 林頌恩 李毓倫 王亭玥 陳沛瑄">
   <td>14:45–15:00</td><td><span class="tag loc-seat">觀禮席</span></td>
-  <td>新人指引組全體</td>
-  <td>中獎新人引導</td>
+  <td>各排專責＋小幫手（共24人）</td>
+  <td>⚠中獎新人引導</td>
   <td class="detail"><ol>
-    <li>負責新人中獎時，該組組員舉手引導至舞台單號側伯特處集合</li>
-    <li>抽獎結束後全體退至後方，準備下一階段編號手舉牌</li>
+    <li>各排專責人員站在自己負責那排「<span class="risk">外側</span>」（新人區與父母席之間走道），定點站好、不要離開崗位；緊盯自己負責範圍的號碼，一旦唱到自己負責的號碼，<span class="risk">立刻舉手指引該對新人走去伯特處集合</span></li>
+    <li>小幫手站在「<span class="risk">走道</span>」，定點站好、不要離開崗位；緊盯自己協助範圍的號碼，一旦唱到相關號碼，<span class="risk">立刻舉手指引該對新人走去伯特處集合</span></li>
   </ol></td>
-  <td>編號手舉牌</td>
+  <td>—</td>
+</tr>
+
+<tr data-team="舞台組" data-people="胡詩涵 趙芯巧">
+  <td>14:35–15:00</td><td><span class="tag loc-stage">舞台</span></td>
+  <td>胡詩涵、趙芯巧</td>
+  <td>LOGO牌發放</td>
+  <td class="detail"><ol>
+    <li>14:35儀式道具任務結束後，兩人利用抽獎期間空檔，隨機將LOGO牌發給觀禮席新人，不需依編號或順序</li>
+  </ol></td>
+  <td>LOGO牌</td>
+</tr>
+
+<tr class="critical" data-team="管理控台 新人指引組" data-people="朋喬 指引組全體">
+  <td>15:00左右</td><td><span class="tag loc-stage">舞台前</span></td>
+  <td>朋喬、新人指引組全體</td>
+  <td>⚠市長大合照前置</td>
+  <td class="detail"><ol>
+    <li>10項全部抽完後，<span class="risk">26對中獎新人移至全體新人隊伍最前排</span>定位</li>
+    <li>新人指引組協助全體新人快速集中至定位，<span class="risk">動作要快，避免冷場</span>（LOGO牌已由胡詩涵、趙芯巧發放完畢，不需再處理）</li>
+    <li>市長、民政局長由舞台走下，至<span class="risk">第一排正中央</span>定位；朋喬親自遞交標語牌給市長與局長</li>
+    <li>攝影師上舞台拍攝大合照（市長、局長＋全體新人）</li>
+  </ol></td>
+  <td>標語牌</td>
 </tr>
 
 <!-- ========== 新人及家屬合照 ========== -->
@@ -811,16 +839,16 @@
   <td>整隊＋上台協助＋背板指引</td>
   <td class="detail"><ol>
     <li>以手舉牌排為單位（每排5對），輪到的那一排整排移動到舞台旁排隊等候；其餘各排先回觀禮席座位，待輪到編號再前往</li>
-    <li><span class="risk">⚠輪到的那一排，由該排專責手舉牌人員主動到座位前舉牌帶隊，前往舞台旁排隊，不是等新人自己過來</span></li>
+    <li>輪到的那一排，由該排專責手舉牌人員<span class="risk">主動到座位前舉牌帶隊</span>，前往舞台旁排隊，不是等新人自己過來</li>
     <li>排隊該排新人依序上台合照，接續到背板獨照，整排拍完換下一排上前排隊</li>
-    <li><span class="risk">⚠提前集合：當前一排正在排隊拍照時，下一排的專責人員就要開始集合自己負責的新人、準備移動到舞台旁排隊，不要等前一排整個拍完才開始集合，避免中間空等冷場</span></li>
-    <li><span class="risk">流動協助小幫手固定站位分工（不需自行判斷，各自固定站好）：
-      <br>・康筠、徐柔婕：兩人一起站紅毯中央（新人從舞台正中間下來，不分單雙號），新人下舞台後主動伸手引導、說「這邊請」帶往背板方向
-      <br>・林頌恩：站背板正前方地貼點，新人走近時用手勢示意站定位置
-      <br>・李毓倫：站背板側邊，攝影師拍完喊「好了」後，立即上前說「這邊請」帶新人離開背板
-      <br>・王亭玥、陳沛瑄：前往另一主題拍照區（近醫護區側）協助攝影師，2人一組整理排隊人潮、遞拍照道具，因人潮較多原本1人可能不夠</span></li>
+    <li>提前集合：當前一排正在排隊拍照時，下一排的專責人員就要<span class="risk">開始集合自己負責的新人</span>、準備移動到舞台旁排隊，不要等前一排整個拍完才開始集合，避免中間空等冷場</li>
+    <li>流動協助小幫手固定站位分工（不需自行判斷，各自固定站好）：
+      <br>・康筠、徐柔婕：兩人一起站<span class="risk">紅毯中央</span>（新人從舞台正中間下來，不分單雙號），新人下舞台後主動伸手引導、說「這邊請」帶往背板方向
+      <br>・林頌恩：站<span class="risk">背板正前方地貼點</span>，新人走近時用手勢示意站定位置
+      <br>・李毓倫：站<span class="risk">背板側邊</span>，攝影師拍完喊「好了」後，立即上前說「這邊請」帶新人離開背板
+      <br>・王亭玥、陳沛瑄：前往<span class="risk">另一主題拍照區（近醫護區側）</span>協助攝影師，2人一組整理排隊人潮、遞拍照道具，因人潮較多原本1人可能不夠</li>
     <li>會拉裙擺者（陳嘉梅、陳千薏、黃筱詩＋Abby）於新人上台時協助拉裙擺</li>
-    <li><span class="risk">⚠小組長隨時回報：只要自己範圍內有新人不參與合照（臨時離場、找不到人等），立即call機回報朋喬登記，不要等排完才說——因為現場是依編號順序上台，有人不拍會造成跳號，朋喬需要即時知道才能判斷是否要調整順序或留意後續编號銜接</span></li>
+    <li>小組長隨時回報：只要自己範圍內有新人不參與合照（臨時離場、找不到人等），<span class="risk">立即call機回報朋喬登記</span>，不要等排完才說——因為現場是依編號順序上台，有人不拍會造成跳號，朋喬需要即時知道才能判斷是否要調整順序或留意後續编號銜接</li>
   </ol></td>
   <td>編號手舉牌</td>
 </tr>
@@ -1400,6 +1428,32 @@
 
   <div class="card team-guide">
     <h2 class="guide">新人指引組（葉智凱／Abby／劉芳／靜俞 各自帶開自己排）</h2>
+    <table style="width:100%;border-collapse:collapse;font-size:12px;margin-bottom:14px;">
+      <thead>
+        <tr style="background:#4C7A3D;color:#fff;">
+          <th style="padding:5px 6px;text-align:left;border:1px solid #3a6030;">時間</th>
+          <th style="padding:5px 6px;text-align:left;border:1px solid #3a6030;">誰</th>
+          <th style="padding:5px 6px;text-align:left;border:1px solid #3a6030;">站在哪裡</th>
+          <th style="padding:5px 6px;text-align:left;border:1px solid #3a6030;">做什麼</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:4px 6px;border:1px solid #ccc;">12:50</td><td style="padding:4px 6px;border:1px solid #ccc;">全體（派1人）</td><td style="padding:4px 6px;border:1px solid #ccc;">報到桌前</td><td style="padding:4px 6px;border:1px solid #ccc;">持手舉牌待命</td></tr>
+        <tr><td style="padding:4px 6px;border:1px solid #ccc;">13:00–13:40</td><td style="padding:4px 6px;border:1px solid #ccc;">全體</td><td style="padding:4px 6px;border:1px solid #ccc;">休息梳化區自己桌前</td><td style="padding:4px 6px;border:1px solid #ccc;">舉牌等新人相認</td></tr>
+        <tr><td style="padding:4px 6px;border:1px solid #ccc;">13:40–13:50</td><td style="padding:4px 6px;border:1px solid #ccc;">全體</td><td style="padding:4px 6px;border:1px solid #ccc;">觀禮席後方兩側</td><td style="padding:4px 6px;border:1px solid #ccc;">整隊（後往前、大號在前）</td></tr>
+        <tr><td style="padding:4px 6px;border:1px solid #ccc;">13:50–14:05</td><td style="padding:4px 6px;border:1px solid #ccc;">全體</td><td style="padding:4px 6px;border:1px solid #ccc;">雙側走道→觀禮席</td><td style="padding:4px 6px;border:1px solid #ccc;">護送新人入座</td></tr>
+        <tr><td style="padding:4px 6px;border:1px solid #ccc;">14:05–14:15</td><td style="padding:4px 6px;border:1px solid #ccc;">全體</td><td style="padding:4px 6px;border:1px solid #ccc;">媒體高台後方</td><td style="padding:4px 6px;border:1px solid #ccc;">待命看演唱</td></tr>
+        <tr style="background:#FDF4F4;"><td style="padding:4px 6px;border:1px solid #ccc;">14:05–14:20</td><td style="padding:4px 6px;border:1px solid #ccc;">僅6位小幫手</td><td style="padding:4px 6px;border:1px solid #ccc;">觀禮席後方</td><td style="padding:4px 6px;border:1px solid #ccc;">誓言卡檢查整理</td></tr>
+        <tr style="background:#FDF4F4;"><td style="padding:4px 6px;border:1px solid #ccc;">14:20後</td><td style="padding:4px 6px;border:1px solid #ccc;">僅18位排專責</td><td style="padding:4px 6px;border:1px solid #ccc;">觀禮席後方</td><td style="padding:4px 6px;border:1px solid #ccc;">領誓言卡待命</td></tr>
+        <tr style="background:#FDF4F4;"><td style="padding:4px 6px;border:1px solid #ccc;">14:35</td><td style="padding:4px 6px;border:1px solid #ccc;">僅18位排專責</td><td style="padding:4px 6px;border:1px solid #ccc;">中間走道進場→新人區/父母席間退場</td><td style="padding:4px 6px;border:1px solid #ccc;">發放誓言卡（90秒）</td></tr>
+        <tr><td style="padding:4px 6px;border:1px solid #ccc;">14:35–14:45</td><td style="padding:4px 6px;border:1px solid #ccc;">全體</td><td style="padding:4px 6px;border:1px solid #ccc;">觀禮席走道兩側</td><td style="padding:4px 6px;border:1px solid #ccc;">維持秩序</td></tr>
+        <tr style="background:#FDF4F4;"><td style="padding:4px 6px;border:1px solid #ccc;">14:40後</td><td style="padding:4px 6px;border:1px solid #ccc;">僅18位排專責</td><td style="padding:4px 6px;border:1px solid #ccc;">同上路線</td><td style="padding:4px 6px;border:1px solid #ccc;">回收誓言卡</td></tr>
+        <tr style="background:#FDECEC;"><td style="padding:4px 6px;border:1px solid #ccc;font-weight:bold;">14:45–15:00</td><td style="padding:4px 6px;border:1px solid #ccc;">18位排專責</td><td style="padding:4px 6px;border:1px solid #ccc;">自己那排「外側」（新人區／父母席之間）</td><td style="padding:4px 6px;border:1px solid #ccc;">⚠緊盯自己號碼，中獎立刻引導新人去伯特處</td></tr>
+        <tr style="background:#FDECEC;"><td style="padding:4px 6px;border:1px solid #ccc;font-weight:bold;">14:45–15:00</td><td style="padding:4px 6px;border:1px solid #ccc;">6位小幫手</td><td style="padding:4px 6px;border:1px solid #ccc;">「走道」</td><td style="padding:4px 6px;border:1px solid #ccc;">⚠緊盯自己號碼，中獎立刻引導新人去伯特處</td></tr>
+        <tr><td style="padding:4px 6px;border:1px solid #ccc;">15:00左右</td><td style="padding:4px 6px;border:1px solid #ccc;">全體</td><td style="padding:4px 6px;border:1px solid #ccc;">舞台前</td><td style="padding:4px 6px;border:1px solid #ccc;">協助新人快速集中到最前排</td></tr>
+        <tr><td style="padding:4px 6px;border:1px solid #ccc;">15:00–16:00</td><td style="padding:4px 6px;border:1px solid #ccc;">全體（依排輪替）</td><td style="padding:4px 6px;border:1px solid #ccc;">舞台旁→拍照區A</td><td style="padding:4px 6px;border:1px solid #ccc;">上台協助＋背板指引</td></tr>
+      </tbody>
+    </table>
     <span class="sub-label">2. 工作流程認識（每位排專責／小幫手／拉裙擺都要知道完整順序）</span>
     <ul>
       <li><b>⚠站位一般規則：男左女右</b>（男方站左邊、女方站右邊）——整隊時尚未拿到誓言卡，單純依性別站位</li>
@@ -1414,7 +1468,7 @@
       <li>14:35（僅18位排專責）誓言卡發放，目標90秒內完成，發完沿新人區與父母席之間走道退場（繞一圈，不走原路）</li>
       <li>14:35–14:45 全體退到觀禮席走道兩側維持秩序</li>
       <li>⚠14:40後（僅18位排專責）愛的印記結束後，原班再走一次相同路線回收兩張誓言卡</li>
-      <li>14:45–15:00 中獎新人引導到舞台單號側</li>
+      <li>⚠14:45–15:00 抽獎期間，18位排專責站自己那排「外側」（新人區與父母席之間）、6位小幫手站「走道」，緊盯自己號碼；中獎立刻舉手引導新人去舞台單號側伯特處集合</li>
       <li>15:00–16:00 輪到自己排時主動集合帶隊上台合照；⚠提前集合，不要等前一排拍完才開始</li>
       <li>⚠上台合照後，帶新人前往<b>拍照區A</b>個人拍照；此時段拍照區A只開放給輪替中的新人，暫不開放其他親友拍照，需協助婉拒＋維持秩序</li>
     </ul>
@@ -1428,12 +1482,11 @@
     <ul>
       <li>12:50 大門／捷運站／拍照區就位，查驗邀請函；⚠大門至少2人駐守</li>
       <li>13:40 賓客到齊後轉巡邏休息梳化區</li>
-      <li>14:40 抽獎桌搬上舞台</li>
-      <li>14:45–15:00 抽獎協助，依序遞出獎項牌</li>
+      <li>14:40 抽獎桌搬上舞台（不再參與抽獎現場協助，獎項牌改由伯特一人處理）</li>
       <li>15:00–16:00 支援另一拍照區協助攝影師、背板管制</li>
     </ul>
     <span class="sub-label">3. 工作會用到的道具</span>
-    <p style="font-size:12.5px;margin:4px 0 0;">立牌、邀請函核對清單、點心吧物件、抽獎箱、抽獎桌、獎項牌×20、拍照道具</p>
+    <p style="font-size:12.5px;margin:4px 0 0;">立牌、邀請函核對清單、點心吧物件、抽獎箱、抽獎桌、拍照道具</p>
   </div>
 
   <div class="card team-stage">
@@ -1445,7 +1498,7 @@
       <li>14:05起 陸續於台下備妥麥克風／書約版／禮物盒等道具，交由禮賓遞交上台</li>
     </ul>
     <span class="sub-label">3. 工作會用到的道具</span>
-    <p style="font-size:12.5px;margin:4px 0 0;">麥克風×2、誓言卡18袋、書約版＋筆、禮物盒、獎項牌×20、投影設備、手持麥克風、椅子×2</p>
+    <p style="font-size:12.5px;margin:4px 0 0;">麥克風×2、誓言卡18袋、書約版＋筆、禮物盒、獎項牌×26（依中獎新人數量，數量待確認）、投影設備、手持麥克風、椅子×2</p>
   </div>
 </div>
 
@@ -1561,18 +1614,21 @@ function applyFilter(){
         const offset = cells.length===7 ? 1 : 0;
         if(cells.length>=offset+5){
           const time = cells[offset].textContent.trim();
-          const loc = cells[offset+1].textContent.trim();
+          const loc = cells[offset+1].innerHTML.trim();
           const task = cells[offset+3].textContent.trim();
           const detailCell = cells[offset+4];
-          const items = Array.from(detailCell.querySelectorAll('li')).map(li=>li.textContent.trim());
+          const liPairs = Array.from(detailCell.querySelectorAll('li')).map(li=>({
+            text: li.textContent.trim(),
+            html: li.innerHTML.trim()
+          }));
           const mine = [];
-          items.forEach(t=>{
-            const own = extractOwnBullet(t, person);
+          liPairs.forEach(({text, html})=>{
+            const own = extractOwnBullet(text, person);
             if(own){ mine.push(own); }
-            else if(matchesPerson(t, person)){ mine.push(t); }
+            else if(matchesPerson(text, person)){ mine.push(html); }
           });
           // 有沒有找到專屬他名字的句子,沒有的話整段都跟他有關(全組共同指示),都要顯示,不留空
-          const action = (mine.length>0 ? mine : items).join('；');
+          const action = (mine.length>0 ? mine : liPairs.map(p=>p.html)).join('；');
           if(time) timelineItems.push({time, loc, task, action});
         }
       }
@@ -1585,19 +1641,20 @@ function applyFilter(){
       timelineItems.forEach(it=>{
         html += `<div style="display:flex;gap:12px;padding:6px 10px;background:#fff;border-radius:6px;border-left:4px solid #C9A15A;">
           <span style="font-weight:bold;color:#B01010;min-width:110px;">${it.time}</span>
-          <span style="color:#8a6a4a;min-width:110px;">${it.loc}</span>
+          <span style="min-width:110px;">${it.loc}</span>
           <span style="color:#3a2a1a;min-width:140px;">${it.task}</span>
-          <span style="color:#555;font-size:12.5px;">${it.action}</span>
+          <span class="timeline-action" style="font-size:12.5px;">${it.action}</span>
         </div>`;
       });
     } else {
       timelineItems.forEach(it=>{
         html += `<div style="padding:6px 10px;background:#fff;border-radius:6px;border-left:4px solid #C9A15A;">
-          <div style="display:flex;gap:12px;">
+          <div style="display:flex;gap:12px;align-items:center;">
             <span style="font-weight:bold;color:#B01010;min-width:110px;">${it.time}</span>
-            <span style="color:#3a2a1a;">現在：${it.task}</span>
+            <span>${it.loc}</span>
+            <span style="color:#3a2a1a;">${it.task}</span>
           </div>
-          ${it.action ? `<div style="color:#B01010;font-weight:bold;margin-top:2px;padding-left:122px;">你要做：${it.action}</div>` : ''}
+          ${it.action ? `<div class="timeline-action" style="margin-top:2px;padding-left:122px;">你要做：${it.action}</div>` : ''}
         </div>`;
       });
     }
@@ -1628,18 +1685,22 @@ function collectPersonItems(person){
     const offset = cells.length===7 ? 1 : 0;
     if(cells.length < offset+6) return;
     const time = cells[offset].textContent.trim();
-    const loc = cells[offset+1].textContent.trim();
+    const loc = cells[offset+1].innerHTML.trim();
     const task = cells[offset+3].textContent.trim();
     const detailCell = cells[offset+4];
     const neededItems = cells[offset+5] ? cells[offset+5].textContent.trim() : '';
-    const items = Array.from(detailCell.querySelectorAll('li')).map(li=>li.textContent.trim());
+    // liPairs: 同時保留純文字(比對用)與原始innerHTML(顯示用，保留.risk等標記)
+    const liPairs = Array.from(detailCell.querySelectorAll('li')).map(li=>({
+      text: li.textContent.trim(),
+      html: li.innerHTML.trim()
+    }));
     const mine = [];
-    items.forEach(t=>{
-      const own = extractOwnBullet(t, person);
+    liPairs.forEach(({text, html})=>{
+      const own = extractOwnBullet(text, person);
       if(own){ mine.push(own); }
-      else if(matchesPerson(t, person)){ mine.push(t); }
+      else if(matchesPerson(text, person)){ mine.push(html); }
     });
-    const action = (mine.length>0 ? mine : items).join('；');
+    const action = (mine.length>0 ? mine : liPairs.map(p=>p.html)).join('；');
     if(time) out.push({time, loc, task, action, neededItems});
   });
   return out;
