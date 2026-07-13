@@ -82,6 +82,47 @@
     .subpage{display:block !important; page-break-before: always;}
     .subpage:first-child{page-break-before: auto;}
   }
+
+  /* ===== 個人列印版 ===== */
+  .personal-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 12px;}
+  .personal-actions button{font-family:inherit;font-size:12px;padding:6px 14px;border-radius:6px;
+    border:1px solid #9E2B25;background:#fff;color:#9E2B25;cursor:pointer;font-weight:bold;}
+  .personal-actions button.primary{background:#9E2B25;color:#fff;}
+  .personal-actions .hint{color:#999;font-size:11.5px;}
+
+  .personal-print-only{display:none;}
+  .personal-print-only.show{display:block;background:#FAF6EE;padding:16px;}
+
+  .personal-page{border:1px solid #c9b8a3;border-radius:10px;padding:18px 22px;margin:0 0 18px;
+    background:#fff;page-break-after:always;}
+  .personal-page:last-child{page-break-after:auto;}
+  .personal-page h2{margin:0 0 4px;font-size:19px;color:#9E2B25;}
+  .personal-page .p-sub{font-size:11.5px;color:#6b5b4d;margin-bottom:12px;border-bottom:2px solid #9E2B25;padding-bottom:8px;}
+  .personal-item{display:flex;gap:10px;padding:9px 11px;border-left:4px solid #C9A15A;background:#FFF8EC;
+    border-radius:6px;margin-bottom:7px;}
+  .personal-item .p-time{min-width:70px;font-weight:bold;color:#B01010;font-size:13px;}
+  .personal-item .p-body{flex:1;}
+  .personal-item .p-loc{color:#8a6a4a;font-size:11px;margin-bottom:1px;}
+  .personal-item .p-task{color:#3a2a1a;font-weight:bold;font-size:13px;}
+  .personal-item .p-action{color:#B01010;font-weight:bold;margin-top:2px;font-size:12.5px;}
+  .personal-item .p-items{color:#666;font-size:11px;margin-top:2px;}
+  .personal-empty{color:#999;font-style:italic;padding:10px 0;}
+
+  /* 進入個人列印模式時，螢幕預覽與實際列印畫面一致：只顯示個人卡 */
+  body.printing-personal .tabs,
+  body.printing-personal .toolbar,
+  body.printing-personal #p1,
+  body.printing-personal #p2,
+  body.printing-personal #p3,
+  body.printing-personal #p4,
+  body.printing-personal #p5,
+  body.printing-personal .personal-actions{display:none !important;}
+  body.printing-personal .personal-print-only.show{display:block !important;}
+
+  @media print{
+    body.printing-personal .personal-print-only{background:#fff;padding:0;}
+    body.printing-personal .personal-page{page-break-after:always;}
+  }
 </style>
 </head>
 <body>
@@ -272,7 +313,13 @@
     </optgroup>
   </select>
   <button class="primary" onclick="clearFilter()">清除篩選</button>
-  <span style="margin-left:auto;color:#999;">列印：Ctrl+P →橫向→縮放至頁面大小（篩選不影響列印，列印固定顯示全表）</span>
+  <span style="margin-left:auto;color:#999;">列印全表：Ctrl+P →橫向→縮放至頁面大小（篩選不影響此列印，固定顯示全表）</span>
+</div>
+
+<div class="personal-actions no-print">
+  <button class="primary" onclick="printPersonal()">🖨️ 列印目前所選人員的個人版</button>
+  <button onclick="printAllPersonal()">🖨️ 批次列印全體個人版（每人一頁）</button>
+  <span class="hint">個人版只列出該人員自己的時段與任務，A4直印，適合裁切分發給每位工作人員</span>
 </div>
 
 <div id="personTimeline" style="display:none;margin:12px 0;padding:14px 16px;background:#FFF8EC;border:2px solid #C9A15A;border-radius:8px;"></div>
@@ -1259,6 +1306,11 @@
 
 </div>
 
+<!-- ============================================================ -->
+<!-- 個人列印版容器（不屬於分頁切換，直接位於body下）-->
+<!-- ============================================================ -->
+<div id="personalPrintArea" class="personal-print-only"></div>
+
 <script>
 function showPage(id, btn){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -1400,6 +1452,103 @@ function clearFilter(){
   document.getElementById('personSel').value='all';
   applyFilter();
 }
+
+// ===== 個人列印版 =====
+// 不受目前「大組」篩選影響，永遠列出該人員自己的全部時段
+function collectPersonItems(person){
+  const rows = document.querySelectorAll('#mainTable tbody tr');
+  const out = [];
+  rows.forEach(r=>{
+    const people = (r.getAttribute('data-people')||'');
+    const personOK = people.includes(person) || people.includes('全體');
+    if(!personOK) return;
+    const cells = r.children;
+    const offset = cells.length===7 ? 1 : 0;
+    if(cells.length < offset+6) return;
+    const time = cells[offset].textContent.trim();
+    const loc = cells[offset+1].textContent.trim();
+    const task = cells[offset+3].textContent.trim();
+    const detailCell = cells[offset+4];
+    const neededItems = cells[offset+5] ? cells[offset+5].textContent.trim() : '';
+    const items = Array.from(detailCell.querySelectorAll('li')).map(li=>li.textContent.trim());
+    const mine = [];
+    items.forEach(t=>{
+      const own = extractOwnBullet(t, person);
+      if(own){ mine.push(own); }
+      else if(matchesPerson(t, person)){ mine.push(t); }
+    });
+    const action = (mine.length>0 ? mine : items).join('；');
+    if(time) out.push({time, loc, task, action, neededItems});
+  });
+  return out;
+}
+function personLabel(value){
+  const opt = Array.from(document.querySelectorAll('#personSel option')).find(o=>o.value===value);
+  return opt ? opt.textContent.trim() : value;
+}
+function getAllIndividualPersonValues(){
+  // 批次列印排除「all」與「指引組全體」這類非單一個人的彙總選項；同一人若在下拉選單中重複列出（如朋喬），去重避免重複頁面
+  const raw = Array.from(document.querySelectorAll('#personSel option'))
+    .map(o=>o.value)
+    .filter(v => v && v!=='all' && v!=='指引組全體');
+  return Array.from(new Set(raw));
+}
+function buildPersonalPageHTML(person){
+  const label = personLabel(person);
+  const items = collectPersonItems(person);
+  let body;
+  if(items.length===0){
+    body = '<div class="personal-empty">目前查無此人員專屬流程資料，請依現場組長／朋喬指示。</div>';
+  } else {
+    body = items.map(it => `
+      <div class="personal-item">
+        <div class="p-time">${it.time}</div>
+        <div class="p-body">
+          <div class="p-loc">${it.loc}</div>
+          <div class="p-task">${it.task}</div>
+          <div class="p-action">你要做：${it.action}</div>
+          ${it.neededItems ? `<div class="p-items">需要物品：${it.neededItems}</div>` : ''}
+        </div>
+      </div>`).join('');
+  }
+  return `
+    <div class="personal-page">
+      <h2>臺北・囍｜${label} 個人工作卡</h2>
+      <div class="p-sub">臺北市第226場聯合婚禮｜2026.07.18（六）｜花博公園爭艷館｜如有疑問請洽現場組長或朋喬</div>
+      ${body}
+    </div>`;
+}
+let _personalPageStyleEl = null;
+function enterPersonalPrintMode(html){
+  const area = document.getElementById('personalPrintArea');
+  area.innerHTML = html;
+  area.classList.add('show');
+  _personalPageStyleEl = document.createElement('style');
+  _personalPageStyleEl.id = 'personalPageStyleTmp';
+  _personalPageStyleEl.textContent = '@page{size:A4 portrait;margin:14mm;}';
+  document.head.appendChild(_personalPageStyleEl);
+  document.body.classList.add('printing-personal');
+  window.print();
+}
+function printPersonal(){
+  const person = document.getElementById('personSel').value;
+  if(person==='all'){
+    alert('請先在上方「人員」下拉選單選擇一位工作人員，再列印個人版。');
+    return;
+  }
+  enterPersonalPrintMode(buildPersonalPageHTML(person));
+}
+function printAllPersonal(){
+  const values = getAllIndividualPersonValues();
+  const html = values.map(v=>buildPersonalPageHTML(v)).join('');
+  enterPersonalPrintMode(html);
+}
+window.addEventListener('afterprint', function(){
+  document.body.classList.remove('printing-personal');
+  const area = document.getElementById('personalPrintArea');
+  if(area){ area.classList.remove('show'); area.innerHTML=''; }
+  if(_personalPageStyleEl){ _personalPageStyleEl.remove(); _personalPageStyleEl=null; }
+});
 
 // ===== 列印修正：部分瀏覽器對 display:none→block 的@media print覆蓋不穩定，
 // 改為列印前用JS真正把所有分頁/子分頁加上active class（走一般顯示邏輯），列印後還原 =====
