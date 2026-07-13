@@ -164,6 +164,12 @@
   <button class="tab-btn" onclick="showPage('p6',this)">⑥ 組長晨會簡報稿</button>
 </div>
 
+<div class="personal-actions no-print">
+  <button class="primary" onclick="printFullTable()">🖨️ 列印全體大表</button>
+  <button onclick="printCurrentPage()">🖨️ 只列印目前這頁</button>
+  <span class="hint">全體大表＝橫向A3、把①～⑥全部分頁一次印出；只列印目前這頁＝只印你現在看到的這個分頁（如PA提示表、場地方版）；個人版請切到②工作人員流程表分頁使用</span>
+</div>
+
 <!-- ============================================================ -->
 <!-- PAGE 1：分組總表 -->
 <!-- ============================================================ -->
@@ -342,11 +348,9 @@
 </div>
 
 <div class="personal-actions no-print">
-  <button class="primary" onclick="printFullTable()">🖨️ 列印全體大表</button>
-  <button onclick="printCurrentPage()">🖨️ 只列印目前這頁</button>
   <button onclick="printPersonal()">🖨️ 列印目前所選人員的個人版</button>
   <button onclick="printAllPersonal()">🖨️ 批次列印全體個人版（每人一頁）</button>
-  <span class="hint">全體大表＝橫向A3、把①～⑥全部分頁一次印出；只列印目前這頁＝只印你現在看到的這個分頁（如PA提示表、場地方版）；個人版只列出該人員自己的時段與任務，A4直印，適合裁切分發</span>
+  <span class="hint">個人版只列出上方所選人員自己的時段與任務，A4直印，適合裁切分發</span>
 </div>
 
 <div id="personTimeline" style="display:none;margin:12px 0;padding:14px 16px;background:#FFF8EC;border:2px solid #C9A15A;border-radius:8px;"></div>
@@ -1075,20 +1079,32 @@
   <td>內部團隊到場</td>
   <td>想樂＋WeddingDay＋靜俞（共14人）</td>
   <td class="detail"><ol>
-    <li>想樂：Erin、朋喬、劉芳、或或、杜杜、定瀚、Abby（伯特7/17不到場）</li>
+    <li>想樂：Erin、朋喬、劉芳、或或、杜杜、定瀚、Abby</li>
     <li>WeddingDay：晉姍、亞當、詩晴、丁丁、周胖、小昇</li>
     <li>＋靜俞（想樂工作人員，7/17、7/18兩天皆出席）</li>
-    <li>今日僅內部團隊到場，不含PT新人指引組等外部工作人員</li>
   </ol></td>
   <td>—</td>
 </tr>
 
 <tr class="critical">
-  <td class="time">11:00起</td>
+  <td class="time">實際依廠商送達時間為準（預估10:00–12:00間）</td>
+  <td>杜杜、定瀚</td>
+  <td>⚠印刷廠商輸出物到貨－統一收件分類</td>
+  <td class="detail"><ol>
+    <li><span class="risk">印刷廠商通常會將立地指引牌、桌立牌、椅貼、地貼等所有輸出物一次送達，兩人負責統一收件、清點數量，並依區域（大門/場外、報到區、觀禮席、休息區/梳化區）分類擺放</span></li>
+    <li>分類完成後，桌立牌（報到區）由丁丁、周胖領取；椅貼／地貼由任務1/2小組領取；立地指引牌（①-⑪）由杜杜、定瀚兩人自行留下後續逐一放置</li>
+    <li>清點如有短缺或損壞，立即回報朋喬</li>
+    <li>若送達時間與任務1（新人站位定位）重疊：杜杜本為任務1備援人力可直接抽身；定瀚短暫離隊收件，雙號側其餘4人先行，定瀚收件完成後歸隊</li>
+  </ol></td>
+  <td>設計清單（核對用）</td>
+</tr>
+
+<tr class="critical">
+  <td class="time">10:00起</td>
   <td>單號：晉姍、丁丁、周胖、Abby、詩晴<br>雙號：亞當、劉芳、定瀚、朋喬、靜俞<br>備援：杜杜、或或</td>
   <td>⚠任務1：新人站位定位</td>
   <td class="detail"><ol>
-    <li>舞台完工後開始；每側5人一人站一個定位點，全員共持大捲尺，貼齊捲尺上緣，貼完同步往後退至下一排</li>
+    <li>內部團隊10:00到場後即可開始，不需等舞台完工；每側5人一人站一個定位點，全員共持大捲尺，貼齊捲尺上緣，貼完同步往後退至下一排</li>
     <li>中央縱向捲尺對排距（每排90cm），確保每排整齊不歪斜</li>
     <li>粉紅底色數字對應貼紙數字，灰底色數字為間距公分數（自舞台中心點起算，兩側各150/275/400/525/650/775/900/1025/1150/1275/1400/1525cm）</li>
     <li>單號站位對應編號：1.3.5.7.9／11.13.15.17.19／…／81.83.85.87（共9排）</li>
@@ -1100,12 +1116,13 @@
 
 <tr class="critical">
   <td class="time">12:00起</td>
-  <td>杜杜、或或（專責）；任務1人力完成後陸續加入</td>
-  <td>⚠任務2：父母／親友椅貼</td>
+  <td>單號側：杜杜（專責先行）→晉姍、丁丁、周胖、Abby、詩晴完成任務1後加入<br>雙號側：或或（專責先行）→亞當、劉芳、定瀚、靜俞完成任務1後加入</td>
+  <td>⚠任務2：父母／親友椅貼（單雙號分側進行）</td>
   <td class="detail"><ol>
-    <li>比旺完成排椅後開始；父母觀禮區每組4張、親友觀禮區每組5張編號椅貼，<span class="risk">依下方「座位對照表」由第1排（靠近舞台）往後排依序黏貼</span></li>
+    <li>比旺完成排椅後開始；父母觀禮區每組4張、親友觀禮區每組5張編號椅貼，一側合計近400張，<span class="risk">單號、雙號分開進行，各自依下方「座位對照表」由第1排（靠近舞台）往後排依序黏貼，避免兩側人力互相干擾走位</span></li>
     <li>父母椅貼含新人雙方姓名＋數字＋父母席；親友椅貼含新人雙方姓名＋數字＋親友席</li>
-    <li>杜杜、或或先行開始；晉姍、丁丁、周胖、Abby、詩晴、亞當、定瀚、靜俞完成任務1後陸續加入支援，加快進度</li>
+    <li>杜杜（單號）、或或（雙號）先行開始各自側別；其餘人力完成任務1後依原本單／雙號分組加入對應側，加快進度</li>
+    <li><span class="risk">丁丁、周胖13:00起須轉往報到處佈置，屆時單號側人力請留意調度</span></li>
     <li><span class="risk">朋喬不參與此任務執行，當日需保留彈性時間處理各廠商現場問題</span></li>
   </ol></td>
   <td>父母編號椅貼、親友編號椅貼（各1–90號，4號、44號不需要）</td>
@@ -1134,12 +1151,12 @@
 
 <tr class="critical">
   <td class="time">13:00</td>
-  <td>定瀚（專責對接）</td>
+  <td>劉芳（專責對接）</td>
   <td>更衣間＋全身鏡進場</td>
   <td class="detail"><ol>
-    <li>雅美圖進場架設更衣間、全身鏡</li>
-    <li><span class="risk">定瀚在場確認到貨數量、簽收，並核對定位是否符合場地配置圖（100×100cm 4間、85×85cm 6間）</span></li>
-    <li><span class="risk">朋喬不需在場，定瀚處理後回報朋喬即可</span></li>
+    <li>大間更衣室（150×150cm，4間）由靠設計進場架設；小間更衣室（85×85cm，6間）由雅美圖進場架設；全身鏡另計</li>
+    <li><span class="risk">劉芳在場分別確認兩家廠商到貨數量、簽收，並核對定位是否符合場地配置圖（大間150×150cm 4間／小間85×85cm 6間）</span></li>
+    <li><span class="risk">朋喬不需在場，劉芳處理後回報朋喬即可</span></li>
   </ol></td>
   <td>場地配置圖、簽收單</td>
 </tr>
@@ -1156,7 +1173,7 @@
 
 <tr>
   <td class="time">13:00–15:00</td>
-  <td>朋喬團隊</td>
+  <td>丁丁、周胖</td>
   <td>報到處佈置</td>
   <td class="detail"><ol>
     <li>裝喜餅、裝書約、佈置Candy Bar</li>
@@ -1175,12 +1192,24 @@
 </tr>
 
 <tr class="critical">
+  <td class="time">13:00</td>
+  <td>杜杜、或或</td>
+  <td>⚠市長進場紅龍架設（2人共同搬運）</td>
+  <td class="detail"><ol>
+    <li><span class="risk">紅龍共7支，逐支自舞台左側鐵捲門前拉一條通道至舞台左側（約10米）；紅龍較重，2人一起搬運＋定位，不要單人搬</span></li>
+    <li>距離拉好後所有紅龍先靠邊擺放，等市長到場前才往前定位</li>
+    <li>完成後回報朋喬確認</li>
+  </ol></td>
+  <td>紅龍×7</td>
+</tr>
+
+<tr class="critical">
   <td class="time">13:00–15:00</td>
   <td>朋喬（統籌）</td>
   <td>⚠任務5：所有輸出物位置確認</td>
   <td class="detail"><ol>
     <li><span class="risk">對照下方「📦輸出物清單＋定位」逐項核對每個物件是否就位且內容正確</span></li>
-    <li>市長進場紅龍：自舞台左側鐵捲門前拉一條紅龍通道至舞台左側（約10米），距離拉好後所有紅龍靠邊擺放（等市長到再往前放），總共備7支</li>
+    <li>市長進場紅龍：確認杜杜、或或已完成架設定位（架設本身不需朋喬動手，僅最終確認）</li>
     <li>IBM桌巾顏色核對：梳化區黑色16張、雙號/單號/貴賓報到桌香檳金各4/4/2張、Candy Bar／贊助廠商／拍拍印印卡讚／醫護區白色8/12/4/2張</li>
     <li><span class="risk">須在15:00彩排開始前完成初步確認</span></li>
   </ol></td>
@@ -1192,9 +1221,7 @@
   <td>朋喬（統籌）、Erin（主控）、指引組小組長（葉智凱、Abby、劉芳、靜俞）、內部團隊</td>
   <td>⚠總彩排（小組長場）</td>
   <td class="detail"><ol>
-    <li><span class="risk">本場僅小組長＋內部團隊參與，用組員代替88對新人先跑一次動線，抓場地卡點；7/18當天10:30另有一場全員彩排（全體48位工作人員參與），兩場性質不同、皆須進行</span></li>
     <li>流程同②工作人員流程表「總彩排」段落：雙側進場輪轉實測、誓言卡列隊發放實測</li>
-    <li>此時段各廠商佈置作業可自行繼續進行，不需朋喬另外管理（僅剩餘尾端收尾工作，不影響彩排動線）</li>
   </ol></td>
   <td>模擬新人牌、碼表</td>
 </tr>
@@ -1222,6 +1249,24 @@
 <defs><marker id="bigarr" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,1 L9,5 L0,9 z" fill="#4472C4"/></marker></defs>
 <rect x="890.0" y="20" width="620" height="70" rx="8" fill="#B03A3A" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="1200.0" y="62" text-anchor="middle" font-size="26" fill="#fff" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">舞台（W1260cm）</text><rect x="1130.0" y="110" width="140" height="46" rx="4" fill="#C9A15A" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="1200.0" y="138" text-anchor="middle" font-size="15" fill="#fff" font-family="Microsoft JhengHei, sans-serif">延伸台</text><rect x="828.0" y="200" width="312" height="406" rx="8" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="984.0" y="403.0" text-anchor="middle" font-size="20" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">雙號新人席</text><rect x="1260.0" y="200" width="312" height="406" rx="8" fill="#F3D9C4" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="1416.0" y="403.0" text-anchor="middle" font-size="20" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">單號新人席</text><rect x="924.0" y="618" width="120" height="30" rx="4" fill="#5BA870" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="984.0" y="638" text-anchor="middle" font-size="13" fill="#fff" font-family="Microsoft JhengHei, sans-serif">媒體高台</text><rect x="1356.0" y="618" width="120" height="30" rx="4" fill="#5BA870" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="1416.0" y="638" text-anchor="middle" font-size="13" fill="#fff" font-family="Microsoft JhengHei, sans-serif">媒體高台</text><rect x="414.0" y="200" width="344" height="406" rx="8" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="586.0" y="403.0" text-anchor="middle" font-size="20" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">雙號父母席</text><rect x="1642.0" y="200" width="344" height="406" rx="8" fill="#E8B4B8" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="1814.0" y="403.0" text-anchor="middle" font-size="20" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">單號父母席</text><rect x="-4.0" y="200" width="358" height="406" rx="8" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="175.0" y="403.0" text-anchor="middle" font-size="19" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">雙號親友觀禮區</text><rect x="2046.0" y="200" width="358" height="406" rx="8" fill="#F0C8CB" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="2225.0" y="403.0" text-anchor="middle" font-size="19" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">單號親友觀禮區</text><rect x="-44.0" y="676" width="2488.0" height="26" rx="4" fill="#EDDCC8" stroke="none" stroke-width="1.5" opacity="1"/><text x="1200.0" y="694" text-anchor="middle" font-size="14" fill="#8a6a4a" font-family="Microsoft JhengHei, sans-serif">主走道（2m）</text><rect x="95.0" y="766" width="700" height="260" rx="8" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="445.0" y="896" text-anchor="middle" font-size="20" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">單號新人休息區（11桌）</text><rect x="95.0" y="1066" width="700" height="260" rx="8" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="445.0" y="1196" text-anchor="middle" font-size="20" fill="#9E2B25" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">雙號新人休息區（11桌）</text><rect x="-45" y="766" width="110" height="300" rx="6" fill="#D8CBBB" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="10" y="916" text-anchor="middle" font-size="16" fill="#5b4a3a" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 10 916)">梳化區</text><rect x="-45" y="1096" width="110" height="160" rx="6" fill="#D8CBBB" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="10" y="1181" text-anchor="middle" font-size="14" fill="#5b4a3a" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 10 1181)">更衣室</text><rect x="985.0" y="796" width="90" height="170" rx="6" fill="#4C8A7A" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="1030.0" y="886" text-anchor="middle" font-size="14" fill="#fff" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 1030.0 886)">新人報到區</text><text x="1030.0" y="904" text-anchor="middle" font-size="11" fill="#fff" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 1030.0 904)">（單號）</text><rect x="985.0" y="1036" width="90" height="170" rx="6" fill="#4C8A7A" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="1030.0" y="1126" text-anchor="middle" font-size="14" fill="#fff" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 1030.0 1126)">新人報到區</text><text x="1030.0" y="1144" text-anchor="middle" font-size="11" fill="#fff" font-family="Microsoft JhengHei, sans-serif" transform="rotate(-90 1030.0 1144)">（雙號）</text><circle cx="935.0" cy="986" r="24" fill="#A0522D"/><text x="935.0" y="1036" text-anchor="middle" font-size="12" fill="#5b2020" font-family="Microsoft JhengHei, sans-serif">抽獎箱</text><rect x="1115.0" y="856" width="300" height="300" rx="8" fill="#BFDCE8" stroke="#7AAAC0" stroke-width="1.5" opacity="0.85"/><text x="1265.0" y="1006" text-anchor="middle" font-size="22" fill="#3D6B7A" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">報到引導區</text><rect x="1455.0" y="776" width="150" height="60" rx="6" fill="#C9A15A" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="1530.0" y="812" text-anchor="middle" font-size="15" fill="#fff" font-family="Microsoft JhengHei, sans-serif">拍照區</text><rect x="1455.0" y="856" width="150" height="46" rx="6" fill="#B9A8D8" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="1530.0" y="886" text-anchor="middle" font-size="15" fill="#fff" font-family="Microsoft JhengHei, sans-serif">醫護區</text><rect x="1455.0" y="922" width="150" height="60" rx="6" fill="#8FB8D8" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="1530.0" y="958" text-anchor="middle" font-size="14" fill="#fff" font-family="Microsoft JhengHei, sans-serif">貴賓媒體</text><rect x="1455.0" y="1002" width="150" height="60" rx="6" fill="#C9A15A" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="1530.0" y="1038" text-anchor="middle" font-size="15" fill="#fff" font-family="Microsoft JhengHei, sans-serif">拍照區</text><rect x="1165.0" y="1530" width="200" height="30" rx="4" fill="#5BA870" stroke="#9E2B25" stroke-width="1.5" opacity="1"/><text x="1265.0" y="1552" text-anchor="middle" font-size="16" fill="#fff" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">大門（出入口）</text><path d="M 1265.0 1520 L 1265.0 1176" stroke="#4472C4" stroke-width="3" marker-end="url(#bigarr)"/><rect x="-420" y="250" width="340" height="500" rx="6" fill="#E5E5E5" stroke="#999" stroke-width="1.5" opacity="1"/><text x="-250.0" y="280" text-anchor="middle" font-size="19" fill="#666" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">工作人員區域</text><circle cx="-330" cy="390" r="26" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><circle cx="-170" cy="430" r="26" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><circle cx="-310" cy="590" r="26" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><circle cx="-160" cy="650" r="26" fill="#F5E3CE" stroke="#9E2B25" stroke-width="1.2"/><path d="M -59 250.0 L -71 289.4 L -59 328.8 L -71 368.2 L -59 407.7 L -71 447.1 L -59 486.5 L -71 525.9 L -59 565.3 L -71 604.8 L -59 644.2 L -71 683.6 L -59 723.0 L -71 762.4 L -59 801.8 L -71 841.2 L -59 880.7 L -71 920.1 L -59 959.5 L -71 998.9 L -59 1038.3 L -71 1077.8 L -59 1117.2 L -71 1156.6 L -59 1196.0" stroke="#C9A15A" stroke-width="3" fill="none" opacity="0.5"/><path d="M -34.0 154.0 L 120.0 146.0 L 274.0 154.0 L 428.0 146.0 L 582.0 154.0 L 736.0 146.0 L 890.0 154.0" stroke="#7a1a1a" stroke-width="3" fill="none" opacity="0.5"/><circle cx="1200.0" cy="689" r="20" fill="#F5D020" stroke="#7a1a1a" stroke-width="2"/><text x="1200.0" y="696" text-anchor="middle" font-size="18" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">2</text><rect x="1130.0" y="715" width="140" height="24" rx="4" fill="#fff" stroke="#7a1a1a" stroke-width="1" opacity="0.92"/><text x="1200.0" y="732" text-anchor="middle" font-size="12.5" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">②婚禮流程</text><circle cx="1030.0" cy="881" r="20" fill="#F5D020" stroke="#7a1a1a" stroke-width="2"/><text x="1030.0" y="888" text-anchor="middle" font-size="18" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">3</text><rect x="960.0" y="907" width="140" height="24" rx="4" fill="#fff" stroke="#7a1a1a" stroke-width="1" opacity="0.92"/><text x="1030.0" y="924" text-anchor="middle" font-size="12.5" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">③新人報到(單)</text><circle cx="1030.0" cy="1121" r="20" fill="#F5D020" stroke="#7a1a1a" stroke-width="2"/><text x="1030.0" y="1128" text-anchor="middle" font-size="18" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">4</text><rect x="960.0" y="1147" width="140" height="24" rx="4" fill="#fff" stroke="#7a1a1a" stroke-width="1" opacity="0.92"/><text x="1030.0" y="1164" text-anchor="middle" font-size="12.5" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">④新人報到(雙)</text><circle cx="1814.0" cy="566" r="20" fill="#F5D020" stroke="#7a1a1a" stroke-width="2"/><text x="1814.0" y="573" text-anchor="middle" font-size="18" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">5</text><rect x="1744.0" y="592" width="140" height="24" rx="4" fill="#fff" stroke="#7a1a1a" stroke-width="1" opacity="0.92"/><text x="1814.0" y="609" text-anchor="middle" font-size="12.5" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">⑤父母觀禮(單)</text><circle cx="586.0" cy="566" r="20" fill="#F5D020" stroke="#7a1a1a" stroke-width="2"/><text x="586.0" y="573" text-anchor="middle" font-size="18" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">6</text><rect x="516.0" y="592" width="140" height="24" rx="4" fill="#fff" stroke="#7a1a1a" stroke-width="1" opacity="0.92"/><text x="586.0" y="609" text-anchor="middle" font-size="12.5" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">⑥父母觀禮(雙)</text><circle cx="2225.0" cy="566" r="20" fill="#F5D020" stroke="#7a1a1a" stroke-width="2"/><text x="2225.0" y="573" text-anchor="middle" font-size="18" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">7</text><rect x="2155.0" y="592" width="140" height="24" rx="4" fill="#fff" stroke="#7a1a1a" stroke-width="1" opacity="0.92"/><text x="2225.0" y="609" text-anchor="middle" font-size="12.5" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">⑦親友觀禮(單)</text><circle cx="175.0" cy="566" r="20" fill="#F5D020" stroke="#7a1a1a" stroke-width="2"/><text x="175.0" y="573" text-anchor="middle" font-size="18" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">8</text><rect x="105.0" y="592" width="140" height="24" rx="4" fill="#fff" stroke="#7a1a1a" stroke-width="1" opacity="0.92"/><text x="175.0" y="609" text-anchor="middle" font-size="12.5" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">⑧親友觀禮(雙)</text><circle cx="835.0" cy="886" r="20" fill="#F5D020" stroke="#7a1a1a" stroke-width="2"/><text x="835.0" y="893" text-anchor="middle" font-size="18" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">9</text><rect x="765.0" y="912" width="140" height="24" rx="4" fill="#fff" stroke="#7a1a1a" stroke-width="1" opacity="0.92"/><text x="835.0" y="929" text-anchor="middle" font-size="12.5" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">⑨新人休息區</text><circle cx="10" cy="816" r="20" fill="#F5D020" stroke="#7a1a1a" stroke-width="2"/><text x="10" y="823" text-anchor="middle" font-size="18" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">11</text><rect x="-60" y="842" width="140" height="24" rx="4" fill="#fff" stroke="#7a1a1a" stroke-width="1" opacity="0.92"/><text x="10" y="859" text-anchor="middle" font-size="12.5" fill="#7a1a1a" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">⑪新人梳化區</text><text x="1200.0" y="1586" text-anchor="middle" font-size="15" fill="#B01010" font-weight="bold" font-family="Microsoft JhengHei, sans-serif">※ 面對舞台：雙號左／單號右 ※ 立地指引牌標註位置（室內，室外①系列另見花博動線圖）</text>
 </svg></div>
+
+<table style="width:100%;max-width:900px;margin:10px auto 0;border-collapse:collapse;font-size:12.5px;">
+<tr style="background:#9E2B25;color:#fff;">
+  <th style="padding:5px 8px;border:1px solid #7a1f1a;">編號</th>
+  <th style="padding:5px 8px;border:1px solid #7a1f1a;text-align:left;">立牌內容</th>
+  <th style="padding:5px 8px;border:1px solid #7a1f1a;text-align:left;">位置</th>
+  <th style="padding:5px 8px;border:1px solid #7a1f1a;">數量</th>
+  <th style="padding:5px 8px;border:1px solid #7a1f1a;">負責人</th>
+</tr>
+<tr><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">①</td><td style="padding:4px 8px;border:1px solid #ccc;">活動指引（1-1／1-2／1-3）</td><td style="padding:4px 8px;border:1px solid #ccc;">大門／場館入口動線（室外，見花博動線圖）</td><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">3</td><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">杜杜、定瀚</td></tr>
+<tr><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">②</td><td style="padding:4px 8px;border:1px solid #ccc;">婚禮流程立牌</td><td style="padding:4px 8px;border:1px solid #ccc;">報到區入口附近</td><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">1</td><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">杜杜、定瀚</td></tr>
+<tr><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">③④</td><td style="padding:4px 8px;border:1px solid #ccc;">新人報到區立牌（單／雙）</td><td style="padding:4px 8px;border:1px solid #ccc;">單／雙號報到桌前，需標注單／雙號</td><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">各1</td><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">杜杜、定瀚</td></tr>
+<tr><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">⑤⑥</td><td style="padding:4px 8px;border:1px solid #ccc;">父母觀禮區立牌（單／雙）</td><td style="padding:4px 8px;border:1px solid #ccc;">父母席入口，標注單／雙號</td><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">各1</td><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">杜杜、定瀚</td></tr>
+<tr><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">⑦⑧</td><td style="padding:4px 8px;border:1px solid #ccc;">親友觀禮區立牌（單／雙）</td><td style="padding:4px 8px;border:1px solid #ccc;">親友席入口，標注單／雙號</td><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">各1</td><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">杜杜、定瀚</td></tr>
+<tr><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">⑨</td><td style="padding:4px 8px;border:1px solid #ccc;">新人休息區立牌（單／雙，雙箭頭指引）</td><td style="padding:4px 8px;border:1px solid #ccc;">休息區入口，右單左雙</td><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">各1</td><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">杜杜、定瀚</td></tr>
+<tr><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">⑩</td><td style="padding:4px 8px;border:1px solid #ccc;">貴賓休息區立牌</td><td style="padding:4px 8px;border:1px solid #ccc;">貴賓休息室（不在本圖範圍內，故未標註於圖上）</td><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">1</td><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">杜杜、定瀚</td></tr>
+<tr><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">⑪</td><td style="padding:4px 8px;border:1px solid #ccc;">新人梳化區立牌</td><td style="padding:4px 8px;border:1px solid #ccc;">梳化區入口</td><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">1</td><td style="padding:4px 8px;border:1px solid #ccc;text-align:center;">杜杜、定瀚</td></tr>
+</table>
 
 <div style="margin-bottom:28px;">
 <div style="font-weight:bold;color:#9E2B25;margin-bottom:6px;font-size:16px;">花博動線圖｜場外立地指引牌標註（捷運站→爭艷館）</div>
@@ -1263,13 +1308,13 @@
 
 <tr><th colspan="5">大門／場外｜負責：杜杜、詩晴</th></tr>
 <tr><td class="team">大門／場外</td><td>場外指引-主視覺（帆布，捷運站外）</td><td>1</td><td>詩晴</td><td>捷運站外，含往前箭頭</td></tr>
-<tr><td></td><td>立地指引牌（活動指引）</td><td>3</td><td>詩晴</td><td>大門／場館入口動線，含箭頭黏貼</td></tr>
+<tr><td></td><td>立地指引牌（活動指引）</td><td>3</td><td>杜杜、定瀚</td><td>大門／場館入口動線，含箭頭黏貼</td></tr>
 <tr><td></td><td>活動場地配置圖（A1橫式）</td><td>1</td><td>亞當</td><td>大門入口張貼</td></tr>
-<tr><td></td><td>市長進場紅龍</td><td>7支</td><td>杜杜</td><td>舞台左側鐵捲門前至舞台左側，約10米，靠邊擺放待市長到場</td></tr>
+<tr><td></td><td>市長進場紅龍</td><td>7支</td><td>杜杜、或或</td><td>舞台左側鐵捲門前至舞台左側，約10米，靠邊擺放待市長到場（2人共同搬運）</td></tr>
 
 <tr><th colspan="5">報到區｜負責：丁丁、周胖</th></tr>
-<tr><td class="team">報到區</td><td>新人報到區立牌（單／雙）</td><td>各1</td><td>周胖</td><td>單／雙號報到桌前，需標注單／雙號</td></tr>
-<tr><td></td><td>婚禮流程立牌</td><td>1</td><td>丁丁</td><td>報到區入口附近</td></tr>
+<tr><td class="team">報到區</td><td>新人報到區立牌（單／雙）</td><td>各1</td><td>杜杜、定瀚</td><td>單／雙號報到桌前，需標注單／雙號</td></tr>
+<tr><td></td><td>婚禮流程立牌</td><td>1</td><td>杜杜、定瀚</td><td>報到區入口附近</td></tr>
 <tr><td></td><td>桌立牌：報到處（單／雙，A4）</td><td>各1</td><td>周胖</td><td>報到桌面</td></tr>
 <tr><td></td><td>桌立牌：獎品領取區（單／雙，A4）</td><td>各1</td><td>丁丁</td><td>報到桌面（15:00後兌換用）</td></tr>
 <tr><td></td><td>桌立牌：貴賓報到處／媒體報到處（A4）</td><td>各1</td><td>丁丁</td><td>貴賓媒體報到桌面</td></tr>
@@ -1278,8 +1323,8 @@
 <tr><td></td><td>抽獎箱貼紙</td><td>1</td><td>周胖</td><td>貼於抽獎箱本體</td></tr>
 
 <tr><th colspan="5">觀禮席／舞台周邊｜負責：任務1/2小組（見前）</th></tr>
-<tr><td class="team">觀禮席</td><td>父母觀禮區立牌（單／雙）</td><td>各1</td><td>—</td><td>父母席入口，標注單／雙號</td></tr>
-<tr><td></td><td>親友觀禮區立牌（單／雙）</td><td>各1</td><td>—</td><td>親友席入口，標注單／雙號</td></tr>
+<tr><td class="team">觀禮席</td><td>父母觀禮區立牌（單／雙）</td><td>各1</td><td>杜杜、定瀚</td><td>父母席入口，標注單／雙號</td></tr>
+<tr><td></td><td>親友觀禮區立牌（單／雙）</td><td>各1</td><td>杜杜、定瀚</td><td>親友席入口，標注單／雙號</td></tr>
 <tr><td></td><td>新人編號地貼（1–90號，4、44號除外）</td><td>88點</td><td>—</td><td>新人站位，見「地貼定位施工圖」</td></tr>
 <tr><td></td><td>父母編號椅貼／親友編號椅貼／新人編號椅貼</td><td>各88組</td><td>—</td><td>對應座位，見「座位對照表」</td></tr>
 <tr><td></td><td>編號手舉牌（單／雙各9張）</td><td>18張</td><td>—</td><td>新人指引組使用，不固定於場地</td></tr>
@@ -1298,10 +1343,10 @@
 <tr><td></td><td>媒體區椅貼／貴賓椅貼</td><td>1式</td><td>晉姍</td><td>媒體區／貴賓席</td></tr>
 
 <tr><th colspan="5">休息區／梳化區／更衣室｜負責：定瀚</th></tr>
-<tr><td class="team">休息區</td><td>新人休息區立牌（單／雙，雙箭頭指引）</td><td>各1</td><td>定瀚</td><td>休息區入口，右單左雙</td></tr>
+<tr><td class="team">休息區</td><td>新人休息區立牌（單／雙，雙箭頭指引）</td><td>各1</td><td>杜杜、定瀚</td><td>休息區入口，右單左雙</td></tr>
 <tr><td></td><td>雙面三角桌牌（每桌4對編號）</td><td>單雙各11張</td><td>定瀚</td><td>新人休息區各桌，對應桌號</td></tr>
-<tr><td></td><td>貴賓休息區立牌</td><td>1</td><td>定瀚</td><td>貴賓休息室</td></tr>
-<tr><td></td><td>新人梳化區立牌</td><td>1</td><td>定瀚</td><td>梳化區入口</td></tr>
+<tr><td></td><td>貴賓休息區立牌</td><td>1</td><td>杜杜、定瀚</td><td>貴賓休息室</td></tr>
+<tr><td></td><td>新人梳化區立牌</td><td>1</td><td>杜杜、定瀚</td><td>梳化區入口</td></tr>
 <tr><td></td><td>IBM桌巾：梳化區黑16／報到桌香檳金4+4+2／Candy Bar白8／贊助白12／拍拍印印卡讚白4／醫護白2</td><td>共46張</td><td>定瀚</td><td>對應各桌</td></tr>
 </table>
 
@@ -1360,7 +1405,7 @@
 <tr><td class="time">第7排</td><td colspan="2">82、84、86、88、89、90</td></tr>
 </table>
 
-<p style="color:#B01010;font-size:12px;">※ 樂群（舞台）11:00完工、比旺（桌椅）目標12:00前完工，任務1、2依此為觸發點；若廠商延遲，後續任務需順延。15:00–17:00為總彩排時段，佈置類作業與彩排並行、無需朋喬同時管理。</p>
+<p style="color:#B01010;font-size:12px;">※ 任務1（新人站位定位）10:00內部團隊到場後即可開始，不需等樂群（舞台）完工；任務2（父母／親友椅貼）仍須等比旺（桌椅）目標12:00前完工排椅後才能開始。若廠商延遲，任務2需順延。15:00–17:00為總彩排時段，佈置類作業與彩排並行、無需朋喬同時管理。</p>
 
 </div>
 
@@ -1421,7 +1466,20 @@
 
 <div class="briefing-section-title">Part B｜各組專屬（只講自己這組的部分）</div>
 
-<div class="groupwrap">
+<div class="personal-actions no-print" style="margin:0 0 12px;">
+  <label>只看／只印：</label>
+  <select id="briefingTeamSel" onchange="filterBriefingTeam()">
+    <option value="all">全部組別</option>
+    <option value="team-reg">報到組</option>
+    <option value="team-guide">新人指引組</option>
+    <option value="team-route">動線＋拍照組</option>
+    <option value="team-stage">舞台組</option>
+  </select>
+  <button onclick="filterBriefingTeam();printCurrentPage()">🖨️ 只列印所選組別（含Part A共同內容）</button>
+  <span class="hint">選好組別後，Part B只會顯示／印出該組卡片，Part A共同內容仍會一起印出</span>
+</div>
+
+<div class="groupwrap" id="partBWrap">
   <div class="card team-reg">
     <h2 class="reg">報到組（詩晴／丁丁 帶開）</h2>
     <span class="sub-label">2. 工作流程認識</span>
@@ -1682,6 +1740,19 @@ function clearFilter(){
   document.getElementById('teamSel').value='all';
   document.getElementById('personSel').value='all';
   applyFilter();
+}
+
+function filterBriefingTeam(){
+  const sel = document.getElementById('briefingTeamSel').value;
+  const wrap = document.getElementById('partBWrap');
+  if(!wrap) return;
+  wrap.querySelectorAll('.card').forEach(card=>{
+    if(sel==='all' || card.classList.contains(sel)){
+      card.style.display='';
+    } else {
+      card.style.display='none';
+    }
+  });
 }
 
 // ===== 個人列印版 =====
