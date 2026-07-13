@@ -76,8 +76,10 @@
   @media print{
     .tabs, .toolbar{display:none;}
     body{background:#fff;padding:0;}
-    .page{display:block !important; page-break-before: always;}
-    .page:first-child{page-break-before: auto;}
+    .page{display:none;}
+    .page.active{display:block !important;}
+    body.printing-all .page{display:block !important; page-break-before: always;}
+    body.printing-all .page:first-child{page-break-before: auto;}
     tr.hidden{display:table-row !important;}
     svg, img{page-break-inside: avoid; break-inside: avoid;}
     tr{page-break-inside: avoid; break-inside: avoid;}
@@ -90,8 +92,10 @@
   .subpage.active{display:block;}
   @media print{
     .subtabs{display:none;}
-    .subpage{display:block !important; page-break-before: always;}
-    .subpage:first-child{page-break-before: auto;}
+    .subpage{display:none;}
+    .subpage.active{display:block !important;}
+    body.printing-all .subpage{display:block !important; page-break-before: always;}
+    body.printing-all .subpage:first-child{page-break-before: auto;}
   }
 
   /* ===== 個人列印版 ===== */
@@ -261,7 +265,7 @@
 <tr><td>主題拍照區B（大門側）</td><td>童莉崴</td><td>同上</td></tr>
 <tr><td class="team" rowspan="3">舞台組<br><span style="font-size:10.5px;color:#888;">（胡詩涵→朋喬；趙芯巧→伯特）</span></td><td>左道具備妥（雙號側）</td><td>胡詩涵</td><td class="risk">13:00–14:00先支援新人指引組報到／進場；14:00起歸位舞台下方，備妥並檢查麥克風，交由禮賓遞交上台（⚠不含誓言卡，見流程表說明）</td></tr>
 <tr><td>右道具備妥（單號側）</td><td>趙芯巧</td><td class="risk">13:00–14:00先支援新人指引組報到／進場；14:00起歸位舞台下方，備妥並檢查禮物盒、書約版、獎項牌，交由禮賓遞交上台</td></tr>
-<tr><td>抽獎箱搬運</td><td>蘇純呈、童莉崴</td><td>14:30前就位舞台右側，14:40抽獎桌上台；不再參與抽獎現場協助（獎項牌改伯特一人處理）</td></tr>
+<tr><td>抽獎箱搬運</td><td>蘇純呈、童莉崴</td><td>14:30前就位舞台右側，14:40抽獎桌上台；搬運任務結束後（約15:00）回原拍照區崗位，不再參與抽獎現場協助（獎項牌改伯特一人處理）</td></tr>
 <tr><td class="team" rowspan="2">短影音組</td><td>平面攝影</td><td>The Stage</td><td>進場分駐左右背板拍攝新人；不需另行排班管理</td></tr>
 <tr><td>動態錄影／轉播</td><td>臉紅紅</td><td>契約需全程錄影；不需另行排班管理</td></tr>
 <tr><td class="team">禮賓組</td><td class="risk">⚠儀式引導＋道具遞交</td><td class="risk">禮賓人員×6</td><td class="risk">編號1/2/3新人上下台、證婚人/介紹人引導；<b>所有麥克風及儀式道具由禮賓上台遞交</b>，舞台組僅於台下備妥</td></tr>
@@ -339,9 +343,10 @@
 
 <div class="personal-actions no-print">
   <button class="primary" onclick="printFullTable()">🖨️ 列印全體大表</button>
+  <button onclick="printCurrentPage()">🖨️ 只列印目前這頁</button>
   <button onclick="printPersonal()">🖨️ 列印目前所選人員的個人版</button>
   <button onclick="printAllPersonal()">🖨️ 批次列印全體個人版（每人一頁）</button>
-  <span class="hint">全體大表＝橫向A3、固定顯示全表（不受篩選影響）；個人版只列出該人員自己的時段與任務，A4直印，適合裁切分發</span>
+  <span class="hint">全體大表＝橫向A3、把①～⑥全部分頁一次印出；只列印目前這頁＝只印你現在看到的這個分頁（如PA提示表、場地方版）；個人版只列出該人員自己的時段與任務，A4直印，適合裁切分發</span>
 </div>
 
 <div id="personTimeline" style="display:none;margin:12px 0;padding:14px 16px;background:#FFF8EC;border:2px solid #C9A15A;border-radius:8px;"></div>
@@ -517,7 +522,7 @@
   <td>新人指引組（各排專責＋小幫手）</td>
   <td>⚠桌前舉牌相認＋引導</td>
   <td class="detail"><ol>
-    <li><span class="risk">各排專責人員直接在休息＆梳化區「自己負責的桌子前」舉牌等候，不在報到桌認領；新人報到後走進休息區看到牌子即可自行找到對應桌、雙方就地相認、自我介紹</span></li>
+    <li><span class="risk">各排專責人員直接在休息＆梳化區「自己負責的桌子前」舉牌等候，不在報到桌認領；新人報到後走進休息區看到牌子即可自行找到對應桌、雙方就地相認、自我介紹，並提醒新人記得將抽獎聯投入抽獎箱</span></li>
     <li><span class="risk">6位小幫手（康筠、徐柔婕、林頌恩：報到區外引導；李毓倫、王亭玥、陳沛瑄：休息區入口指位）依「報到／休息區小幫手分配」表執行；各排專責人員本人站在自己負責的桌子前舉牌，新人被指位過去後雙方相認</span></li>
     <li>3位獨立拉裙擺人員（陳嘉梅、陳千薏、黃筱詩）此時段尚未開始拉裙擺任務，13:45前歸位準備即可；伯特此時段於舞台前協助拍照（見下方任務），13:50後轉往舞台單號側核對上台新人並協助Abby拉裙擺</li>
     <li>組長（葉智凱/Abby/劉芳/靜俞）巡邏自己負責範圍，確認新人已投抽獎聯</li>
@@ -1444,7 +1449,7 @@
       </thead>
       <tbody>
         <tr><td style="padding:4px 6px;border:1px solid #ccc;">12:50</td><td style="padding:4px 6px;border:1px solid #ccc;">全體（派1人）</td><td style="padding:4px 6px;border:1px solid #ccc;">報到桌前</td><td style="padding:4px 6px;border:1px solid #ccc;">持手舉牌待命</td></tr>
-        <tr><td style="padding:4px 6px;border:1px solid #ccc;">13:00–13:40</td><td style="padding:4px 6px;border:1px solid #ccc;">全體</td><td style="padding:4px 6px;border:1px solid #ccc;">休息梳化區自己桌前</td><td style="padding:4px 6px;border:1px solid #ccc;">舉牌等新人相認</td></tr>
+        <tr><td style="padding:4px 6px;border:1px solid #ccc;">13:00–13:40</td><td style="padding:4px 6px;border:1px solid #ccc;">全體</td><td style="padding:4px 6px;border:1px solid #ccc;">休息梳化區自己桌前</td><td style="padding:4px 6px;border:1px solid #ccc;">舉牌等新人相認，提醒投抽獎聯</td></tr>
         <tr><td style="padding:4px 6px;border:1px solid #ccc;">13:40–13:50</td><td style="padding:4px 6px;border:1px solid #ccc;">全體</td><td style="padding:4px 6px;border:1px solid #ccc;">觀禮席後方兩側</td><td style="padding:4px 6px;border:1px solid #ccc;">整隊（後往前、大號在前）</td></tr>
         <tr><td style="padding:4px 6px;border:1px solid #ccc;">13:50–14:05</td><td style="padding:4px 6px;border:1px solid #ccc;">全體</td><td style="padding:4px 6px;border:1px solid #ccc;">雙側走道→觀禮席</td><td style="padding:4px 6px;border:1px solid #ccc;">護送新人入座</td></tr>
         <tr><td style="padding:4px 6px;border:1px solid #ccc;">14:05–14:15</td><td style="padding:4px 6px;border:1px solid #ccc;">全體</td><td style="padding:4px 6px;border:1px solid #ccc;">媒體高台後方</td><td style="padding:4px 6px;border:1px solid #ccc;">待命看演唱</td></tr>
@@ -1757,8 +1762,18 @@ function enterPersonalPrintMode(html){
   window.print();
 }
 function printFullTable(){
-  // 確保沒有殘留的個人列印模式狀態，直接以全表（不受篩選影響）列印
+  // 確保沒有殘留的個人列印模式狀態，並標記「全表模式」讓所有分頁一次印出
   document.body.classList.remove('printing-personal');
+  const area = document.getElementById('personalPrintArea');
+  if(area){ area.classList.remove('show'); area.innerHTML=''; }
+  if(_personalPageStyleEl){ _personalPageStyleEl.remove(); _personalPageStyleEl=null; }
+  document.body.classList.add('printing-all');
+  window.print();
+}
+function printCurrentPage(){
+  // 只列印目前正在看的這個分頁（不強制展開其他分頁）
+  document.body.classList.remove('printing-personal');
+  document.body.classList.remove('printing-all');
   const area = document.getElementById('personalPrintArea');
   if(area){ area.classList.remove('show'); area.innerHTML=''; }
   if(_personalPageStyleEl){ _personalPageStyleEl.remove(); _personalPageStyleEl=null; }
@@ -1785,10 +1800,12 @@ window.addEventListener('afterprint', function(){
 });
 
 // ===== 列印修正：部分瀏覽器對 display:none→block 的@media print覆蓋不穩定，
-// 改為列印前用JS真正把所有分頁/子分頁加上active class（走一般顯示邏輯），列印後還原 =====
+// 「全表模式」時改為列印前用JS真正把所有分頁/子分頁加上active class（走一般顯示邏輯），列印後還原；
+// 一般單頁列印（printCurrentPage()／瀏覽器原生Ctrl+P）則不動作，只印目前這頁 =====
 let _beforePrintState = null;
 window.addEventListener('beforeprint', function(){
   if(document.body.classList.contains('printing-personal')) return;
+  if(!document.body.classList.contains('printing-all')) return;
   _beforePrintState = {
     activePage: document.querySelector('.page.active') ? document.querySelector('.page.active').id : null,
     activeSubpage: document.querySelector('.subpage.active') ? document.querySelector('.subpage.active').id : null
@@ -1797,6 +1814,7 @@ window.addEventListener('beforeprint', function(){
   document.querySelectorAll('.subpage').forEach(p=>p.classList.add('active'));
 });
 window.addEventListener('afterprint', function(){
+  document.body.classList.remove('printing-all');
   if(!_beforePrintState) return;
   document.querySelectorAll('.page').forEach(p=>{
     if(p.id !== _beforePrintState.activePage) p.classList.remove('active');
@@ -1804,6 +1822,7 @@ window.addEventListener('afterprint', function(){
   document.querySelectorAll('.subpage').forEach(p=>{
     if(p.id !== _beforePrintState.activeSubpage) p.classList.remove('active');
   });
+  _beforePrintState = null;
 });
 </script>
 
