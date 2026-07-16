@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <title>臺北・囍｜工作人員流程總表</title>
 <style>
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+  @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+  }
 .lead-icon{display:inline-block;width:14px;height:14px;vertical-align:middle;margin-right:2px;background-image:url(data:image/jpeg;base64,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);background-size:cover;border-radius:50%;}
 
   @page { size: A3 landscape; margin: 8mm; }
@@ -226,27 +230,27 @@
 <colgroup><col style="width:9%"><col style="width:20%"><col style="width:16%"><col style="width:20%"><col style="width:35%"></colgroup>
 <tr><th colspan="5">新人指引組（專責18人＋拉裙擺／小幫手，不含組長）</th></tr>
 
-<tr style="background:#FDF3F0;"><td class="team" rowspan="4" style="border-left:4px solid #D97757;">單號<br>（葉智凱）</td><td>單1排（手舉牌1：1、3、5、7、9）</td><td>董沁怡</td><td rowspan="4">拉裙擺：陳嘉梅<br>小幫手：康筠</td><td rowspan="4">負責範圍：單1–4排全部（20對新人）；拉裙擺於新人上下台協助，小幫手全程流動指引（見下方說明）</td></tr>
-<tr style="background:#FDF3F0;"><td>單2排（手舉牌2：11、13、15、17、19）</td><td>阮靜霓</td></tr>
-<tr style="background:#FDF3F0;"><td>單3排（手舉牌3：21、23、25、27、29）</td><td>何俐穎</td></tr>
-<tr style="background:#FDF3F0;"><td>單4排（手舉牌4：31、33、35、37、39）</td><td>或或</td></tr>
+<tr style="background:#F5DFDF;"><td class="team" rowspan="4" style="border-left:4px solid #D97757;background:#fff;">單號<br>（葉智凱）</td><td style="border-left:4px solid #CB4D4D;">單1排（手舉牌1：1、3、5、7、9）</td><td>董沁怡</td><td rowspan="4" style="background:#fff;">拉裙擺：陳嘉梅<br>小幫手：康筠</td><td rowspan="4" style="background:#fff;">負責範圍：單1–4排全部（20對新人）；拉裙擺於新人上下台協助，小幫手全程流動指引（見下方說明）</td></tr>
+<tr style="background:#F5E6DF;"><td style="border-left:4px solid #CB774D;">單2排（手舉牌2：11、13、15、17、19）</td><td>阮靜霓</td></tr>
+<tr style="background:#F5EEDF;"><td style="border-left:4px solid #CBA14D;">單3排（手舉牌3：21、23、25、27、29）</td><td>何俐穎</td></tr>
+<tr style="background:#F5F5DF;"><td style="border-left:4px solid #CBCB4D;">單4排（手舉牌4：31、33、35、37、39）</td><td>或或</td></tr>
 
-<tr style="background:#F0F5FD;"><td class="team" rowspan="5" style="border-left:4px solid #4A7BC9;">單號<br>（Abby）</td><td>單5排（手舉牌5：41、43、45、47、49）</td><td>邱美晴</td><td rowspan="5">裙擺整理：Abby+伯特協助<br>小幫手：徐柔婕、林頌恩</td><td rowspan="5">負責範圍：單5–9排全部（24對新人）；小幫手全程流動指引</td></tr>
-<tr style="background:#F0F5FD;"><td>單6排（手舉牌6：51、53、55、57、59）</td><td>陳可馨</td></tr>
-<tr style="background:#F0F5FD;"><td>單7排（手舉牌7：61、63、65、67、69）</td><td>李清嶽</td></tr>
-<tr style="background:#F0F5FD;"><td>單8排（手舉牌8：71、73、75、77、79）</td><td>彭鈺芳</td></tr>
-<tr style="background:#F0F5FD;"><td>單9排（手舉牌9：81、83、85、87，僅4對）</td><td>劉品瑗</td></tr>
+<tr style="background:#EEF5DF;"><td class="team" rowspan="5" style="border-left:4px solid #4A7BC9;background:#fff;">單號<br>（Abby）</td><td style="border-left:4px solid #A1CB4D;">單5排（手舉牌5：41、43、45、47、49）</td><td>邱美晴</td><td rowspan="5" style="background:#fff;">裙擺整理：Abby+伯特協助<br>小幫手：徐柔婕、林頌恩</td><td rowspan="5" style="background:#fff;">負責範圍：單5–9排全部（24對新人）；小幫手全程流動指引</td></tr>
+<tr style="background:#E6F5DF;"><td style="border-left:4px solid #77CB4D;">單6排（手舉牌6：51、53、55、57、59）</td><td>陳可馨</td></tr>
+<tr style="background:#DFF5DF;"><td style="border-left:4px solid #4DCB4D;">單7排（手舉牌7：61、63、65、67、69）</td><td>李清嶽</td></tr>
+<tr style="background:#DFF5E6;"><td style="border-left:4px solid #4DCB77;">單8排（手舉牌8：71、73、75、77、79）</td><td>彭鈺芳</td></tr>
+<tr style="background:#DFF5EE;"><td style="border-left:4px solid #4DCBA1;">單9排（手舉牌9：81、83、85、87，僅4對）</td><td>劉品瑗</td></tr>
 
-<tr style="background:#F3FDF0;"><td class="team" rowspan="4" style="border-left:4px solid #5FA85F;">雙號<br>（劉芳）</td><td>雙1排（手舉牌1：2、6、8、10、12）</td><td>陳桂蓉</td><td rowspan="4">拉裙擺：陳千薏<br>小幫手：李毓倫</td><td rowspan="4">負責範圍：雙1–4排全部（20對新人）；拉裙擺於新人上下台協助，小幫手全程流動指引</td></tr>
-<tr style="background:#F3FDF0;"><td>雙2排（手舉牌2：14、16、18、20、22）</td><td>孫正宣</td></tr>
-<tr style="background:#F3FDF0;"><td>雙3排（手舉牌3：24、26、28、30、32）</td><td>董宗珂</td></tr>
-<tr style="background:#F3FDF0;"><td>雙4排（手舉牌4：34、36、38、40、42）</td><td>黃郁婷</td></tr>
+<tr style="background:#DFF5F5;"><td class="team" rowspan="4" style="border-left:4px solid #5FA85F;background:#fff;">雙號<br>（劉芳）</td><td style="border-left:4px solid #4DCBCB;">雙1排（手舉牌1：2、6、8、10、12）</td><td>陳桂蓉</td><td rowspan="4" style="background:#fff;">拉裙擺：陳千薏<br>小幫手：李毓倫</td><td rowspan="4" style="background:#fff;">負責範圍：雙1–4排全部（20對新人）；拉裙擺於新人上下台協助，小幫手全程流動指引</td></tr>
+<tr style="background:#DFEEF5;"><td style="border-left:4px solid #4DA1CB;">雙2排（手舉牌2：14、16、18、20、22）</td><td>孫正宣</td></tr>
+<tr style="background:#DFE6F5;"><td style="border-left:4px solid #4D77CB;">雙3排（手舉牌3：24、26、28、30、32）</td><td>董宗珂</td></tr>
+<tr style="background:#DFDFF5;"><td style="border-left:4px solid #4D4DCB;">雙4排（手舉牌4：34、36、38、40、42）</td><td>黃郁婷</td></tr>
 
-<tr style="background:#FDF9F0;"><td class="team" rowspan="5" style="border-left:4px solid #C9A15A;">雙號<br>（靜俞）</td><td>雙5排（手舉牌5：46、48、50、52、54）</td><td>李汶芯</td><td rowspan="5">拉裙擺：黃筱詩<br>小幫手：王亭玥、陳沛瑄</td><td rowspan="5">負責範圍：雙5–9排全部（24對新人）；拉裙擺於新人上下台協助，小幫手全程流動指引</td></tr>
-<tr style="background:#FDF9F0;"><td>雙6排（手舉牌6：56、58、60、62、64）</td><td>黃釋惟</td></tr>
-<tr style="background:#FDF9F0;"><td>雙7排（手舉牌7：66、68、70、72、74）</td><td>李權</td></tr>
-<tr style="background:#FDF9F0;"><td>雙8排（手舉牌8：76、78、80、82、84）</td><td>歐馨喬</td></tr>
-<tr style="background:#FDF9F0;"><td>雙9排（手舉牌9：86、88、89、90，僅4對）</td><td>王柏翔</td></tr>
+<tr style="background:#E6DFF5;"><td class="team" rowspan="5" style="border-left:4px solid #C9A15A;background:#fff;">雙號<br>（靜俞）</td><td style="border-left:4px solid #774DCB;">雙5排（手舉牌5：46、48、50、52、54）</td><td>李汶芯</td><td rowspan="5" style="background:#fff;">拉裙擺：黃筱詩<br>小幫手：王亭玥、陳沛瑄</td><td rowspan="5" style="background:#fff;">負責範圍：雙5–9排全部（24對新人）；拉裙擺於新人上下台協助，小幫手全程流動指引</td></tr>
+<tr style="background:#EEDFF5;"><td style="border-left:4px solid #A14DCB;">雙6排（手舉牌6：56、58、60、62、64）</td><td>黃釋惟</td></tr>
+<tr style="background:#F5DFF5;"><td style="border-left:4px solid #CB4DCB;">雙7排（手舉牌7：66、68、70、72、74）</td><td>李權</td></tr>
+<tr style="background:#F5DFEE;"><td style="border-left:4px solid #CB4DA1;">雙8排（手舉牌8：76、78、80、82、84）</td><td>歐馨喬</td></tr>
+<tr style="background:#F5DFE6;"><td style="border-left:4px solid #CB4D77;">雙9排（手舉牌9：86、88、89、90，僅4對）</td><td>王柏翔</td></tr>
 </table>
 
 
@@ -352,6 +356,17 @@
 
 <div id="personTimeline" style="display:none;margin:12px 0;padding:14px 16px;background:#FFF8EC;border:2px solid #C9A15A;border-radius:8px;"></div>
 
+<div style="font-size:12.5px;margin:8px 0 12px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+<b style="color:#9E2B25;">依組分色：</b>
+<span><span style="display:inline-block;width:12px;height:12px;background:#FCEEEE;border:1px solid #ccc;vertical-align:middle;"></span> 新人指引組</span>
+<span><span style="display:inline-block;width:12px;height:12px;background:#EEF2FC;border:1px solid #ccc;vertical-align:middle;"></span> 管理控台</span>
+<span><span style="display:inline-block;width:12px;height:12px;background:#EEF9F0;border:1px solid #ccc;vertical-align:middle;"></span> 動線拍照組</span>
+<span><span style="display:inline-block;width:12px;height:12px;background:#FCF6E8;border:1px solid #ccc;vertical-align:middle;"></span> 報到組</span>
+<span><span style="display:inline-block;width:12px;height:12px;background:#F3EEFC;border:1px solid #ccc;vertical-align:middle;"></span> 舞台組</span>
+<span><span style="display:inline-block;width:12px;height:12px;background:#EEF9F9;border:1px solid #ccc;vertical-align:middle;"></span> 短影音組</span>
+<span><span style="display:inline-block;width:12px;height:12px;background:#FDF0F7;border:1px solid #ccc;vertical-align:middle;"></span> 禮賓醫護</span>
+</div>
+
 <div style="margin:12px 0;">
 <div style="font-weight:bold;color:#9E2B25;margin-bottom:8px;font-size:15px;">誓言卡實際照片參考（署名前有編號可核對）</div>
 <div style="display:flex;gap:24px;flex-wrap:wrap;">
@@ -380,7 +395,7 @@
 <tbody>
 
 <!-- ========== 會前準備 ========== -->
-<tr class="phase-head" data-team="管理控台" data-people="朋喬 晉姍">
+<tr class="phase-head" data-team="管理控台" data-people="朋喬 晉姍" style="background:#EEF2FC;">
   <td class="phase" rowspan="4">會前準備</td>
   <td>08:00</td><td><span class="tag loc-all">全場</span></td>
   <td>朋喬、晉姍</td><td>開館＋場地最終檢查</td>
@@ -391,7 +406,7 @@
   <td>場圖、檢核表</td>
 </tr>
 
-<tr data-team="管理控台 新人指引組 報到組 動線拍照組" data-people="葉智凱 Abby 劉芳 靜俞 黃筱涵 詩晴 丁丁">
+<tr data-team="管理控台 新人指引組 報到組 動線拍照組" data-people="葉智凱 Abby 劉芳 靜俞 黃筱涵 詩晴 丁丁" style="background:#EEF2FC;">
   <td>09:00</td><td><span class="tag loc-control">場控區</span></td>
   <td>各組組長：葉智凱、Abby、劉芳、靜俞、黃筱涵、詩晴、丁丁</td>
   <td>組長行前會</td>
@@ -403,7 +418,7 @@
   <td>今年流程總表（本文件）</td>
 </tr>
 
-<tr data-team="新人指引組 報到組 動線拍照組 舞台組" data-people="全體">
+<tr data-team="新人指引組 報到組 動線拍照組 舞台組" data-people="全體" style="background:#FCEEEE;">
   <td>09:30</td><td><span class="tag loc-all">全場</span></td>
   <td>全體工作人員</td>
   <td>工作人員報到＋大會</td>
@@ -414,7 +429,7 @@
   <td>call機、手舉牌、識別證</td>
 </tr>
 
-<tr class="critical" data-team="舞台組 管理控台" data-people="胡詩涵 趙芯巧 蘇純呈 童莉崴 朋喬">
+<tr class="critical" data-team="舞台組 管理控台" data-people="胡詩涵 趙芯巧 蘇純呈 童莉崴 朋喬" style="background:#F3EEFC;">
   <td>09:30–10:30</td><td><span class="tag loc-stage">舞台</span> <span class="tag loc-control">控台</span></td>
   <td>胡詩涵、趙芯巧、蘇純呈、童莉崴、朋喬</td>
   <td>道具／設備就位</td>
@@ -429,7 +444,7 @@
 </tr>
 
 <!-- ========== 總彩排 ========== -->
-<tr class="phase-head critical" data-team="新人指引組 舞台組 動線拍照組 管理控台" data-people="Erin 全體">
+<tr class="phase-head critical" data-team="新人指引組 舞台組 動線拍照組 管理控台" data-people="Erin 全體" style="background:#FCEEEE;">
   <td class="phase" rowspan="3">總彩排<br><span class="risk">（全員場）</span></td>
   <td>10:30</td><td><span class="tag loc-seat">觀禮席</span> <span class="tag loc-stage">舞台</span></td>
   <td><span class="lead">Erin（總彩排主控）</span>＋新人指引組全體＋舞台組</td>
@@ -442,7 +457,7 @@
   <td>模擬新人牌</td>
 </tr>
 
-<tr class="critical" data-team="新人指引組 管理控台" data-people="Erin 指引組全體">
+<tr class="critical" data-team="新人指引組 管理控台" data-people="Erin 指引組全體" style="background:#FCEEEE;">
   <td>11:00</td><td><span class="tag loc-seat">觀禮席後方</span></td>
   <td><span class="lead">Erin（主控）</span>＋新人指引組全體</td>
   <td>⚠誓言卡列隊發放實測</td>
@@ -455,7 +470,7 @@
   <td>誓言卡（模擬用）</td>
 </tr>
 
-<tr data-team="動線拍照組" data-people="蘇純呈 童莉崴">
+<tr data-team="動線拍照組" data-people="蘇純呈 童莉崴" style="background:#EEF9F0;">
   <td>11:20</td><td><span class="tag loc-photo">拍照區</span></td>
   <td>蘇純呈、童莉崴</td>
   <td>擺放點心吧＋動線測試</td>
@@ -467,7 +482,7 @@
 </tr>
 
 <!-- ========== 用餐輪替 ========== -->
-<tr class="phase-head" data-team="管理控台 報到組 新人指引組 動線拍照組 舞台組" data-people="全體">
+<tr class="phase-head" data-team="管理控台 報到組 新人指引組 動線拍照組 舞台組" data-people="全體" style="background:#EEF2FC;">
   <td class="phase">用餐輪替</td>
   <td>12:00–12:50</td><td><span class="tag loc-all">全場</span></td>
   <td>全體工作人員（分批）</td>
@@ -480,7 +495,7 @@
 </tr>
 
 <!-- ========== 就定位 ========== -->
-<tr class="phase-head" data-team="報到組 新人指引組" data-people="全體">
+<tr class="phase-head" data-team="報到組 新人指引組" data-people="全體" style="background:#FCF6E8;">
   <td class="phase" rowspan="2">各組就定位</td>
   <td>12:50</td><td><span class="tag loc-reg">報到區</span></td>
   <td>報到組、新人指引組認領組員</td>
@@ -492,7 +507,7 @@
   <td>手舉牌、簽到表、資料袋</td>
 </tr>
 
-<tr class="critical" data-team="動線拍照組" data-people="張凱涵 辛錫銘 鍾丞宇 蘇純呈 童莉崴">
+<tr class="critical" data-team="動線拍照組" data-people="張凱涵 辛錫銘 鍾丞宇 蘇純呈 童莉崴" style="background:#EEF9F0;">
   <td>12:50</td><td><span class="tag loc-door">大門</span> <span class="tag loc-mrt">捷運站外</span> <span class="tag loc-photo">拍照區</span></td>
   <td>張凱涵、辛錫銘、鍾丞宇、蘇純呈、童莉崴</td>
   <td>動線／查驗／拍照就位</td>
@@ -505,7 +520,7 @@
 </tr>
 
 <!-- ========== 新人報到 ========== -->
-<tr class="phase-head" data-team="報到組 新人指引組 管理控台" data-people="晉姍">
+<tr class="phase-head" data-team="報到組 新人指引組 管理控台" data-people="晉姍" style="background:#FCF6E8;">
   <td class="phase" rowspan="4">新人報到</td>
   <td>13:00–13:40</td><td><span class="tag loc-reg">報到區</span></td>
   <td>報到組</td>
@@ -517,7 +532,7 @@
   <td>簽到表、資料袋、抽獎聯、媒體禮</td>
 </tr>
 
-<tr data-team="新人指引組" data-people="指引組全體">
+<tr data-team="新人指引組" data-people="指引組全體" style="background:#FCEEEE;">
   <td>13:00–13:40</td><td><span class="tag loc-reg">報到區</span> <span class="tag loc-rest">休息梳化區</span></td>
   <td>新人指引組（各排專責＋小幫手）</td>
   <td>⚠桌前舉牌相認＋引導</td>
@@ -530,7 +545,7 @@
   <td>手舉牌、動線說明卡</td>
 </tr>
 
-<tr data-team="新人指引組" data-people="伯特">
+<tr data-team="新人指引組" data-people="伯特" style="background:#FCEEEE;">
   <td>13:00–13:45</td><td><span class="tag loc-stage">舞台前</span></td>
   <td>伯特</td>
   <td>拍照協助＋秩序維持</td>
@@ -540,7 +555,7 @@
   <td>—</td>
 </tr>
 
-<tr data-team="管理控台" data-people="晉姍">
+<tr data-team="管理控台" data-people="晉姍" style="background:#EEF2FC;">
   <td>13:20–13:50</td><td><span class="tag loc-control">場控區</span></td>
   <td>晉姍</td>
   <td>未到新人聯繫</td>
@@ -552,7 +567,7 @@
 </tr>
 
 <!-- ========== 整隊集合 ========== -->
-<tr class="phase-head critical" data-team="新人指引組" data-people="指引組全體">
+<tr class="phase-head critical" data-team="新人指引組" data-people="指引組全體" style="background:#FCEEEE;">
   <td class="phase" rowspan="3">整隊集合</td>
   <td>13:40–13:50</td><td><span class="tag loc-seat">觀禮席後方</span></td>
   <td>新人指引組全體</td>
@@ -564,7 +579,7 @@
   <td>編號手舉牌</td>
 </tr>
 
-<tr data-team="新人指引組 管理控台" data-people="葉智凱 Abby 劉芳 靜俞 朋喬">
+<tr data-team="新人指引組 管理控台" data-people="葉智凱 Abby 劉芳 靜俞 朋喬" style="background:#FCEEEE;">
   <td>13:40–13:50</td><td><span class="tag loc-control">場控區</span></td>
   <td>各組長→朋喬</td>
   <td>未到／過號回報</td>
@@ -575,7 +590,7 @@
   <td>call機</td>
 </tr>
 
-<tr data-team="動線拍照組" data-people="鍾丞宇">
+<tr data-team="動線拍照組" data-people="鍾丞宇" style="background:#EEF9F0;">
   <td>13:40起</td><td><span class="tag loc-rest">休息梳化區</span></td>
   <td>鍾丞宇</td>
   <td>轉崗：休息區專職巡邏</td>
@@ -589,7 +604,7 @@
 </tr>
 
 <!-- ========== 攜手入囍・幸福登場 ========== -->
-<tr class="phase-head critical" data-team="新人指引組 管理控台" data-people="陳桂蓉 陳千薏 劉芳">
+<tr class="phase-head critical" data-team="新人指引組 管理控台" data-people="陳桂蓉 陳千薏 劉芳" style="background:#FCEEEE;">
   <td class="phase" rowspan="5">攜手入囍<br>幸福登場</td>
   <td>13:50</td><td><span class="tag loc-sideL">左側台</span></td>
   <td>雙1排專責：陳桂蓉（陳千薏協助拉裙擺上下台）</td>
@@ -601,7 +616,7 @@
   <td>雙號新人手舉牌</td>
 </tr>
 
-<tr data-team="新人指引組" data-people="董沁怡 陳嘉梅">
+<tr data-team="新人指引組" data-people="董沁怡 陳嘉梅" style="background:#FCEEEE;">
   <td>13:50</td><td><span class="tag loc-sideR">右側台</span></td>
   <td>單1排專責：董沁怡（陳嘉梅協助拉裙擺上下台）</td>
   <td>87號微幅錯開上台就位</td>
@@ -611,7 +626,7 @@
   <td>單號新人手舉牌</td>
 </tr>
 
-<tr class="critical" data-team="短影音組" data-people="">
+<tr class="critical" data-team="短影音組" data-people="" style="background:#EEF9F9;">
   <td>13:50–14:04</td><td><span class="tag loc-stage">舞台左＋右</span></td>
   <td>The Stage（平面）＋臉紅紅（動態）</td>
   <td>拍照＋節奏控制</td>
@@ -623,7 +638,7 @@
   <td>相機×2、閃燈</td>
 </tr>
 
-<tr data-team="新人指引組" data-people="指引組全體">
+<tr data-team="新人指引組" data-people="指引組全體" style="background:#FCEEEE;">
   <td>13:50–14:05<br>（持續輪替）</td><td><span class="tag loc-sideL">左</span> <span class="tag loc-sideR">右</span> <span class="tag loc-seat">觀禮席</span></td>
   <td>新人指引組全體</td>
   <td>雙側流水線輪轉＋入座</td>
@@ -637,7 +652,7 @@
   <td>call機、跳號記錄表</td>
 </tr>
 
-<tr class="critical" data-team="管理控台" data-people="朋喬 伯特">
+<tr class="critical" data-team="管理控台" data-people="朋喬 伯特" style="background:#EEF2FC;">
   <td>13:50–14:05</td><td><span class="tag loc-sideL">舞台雙號側</span> <span class="tag loc-sideR">舞台單號側</span></td>
   <td>朋喬（雙號側／靠音控台）、伯特（單號側）</td>
   <td>⚠上台新人姓名編號雙重核對</td>
@@ -650,7 +665,7 @@
 </tr>
 
 <!-- ========== 幸福序曲 ========== -->
-<tr class="phase-head" data-team="舞台組 禮賓醫護 新人指引組" data-people="胡詩涵 禮賓">
+<tr class="phase-head" data-team="舞台組 禮賓醫護 新人指引組" data-people="胡詩涵 禮賓" style="background:#F3EEFC;">
   <td class="phase" rowspan="2">幸福序曲<br>（陳佩賢演唱）</td>
   <td>14:05–14:15</td><td><span class="tag loc-stage">舞台</span></td>
   <td>禮賓人員（台上遞交）、胡詩涵（台下備妥）</td>
@@ -662,7 +677,7 @@
   <td>手持麥克風</td>
 </tr>
 
-<tr data-team="新人指引組 報到組" data-people="指引組全體 詩晴 丁丁 周胖 潘怡璇 品萱 劉芯薇">
+<tr data-team="新人指引組 報到組" data-people="指引組全體 詩晴 丁丁 周胖 潘怡璇 品萱 劉芯薇" style="background:#FCEEEE;">
   <td>14:05–14:15</td><td><span class="tag loc-seat">媒體高台後方</span> <span class="tag loc-reg">報到區</span></td>
   <td>新人指引組全體、報到組</td>
   <td>待命／禮品清點</td>
@@ -674,7 +689,7 @@
 </tr>
 
 <!-- ========== 介紹人證婚人致詞 ========== -->
-<tr class="phase-head" data-team="禮賓醫護 舞台組" data-people="禮賓 胡詩涵 Eva 張華">
+<tr class="phase-head" data-team="禮賓醫護 舞台組" data-people="禮賓 胡詩涵 Eva 張華" style="background:#FDF0F7;">
   <td class="phase">介紹人、證婚人上台<br>致詞</td>
   <td>14:15–14:25</td><td><span class="tag loc-stage">舞台</span></td>
   <td>禮賓人員（台上引導＋遞交）、胡詩涵（台下備妥）</td>
@@ -688,7 +703,7 @@
 </tr>
 
 <!-- ========== 三儀式 ========== -->
-<tr class="phase-head critical" data-team="新人指引組" data-people="康筠 徐柔婕 林頌恩 李毓倫 王亭玥 陳沛瑄">
+<tr class="phase-head critical" data-team="新人指引組" data-people="康筠 徐柔婕 林頌恩 李毓倫 王亭玥 陳沛瑄" style="background:#FCEEEE;">
   <td class="phase" rowspan="3">囍之宣言／約定／贈禮</td>
   <td>14:05–14:20</td><td><span class="tag loc-seat">觀禮席後方</span></td>
   <td>康筠、徐柔婕、林頌恩、李毓倫、王亭玥、陳沛瑄</td>
@@ -707,7 +722,7 @@
   <td>誓言卡分袋×18</td>
 </tr>
 
-<tr data-team="新人指引組" data-people="董沁怡 阮靜霓 何俐穎 或或 邱美晴 陳可馨 李清嶽 彭鈺芳 劉品瑗 陳桂蓉 孫正宣 董宗珂 黃郁婷 李汶芯 黃釋惟 李權 歐馨喬 王柏翔">
+<tr data-team="新人指引組" data-people="董沁怡 阮靜霓 何俐穎 或或 邱美晴 陳可馨 李清嶽 彭鈺芳 劉品瑗 陳桂蓉 孫正宣 董宗珂 黃郁婷 李汶芯 黃釋惟 李權 歐馨喬 王柏翔" style="background:#FCEEEE;">
   <td>14:20後</td><td><span class="tag loc-seat">觀禮席後方</span></td>
   <td>各排專責人員（每排1人，共18人）</td>
   <td>⚠領取誓言卡＋後方待命</td>
@@ -723,7 +738,7 @@
 
 <!-- 伯特 14:05-14:45 任務待補：舊版「朋喬機動人力」內容已過時，待朋喬確認正確內容後補回 -->
 
-<tr data-team="舞台組 禮賓醫護" data-people="趙芯巧 禮賓">
+<tr data-team="舞台組 禮賓醫護" data-people="趙芯巧 禮賓" style="background:#F3EEFC;">
   <td>14:25–14:35</td><td><span class="tag loc-stage">舞台</span></td>
   <td>禮賓人員（面對舞台左手邊、面對舞台右手邊各1人，台上遞交），趙芯巧（台下備妥）</td>
   <td>編號1/2/3儀式道具（囍之宣言／囍之約定／囍之贈禮）</td>
@@ -737,7 +752,7 @@
 </tr>
 
 <!-- ========== 親恩永存→合喜為囍→愛的印記 ========== -->
-<tr class="phase-head critical" data-team="新人指引組" data-people="董沁怡 阮靜霓 何俐穎 或或 邱美晴 陳可馨 李清嶽 彭鈺芳 劉品瑗 陳桂蓉 孫正宣 董宗珂 黃郁婷 李汶芯 黃釋惟 李權 歐馨喬 王柏翔">
+<tr class="phase-head critical" data-team="新人指引組" data-people="董沁怡 阮靜霓 何俐穎 或或 邱美晴 陳可馨 李清嶽 彭鈺芳 劉品瑗 陳桂蓉 孫正宣 董宗珂 黃郁婷 李汶芯 黃釋惟 李權 歐馨喬 王柏翔" style="background:#FCEEEE;">
   <td class="phase" rowspan="5">親恩永存<br>合喜為囍＋Kiss<br>愛的印記</td>
   <td>14:35</td><td><span class="tag loc-seat">觀禮席走道</span></td>
   <td>各排專責人員（單雙兩列，共18人）</td>
@@ -757,7 +772,7 @@
   <td>誓言卡分袋×18</td>
 </tr>
 
-<tr data-team="新人指引組" data-people="指引組全體">
+<tr data-team="新人指引組" data-people="指引組全體" style="background:#FCEEEE;">
   <td>14:35–14:45</td><td><span class="tag loc-seat">觀禮席</span></td>
   <td>新人指引組全體</td>
   <td>秩序維持</td>
@@ -767,7 +782,7 @@
   <td>—</td>
 </tr>
 
-<tr data-team="新人指引組" data-people="董沁怡 阮靜霓 何俐穎 或或 邱美晴 陳可馨 李清嶽 彭鈺芳 劉品瑗 陳桂蓉 孫正宣 董宗珂 黃郁婷 李汶芯 黃釋惟 李權 歐馨喬 王柏翔">
+<tr data-team="新人指引組" data-people="董沁怡 阮靜霓 何俐穎 或或 邱美晴 陳可馨 李清嶽 彭鈺芳 劉品瑗 陳桂蓉 孫正宣 董宗珂 黃郁婷 李汶芯 黃釋惟 李權 歐馨喬 王柏翔" style="background:#FCEEEE;">
   <td>14:40後</td><td><span class="tag loc-seat">觀禮席走道</span></td>
   <td>各排專責人員（單雙兩列，共18人）</td>
   <td>⚠誓言卡回收</td>
@@ -778,7 +793,7 @@
   <td>誓言卡分袋×18</td>
 </tr>
 
-<tr data-team="動線拍照組" data-people="蘇純呈 童莉崴">
+<tr data-team="動線拍照組" data-people="蘇純呈 童莉崴" style="background:#EEF9F0;">
   <td>14:40</td><td><span class="tag loc-photo">拍照區</span> <span class="tag loc-stage">舞台</span></td>
   <td>蘇純呈、童莉崴</td>
   <td>抽獎桌上台</td>
@@ -788,7 +803,7 @@
   <td>抽獎桌</td>
 </tr>
 
-<tr data-team="新人指引組 報到組" data-people="陳嘉梅 丁丁">
+<tr data-team="新人指引組 報到組" data-people="陳嘉梅 丁丁" style="background:#FCEEEE;">
   <td>15:00後</td><td><span class="tag loc-seat">觀禮席後方</span> <span class="tag loc-control">報到處</span></td>
   <td>陳嘉梅</td>
   <td>誓言卡整理＋交付</td>
@@ -800,7 +815,7 @@
 </tr>
 
 <!-- ========== 抽獎+大合照 ========== -->
-<tr class="phase-head critical" data-team="管理控台" data-people="伯特 朋喬">
+<tr class="phase-head critical" data-team="管理控台" data-people="伯特 朋喬" style="background:#EEF2FC;">
   <td class="phase" rowspan="4">城市驚喜<br>幸運共享（抽獎10項，共26對中獎）</td>
   <td>14:45–15:00</td><td><span class="tag loc-stage">舞台單號側</span></td>
   <td>伯特</td>
@@ -813,7 +828,7 @@
   <td>獎項牌（依26對中獎新人準備，數量待確認）、投影</td>
 </tr>
 
-<tr class="critical" data-team="新人指引組" data-people="董沁怡 阮靜霓 何俐穎 或或 邱美晴 陳可馨 李清嶽 彭鈺芳 劉品瑗 陳桂蓉 孫正宣 董宗珂 黃郁婷 李汶芯 黃釋惟 李權 歐馨喬 王柏翔 康筠 徐柔婕 林頌恩 李毓倫 王亭玥 陳沛瑄 周胖">
+<tr class="critical" data-team="新人指引組" data-people="董沁怡 阮靜霓 何俐穎 或或 邱美晴 陳可馨 李清嶽 彭鈺芳 劉品瑗 陳桂蓉 孫正宣 董宗珂 黃郁婷 李汶芯 黃釋惟 李權 歐馨喬 王柏翔 康筠 徐柔婕 林頌恩 李毓倫 王亭玥 陳沛瑄 周胖" style="background:#FCEEEE;">
   <td>14:45–15:00</td><td><span class="tag loc-seat">觀禮席</span></td>
   <td>各排專責＋小幫手（共24人）</td>
   <td>⚠中獎新人引導</td>
@@ -824,7 +839,7 @@
   <td>—</td>
 </tr>
 
-<tr data-team="舞台組" data-people="胡詩涵 趙芯巧">
+<tr data-team="舞台組" data-people="胡詩涵 趙芯巧" style="background:#F3EEFC;">
   <td>14:35–15:00</td><td><span class="tag loc-stage">舞台</span></td>
   <td>胡詩涵、趙芯巧</td>
   <td>LOGO牌發放</td>
@@ -835,7 +850,7 @@
   <td>LOGO牌</td>
 </tr>
 
-<tr class="critical" data-team="管理控台 新人指引組" data-people="朋喬 指引組全體">
+<tr class="critical" data-team="管理控台 新人指引組" data-people="朋喬 指引組全體" style="background:#EEF2FC;">
   <td>15:00左右</td><td><span class="tag loc-stage">舞台前</span></td>
   <td>朋喬、新人指引組全體</td>
   <td>⚠市長大合照前置</td>
@@ -849,7 +864,7 @@
 </tr>
 
 <!-- ========== 新人及家屬合照 ========== -->
-<tr class="phase-head critical" data-team="新人指引組 短影音組" data-people="指引組全體">
+<tr class="phase-head critical" data-team="新人指引組 短影音組" data-people="指引組全體" style="background:#FCEEEE;">
   <td class="phase" rowspan="6">新人及家屬合照</td>
   <td>15:00–16:00</td><td><span class="tag loc-seat">觀禮席</span> <span class="tag loc-stage">舞台</span></td>
   <td>新人指引組全體</td>
@@ -874,7 +889,7 @@
   <td>編號手舉牌</td>
 </tr>
 
-<tr class="critical" data-team="動線拍照組" data-people="王亭玥 陳沛瑄">
+<tr class="critical" data-team="動線拍照組" data-people="王亭玥 陳沛瑄" style="background:#EEF9F0;">
   <td>15:00–16:00</td><td><span class="tag loc-stage">拍照區（近醫護區）</span></td>
   <td>王亭玥、陳沛瑄</td>
   <td>協助另一背板拍照</td>
@@ -885,7 +900,7 @@
   <td>拍照道具</td>
 </tr>
 
-<tr class="critical" data-team="管理控台" data-people="朋喬 伯特">
+<tr class="critical" data-team="管理控台" data-people="朋喬 伯特" style="background:#EEF2FC;">
   <td>15:00–16:00</td><td><span class="tag loc-sideL">舞台雙號側</span> <span class="tag loc-sideR">舞台單號側</span></td>
   <td>朋喬（雙號側／靠音控台）、伯特（單號側）</td>
   <td>⚠上台新人姓名編號雙重核對</td>
@@ -896,7 +911,7 @@
   <td>名單、跳號記錄表</td>
 </tr>
 
-<tr data-team="短影音組" data-people="">
+<tr data-team="短影音組" data-people="" style="background:#EEF9F9;">
   <td>15:00–16:00</td><td><span class="tag loc-stage">舞台</span></td>
   <td>The Stage（平面）</td>
   <td>分組合照＋獨照（3機位）</td>
@@ -908,7 +923,7 @@
   <td>相機×3、背板</td>
 </tr>
 
-<tr class="critical" data-team="報到組 管理控台" data-people="詩晴 晉姍 周胖 品萱 丁丁 潘怡璇">
+<tr class="critical" data-team="報到組 管理控台" data-people="詩晴 晉姍 周胖 品萱 丁丁 潘怡璇" style="background:#FCF6E8;">
   <td>15:00–17:00</td><td><span class="tag loc-reg">報到區</span> <span class="tag loc-media">貴賓媒體區</span></td>
   <td>詩晴、晉姍、周胖、品萱、丁丁、潘怡璇</td>
   <td>⚠禮品發放＋抽獎整理</td>
@@ -921,7 +936,7 @@
   <td>簽收單、回饋表、兌換券</td>
 </tr>
 
-<tr class="critical" data-team="動線拍照組" data-people="蘇純呈 童莉崴">
+<tr class="critical" data-team="動線拍照組" data-people="蘇純呈 童莉崴" style="background:#EEF9F0;">
   <td>15:00–16:00</td><td><span class="tag loc-stage">拍照區（近醫護區）</span></td>
   <td>蘇純呈／童莉崴（原崗位者）</td>
   <td>⚠背板管制</td>
@@ -934,7 +949,7 @@
 </tr>
 
 <!-- ========== 收尾 ========== -->
-<tr class="phase-head" data-team="管理控台 報到組 舞台組 新人指引組" data-people="全體">
+<tr class="phase-head" data-team="管理控台 報到組 舞台組 新人指引組" data-people="全體" style="background:#EEF2FC;">
   <td class="phase" rowspan="2">收尾</td>
   <td>16:00–17:00</td><td><span class="tag loc-all">全場</span></td>
   <td>全體工作人員</td>
@@ -947,7 +962,7 @@
   <td>—</td>
 </tr>
 
-<tr class="critical" data-team="管理控台" data-people="朋喬">
+<tr class="critical" data-team="管理控台" data-people="朋喬" style="background:#EEF2FC;">
   <td>婚禮結束後1小時內</td><td><span class="tag loc-control">場控區</span></td>
   <td>朋喬</td>
   <td>⚠新聞照片提供</td>
@@ -1014,6 +1029,23 @@
 <div id="p5" class="page">
 <p class="sub" style="margin-top:0;">2026.07.17（五）08:00–17:00｜花博公園爭艷館｜場布日廠商進場＋內部確認事項</p>
 
+<div style="font-size:12.5px;margin:0 0 14px;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;">
+<b style="color:#9E2B25;">依人分色（廠商不上色）：</b>
+<span style="background:#C62828;color:#fff;font-weight:600;padding:1px 6px;border-radius:3px;">朋喬</span>
+<span style="background:#E65100;color:#fff;font-weight:600;padding:1px 6px;border-radius:3px;">晉姍</span>
+<span style="background:#B8860B;color:#fff;font-weight:600;padding:1px 6px;border-radius:3px;">劉芳</span>
+<span style="background:#2E7D32;color:#fff;font-weight:600;padding:1px 6px;border-radius:3px;">丁丁</span>
+<span style="background:#689F38;color:#fff;font-weight:600;padding:1px 6px;border-radius:3px;">周胖</span>
+<span style="background:#00838F;color:#fff;font-weight:600;padding:1px 6px;border-radius:3px;">杜杜</span>
+<span style="background:#0288D1;color:#fff;font-weight:600;padding:1px 6px;border-radius:3px;">定瀚</span>
+<span style="background:#283593;color:#fff;font-weight:600;padding:1px 6px;border-radius:3px;">Abby</span>
+<span style="background:#7B1FA2;color:#fff;font-weight:600;padding:1px 6px;border-radius:3px;">靜俞</span>
+<span style="background:#880E4F;color:#fff;font-weight:600;padding:1px 6px;border-radius:3px;">或或</span>
+<span style="background:#EC407A;color:#fff;font-weight:600;padding:1px 6px;border-radius:3px;">詩晴</span>
+<span style="background:#5D4037;color:#fff;font-weight:600;padding:1px 6px;border-radius:3px;">Erin</span>
+<span style="background:#827717;color:#fff;font-weight:600;padding:1px 6px;border-radius:3px;">葉智凱</span>
+</div>
+
 <div class="subtabs no-print" style="display:flex;gap:6px;margin:10px 0 16px;flex-wrap:wrap;">
   <button class="subtab-btn active" onclick="showSubPage('sp1',this)">時程總覽</button>
   <button class="subtab-btn" onclick="showSubPage('sp2',this)">定位圖／地貼施工圖</button>
@@ -1026,20 +1058,16 @@
 
 <table>
 <colgroup><col style="width:9%"><col style="width:16%"><col style="width:16%"><col style="width:24%"><col style="width:35%"></colgroup>
-<tr><th>時間</th><th>廠商／人員</th><th>項目</th><th>動作細節</th><th>需要物品</th></tr>
-
-<tr class="critical">
+<tr><th>時間</th><th>廠商／人員</th><th>項目</th><th>動作細節</th><th>需要物品</th></tr><tr class="critical">
   <td class="time">08:00</td>
-  <td>朋喬、晉姍</td>
+  <td><span style="background:#C62828;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">朋喬</span>、<span style="background:#E65100;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">晉姍</span></td>
   <td>⚠場地點交</td>
   <td class="detail"><ol>
     <li>與花博場館管理單位進行點交，確認場地現況、水電、動線無異常</li>
     <li>點交完成後才開放各廠商進場施工</li>
   </ol></td>
   <td>點交清單</td>
-</tr>
-
-<tr>
+</tr><tr>
   <td class="time">08:00</td>
   <td>樂群</td>
   <td>舞台進場</td>
@@ -1048,9 +1076,7 @@
     <li><span class="risk">預計11:00完工</span></li>
   </ol></td>
   <td>—</td>
-</tr>
-
-<tr>
+</tr><tr>
   <td class="time">09:00</td>
   <td>靠設計</td>
   <td>背板、展板進場</td>
@@ -1058,9 +1084,7 @@
     <li>舞台背板、婚禮流程背板、廣告背板、花博平面圖、主視覺牆等各式背板進場架設</li>
   </ol></td>
   <td>—</td>
-</tr>
-
-<tr class="critical">
+</tr><tr class="critical">
   <td class="time">10:00</td>
   <td>比旺</td>
   <td>桌椅進場（不含圓桌）</td>
@@ -1071,9 +1095,7 @@
     <li>親友觀禮區：共7排，各排組數不均（靠牆側縮減），每組5個位置，間隔60cm；由第1排（靠父母席）往外排，實際組數依「座位對照表」為準</li>
   </ol></td>
   <td>座椅、編號椅貼（父母每組4張、親友每組5張）</td>
-</tr>
-
-<tr>
+</tr><tr>
   <td class="time">10:00</td>
   <td>奧司卡</td>
   <td>圓桌進場</td>
@@ -1081,9 +1103,7 @@
     <li>新人休息區＋工作人員休息區圓桌進場擺放</li>
   </ol></td>
   <td>—</td>
-</tr>
-
-<tr class="critical">
+</tr><tr class="critical">
   <td class="time">10:00</td>
   <td>內部團隊到場</td>
   <td>想樂＋WeddingDay＋靜俞（共14人）</td>
@@ -1093,11 +1113,9 @@
     <li>＋靜俞（想樂工作人員，7/17、7/18兩天皆出席）</li>
   </ol></td>
   <td>—</td>
-</tr>
-
-<tr class="critical">
+</tr><tr class="critical">
   <td class="time">10:00起</td>
-  <td>單號：晉姍、丁丁、周胖、Abby、詩晴<br>雙號：杜杜、劉芳、定瀚、或或、靜俞</td>
+  <td>單號：<span style="background:#E65100;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">晉姍</span>、<span style="background:#2E7D32;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">丁丁</span>、<span style="background:#689F38;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">周胖</span>、<span style="background:#283593;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">Abby</span>、<span style="background:#EC407A;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">詩晴</span><br>雙號：<span style="background:#00838F;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">杜杜</span>、<span style="background:#B8860B;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">劉芳</span>、<span style="background:#0288D1;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">定瀚</span>、<span style="background:#880E4F;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">或或</span>、<span style="background:#7B1FA2;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">靜俞</span></td>
   <td>⚠任務1：新人站位定位</td>
   <td class="detail"><ol>
     <li>內部團隊10:00到場後即可開始，不需等舞台完工；每側5人一人站一個定位點，全員共持大捲尺，貼齊捲尺上緣，貼完同步往後退至下一排</li>
@@ -1108,11 +1126,9 @@
     <li>朋喬看圖確認每排位置是否正確，不加入實際貼紙作業</li>
   </ol></td>
   <td>捲尺×3、新人編號地貼（10cm圓形，1–90號，4號、44號不需要）</td>
-</tr>
-
-<tr class="critical">
+</tr><tr class="critical">
   <td class="time">任務1完成後（視比旺排椅進度）</td>
-  <td>單號：晉姍、丁丁、周胖、Abby、詩晴<br>雙號：杜杜、劉芳、定瀚、或或、靜俞</td>
+  <td>單號：<span style="background:#E65100;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">晉姍</span>、<span style="background:#2E7D32;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">丁丁</span>、<span style="background:#689F38;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">周胖</span>、<span style="background:#283593;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">Abby</span>、<span style="background:#EC407A;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">詩晴</span><br>雙號：<span style="background:#00838F;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">杜杜</span>、<span style="background:#B8860B;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">劉芳</span>、<span style="background:#0288D1;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">定瀚</span>、<span style="background:#880E4F;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">或或</span>、<span style="background:#7B1FA2;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">靜俞</span></td>
   <td>⚠任務2：父母／親友椅貼（單雙號分側進行）</td>
   <td class="detail"><ol>
     <li><span class="risk">全員先完成任務1（新人站位地貼），任務1做完才開始任務2，不要提前分兵</span></li>
@@ -1121,9 +1137,7 @@
     <li><span class="risk">丁丁、周胖13:00起須轉往報到處佈置，屆時單號側人力請留意調度</span></li>
   </ol></td>
   <td>父母編號椅貼、親友編號椅貼（各1–90號，4號、44號不需要）</td>
-</tr>
-
-<tr>
+</tr><tr>
   <td class="time">11:00</td>
   <td>義丞</td>
   <td>電視牆進場</td>
@@ -1131,20 +1145,16 @@
     <li>會場150吋電視牆×2進場架設</li>
   </ol></td>
   <td>—</td>
-</tr>
-
-<tr>
+</tr><tr>
   <td class="time">11:00起（待朋喬完成任務1雙號側後，視比旺／奧司卡桌椅到位進度）</td>
-  <td>朋喬</td>
+  <td><span style="background:#C62828;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">朋喬</span></td>
   <td>任務3：報到區／休息區定位</td>
   <td class="detail"><ol>
     <li>比旺、奧司卡桌椅到位後，確認單／雙號報到桌位置、新人休息＆梳化區、貴賓休息室定位</li>
     <li>對照設計清單核對桌立牌（報到處單/雙、獎品領取區單/雙、媒體報到處、貴賓報到處）擺放位置</li>
   </ol></td>
   <td>場地配置圖、桌立牌</td>
-</tr>
-
-<tr>
+</tr><tr>
   <td class="time">12:00–13:00</td>
   <td>全體</td>
   <td>休息用餐</td>
@@ -1152,11 +1162,9 @@
     <li>休息用餐</li>
   </ol></td>
   <td>—</td>
-</tr>
-
-<tr class="critical">
+</tr><tr class="critical">
   <td class="time">13:00</td>
-  <td>劉芳</td>
+  <td><span style="background:#B8860B;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">劉芳</span></td>
   <td>⚠印刷廠商輸出物到貨－統一收件分類</td>
   <td class="detail"><ol>
     <li><span class="risk">印刷廠商送達桌立牌、立地指引牌，劉芳負責統一收件、清點數量，並依區域（報到區、大門/場外）分類擺放</span></li>
@@ -1165,22 +1173,18 @@
     <li>劉芳在雙號側，收件期間雙號側暫時人力吃緊，收件完成後立即歸隊</li>
   </ol></td>
   <td>設計清單（核對用）</td>
-</tr>
-
-<tr class="critical" data-team="報到組" data-people="丁丁 周胖">
+</tr><tr class="critical" data-team="報到組" data-people="丁丁 周胖">
   <td class="time">13:30</td>
-  <td>丁丁、周胖</td>
+  <td><span style="background:#2E7D32;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">丁丁</span>、<span style="background:#689F38;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">周胖</span></td>
   <td>⚠領取桌立牌</td>
   <td class="detail"><ol>
     <li>前往劉芳分類集中點，領取桌立牌：報到處（單／雙）、獎品領取區（單／雙）、媒體報到處、貴賓報到處</li>
     <li>領回後直接擺放至對應報到桌面</li>
   </ol></td>
   <td>桌立牌</td>
-</tr>
-
-<tr class="critical" data-team="舞台組" data-people="杜杜 定瀚">
+</tr><tr class="critical" data-team="舞台組" data-people="杜杜 定瀚">
   <td class="time">13:30</td>
-  <td>杜杜、定瀚</td>
+  <td><span style="background:#00838F;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">杜杜</span>、<span style="background:#0288D1;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">定瀚</span></td>
   <td>⚠領取立地指引牌</td>
   <td class="detail"><ol>
     <li>前往劉芳分類集中點，領取立地指引牌（②-⑪，不含①活動指引）</li>
@@ -1188,9 +1192,7 @@
     <li>①活動指引留給黃筱涵動線拍照組，7/18早上再擺放</li>
   </ol></td>
   <td>立地指引牌</td>
-</tr>
-
-<tr>
+</tr><tr>
   <td class="time">13:00</td>
   <td>KS Design、堤奧斯</td>
   <td>佈置（拍照背板）進場</td>
@@ -1198,11 +1200,9 @@
     <li>主題拍照區背板／拍照牆佈置架設</li>
   </ol></td>
   <td>—</td>
-</tr>
-
-<tr class="critical">
+</tr><tr class="critical">
   <td class="time">13:00</td>
-  <td>劉芳（專責對接）</td>
+  <td><span style="background:#B8860B;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">劉芳</span>（專責對接）</td>
   <td>更衣間＋全身鏡進場</td>
   <td class="detail"><ol>
     <li>大間更衣室（150×150cm，4間）由靠設計進場架設；小間更衣室（85×85cm，6間）由雅美圖進場架設；全身鏡另計</li>
@@ -1210,11 +1210,9 @@
     <li>完成後回報朋喬</li>
   </ol></td>
   <td>場地配置圖、簽收單</td>
-</tr>
-
-<tr class="critical">
+</tr><tr class="critical">
   <td class="time">13:00</td>
-  <td>Abby、靜俞、或或</td>
+  <td><span style="background:#283593;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">Abby</span>、<span style="background:#7B1FA2;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">靜俞</span>、<span style="background:#880E4F;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">或或</span></td>
   <td>⚠紅龍架設（2組，3人共同搬運）</td>
   <td class="detail"><ol>
     <li><span class="risk">共兩組紅龍，3人一起做，一組一組來，不要單人搬：</span>
@@ -1223,11 +1221,9 @@
     <li>完成後回報朋喬確認</li>
   </ol></td>
   <td>紅龍×7（動線用）＋紅龍×約15（區隔用）</td>
-</tr>
-
-<tr>
+</tr><tr>
   <td class="time">13:00–15:00</td>
-  <td>丁丁、周胖、詩晴</td>
+  <td><span style="background:#2E7D32;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">丁丁</span>、<span style="background:#689F38;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">周胖</span>、<span style="background:#EC407A;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">詩晴</span></td>
   <td>報到處佈置</td>
   <td class="detail"><ol>
     <li>裝喜餅、裝書約、佈置Candy Bar</li>
@@ -1235,11 +1231,9 @@
     <li>新人休息區每桌擺8張椅子、8瓶水</li>
   </ol></td>
   <td>喜餅、書約、Candy Bar物料、水×8瓶＋新人休息區用水</td>
-</tr>
-
-<tr class="critical">
+</tr><tr class="critical">
   <td class="time">13:00–15:00</td>
-  <td>朋喬（統籌）</td>
+  <td><span style="background:#C62828;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">朋喬</span>（統籌）</td>
   <td>⚠任務5：所有輸出物位置確認</td>
   <td class="detail"><ol>
     <li><span class="risk">對照下方「📦輸出物清單＋定位」逐項核對每個物件是否就位且內容正確</span></li>
@@ -1247,29 +1241,23 @@
     <li><span class="risk">須在15:00彩排開始前完成初步確認</span></li>
   </ol></td>
   <td>設計清單</td>
-</tr>
-
-<tr class="critical">
+</tr><tr class="critical">
   <td class="time">14:30</td>
-  <td>朋喬、晉姍</td>
+  <td><span style="background:#C62828;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">朋喬</span>、<span style="background:#E65100;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">晉姍</span></td>
   <td>⚠與市府確認市長進場動線</td>
   <td class="detail"><ol>
     <li><span class="risk">與市府相關人員現場確認市長進場動線</span></li>
   </ol></td>
   <td>—</td>
-</tr>
-
-<tr class="critical">
+</tr><tr class="critical">
   <td class="time">15:00–17:00</td>
-  <td>朋喬（統籌）、Erin（主控）、指引組小組長（葉智凱、Abby、劉芳、靜俞）、內部團隊</td>
+  <td><span style="background:#C62828;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">朋喬</span>（統籌）、<span style="background:#5D4037;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">Erin</span>（主控）、指引組小組長（<span style="background:#827717;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">葉智凱</span>、<span style="background:#283593;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">Abby</span>、<span style="background:#B8860B;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">劉芳</span>、<span style="background:#7B1FA2;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">靜俞</span>）、內部團隊</td>
   <td>⚠總彩排（小組長場）</td>
   <td class="detail"><ol>
     <li>流程同②工作人員流程表「總彩排」段落：雙側進場輪轉實測、誓言卡列隊發放實測</li>
   </ol></td>
   <td>模擬新人牌</td>
-</tr>
-
-<tr class="critical">
+</tr><tr class="critical">
   <td class="time">17:00</td>
   <td>全體廠商</td>
   <td>⚠交場</td>
@@ -1277,8 +1265,7 @@
     <li>所有廠商17:00前完成施工並交場，朋喬、晉姍最終巡場確認</li>
   </ol></td>
   <td>—</td>
-</tr>
-</table>
+</tr></table>
 
 
 
@@ -1340,45 +1327,45 @@
 
 <table>
 <colgroup><col style="width:12%"><col style="width:26%"><col style="width:10%"><col style="width:12%"><col style="width:40%"></colgroup>
-<tr><th colspan="5">舞台區｜負責：劉芳</th></tr>
-<tr><td></td><td>司儀台（含背貼）</td><td>1式</td><td>劉芳</td><td>舞台前方主持位置</td></tr>
-<tr><td></td><td>1號新人結婚誓言手拿板／2號簽結婚書約版</td><td>各1</td><td>劉芳</td><td>舞台儀式道具，由舞台組保管</td></tr>
-<tr><td></td><td>標語拍照手拿牌</td><td>1式</td><td>劉芳</td><td>舞台旁</td></tr>
-<tr><td></td><td>頒獎牌（10個獎項）</td><td>1式</td><td>劉芳</td><td>抽獎環節，舞台右側</td></tr>
+<tr><th colspan="5">舞台區｜負責：<span style="background:#B8860B;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">劉芳</span></th></tr>
+<tr><td></td><td>司儀台（含背貼）</td><td>1式</td><td><span style="background:#B8860B;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">劉芳</span></td><td>舞台前方主持位置</td></tr>
+<tr><td></td><td>1號新人結婚誓言手拿板／2號簽結婚書約版</td><td>各1</td><td><span style="background:#B8860B;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">劉芳</span></td><td>舞台儀式道具，由舞台組保管</td></tr>
+<tr><td></td><td>標語拍照手拿牌</td><td>1式</td><td><span style="background:#B8860B;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">劉芳</span></td><td>舞台旁</td></tr>
+<tr><td></td><td>頒獎牌（10個獎項）</td><td>1式</td><td><span style="background:#B8860B;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">劉芳</span></td><td>抽獎環節，舞台右側</td></tr>
 
-<tr><th colspan="5">大門／場外｜負責：杜杜、朋喬</th></tr>
-<tr><td class="team">大門／場外</td><td>場外指引-主視覺（帆布，捷運站外）</td><td>1</td><td>朋喬</td><td>捷運站外，含往前箭頭</td></tr>
+<tr><th colspan="5">大門／場外｜負責：<span style="background:#00838F;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">杜杜</span>、<span style="background:#C62828;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">朋喬</span></th></tr>
+<tr><td class="team">大門／場外</td><td>場外指引-主視覺（帆布，捷運站外）</td><td>1</td><td><span style="background:#C62828;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">朋喬</span></td><td>捷運站外，含往前箭頭</td></tr>
 <tr><td></td><td>立地指引牌（活動指引）</td><td>3</td><td>黃筱涵動線拍照組（7/18早上）</td><td>大門／場館入口動線，含箭頭黏貼</td></tr>
-<tr><td></td><td>市長進場紅龍</td><td>7支</td><td>Abby、靜俞、或或</td><td>舞台左側鐵捲門前至舞台左側，約10米，靠邊擺放待市長到場（3人共同搬運）</td></tr>
-<tr><td></td><td>活動區／工作人員休息區區隔紅龍</td><td>約15支</td><td>Abby、靜俞、或或</td><td>活動區與工作人員休息區交界處，避免賓客誤入</td></tr>
+<tr><td></td><td>市長進場紅龍</td><td>7支</td><td><span style="background:#283593;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">Abby</span>、<span style="background:#7B1FA2;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">靜俞</span>、<span style="background:#880E4F;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">或或</span></td><td>舞台左側鐵捲門前至舞台左側，約10米，靠邊擺放待市長到場（3人共同搬運）</td></tr>
+<tr><td></td><td>活動區／工作人員休息區區隔紅龍</td><td>約15支</td><td><span style="background:#283593;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">Abby</span>、<span style="background:#7B1FA2;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">靜俞</span>、<span style="background:#880E4F;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">或或</span></td><td>活動區與工作人員休息區交界處，避免賓客誤入</td></tr>
 
-<tr><th colspan="5">報到區｜負責：丁丁、周胖</th></tr>
-<tr><td class="team">報到區</td><td>新人報到區立牌（單／雙）</td><td>各1</td><td>杜杜、定瀚</td><td>單／雙號報到桌前，需標注單／雙號</td></tr>
-<tr><td></td><td>婚禮流程立牌</td><td>1</td><td>杜杜、定瀚</td><td>報到區入口附近</td></tr>
-<tr><td></td><td>桌立牌：報到處（單／雙，A4）</td><td>各1</td><td>丁丁</td><td>報到桌面</td></tr>
-<tr><td></td><td>桌立牌：獎品領取區（單／雙，A4）</td><td>各1</td><td>丁丁</td><td>報到桌面（15:00後兌換用）</td></tr>
-<tr><td></td><td>桌立牌：貴賓報到處／媒體報到處（A4）</td><td>各1</td><td>丁丁</td><td>貴賓媒體報到桌面</td></tr>
-<tr><td></td><td>抽獎券</td><td>依人數</td><td>周胖</td><td>報到時隨資料袋發放</td></tr>
-<tr><td></td><td>獎品兌換券</td><td>依獎項</td><td>丁丁</td><td>報到／兌換處使用</td></tr>
-<tr><td></td><td>抽獎箱貼紙</td><td>1</td><td>周胖</td><td>貼於抽獎箱本體</td></tr>
+<tr><th colspan="5">報到區｜負責：<span style="background:#2E7D32;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">丁丁</span>、<span style="background:#689F38;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">周胖</span></th></tr>
+<tr><td class="team">報到區</td><td>新人報到區立牌（單／雙）</td><td>各1</td><td><span style="background:#00838F;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">杜杜</span>、<span style="background:#0288D1;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">定瀚</span></td><td>單／雙號報到桌前，需標注單／雙號</td></tr>
+<tr><td></td><td>婚禮流程立牌</td><td>1</td><td><span style="background:#00838F;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">杜杜</span>、<span style="background:#0288D1;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">定瀚</span></td><td>報到區入口附近</td></tr>
+<tr><td></td><td>桌立牌：報到處（單／雙，A4）</td><td>各1</td><td><span style="background:#2E7D32;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">丁丁</span></td><td>報到桌面</td></tr>
+<tr><td></td><td>桌立牌：獎品領取區（單／雙，A4）</td><td>各1</td><td><span style="background:#2E7D32;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">丁丁</span></td><td>報到桌面（15:00後兌換用）</td></tr>
+<tr><td></td><td>桌立牌：貴賓報到處／媒體報到處（A4）</td><td>各1</td><td><span style="background:#2E7D32;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">丁丁</span></td><td>貴賓媒體報到桌面</td></tr>
+<tr><td></td><td>抽獎券</td><td>依人數</td><td><span style="background:#689F38;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">周胖</span></td><td>報到時隨資料袋發放</td></tr>
+<tr><td></td><td>獎品兌換券</td><td>依獎項</td><td><span style="background:#2E7D32;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">丁丁</span></td><td>報到／兌換處使用</td></tr>
+<tr><td></td><td>抽獎箱貼紙</td><td>1</td><td><span style="background:#689F38;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">周胖</span></td><td>貼於抽獎箱本體</td></tr>
 
 <tr><th colspan="5">觀禮席／舞台周邊｜負責：任務1/2小組（見前）</th></tr>
-<tr><td class="team">觀禮席</td><td>父母觀禮區立牌（單／雙）</td><td>各1</td><td>杜杜、定瀚</td><td>父母席入口，標注單／雙號</td></tr>
-<tr><td></td><td>親友觀禮區立牌（單／雙）</td><td>各1</td><td>杜杜、定瀚</td><td>親友席入口，標注單／雙號</td></tr>
+<tr><td class="team">觀禮席</td><td>父母觀禮區立牌（單／雙）</td><td>各1</td><td><span style="background:#00838F;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">杜杜</span>、<span style="background:#0288D1;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">定瀚</span></td><td>父母席入口，標注單／雙號</td></tr>
+<tr><td></td><td>親友觀禮區立牌（單／雙）</td><td>各1</td><td><span style="background:#00838F;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">杜杜</span>、<span style="background:#0288D1;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">定瀚</span></td><td>親友席入口，標注單／雙號</td></tr>
 <tr><td></td><td>新人編號地貼（1–90號，4、44號除外）</td><td>88點</td><td>—</td><td>新人站位，見「地貼定位施工圖」</td></tr>
 <tr><td></td><td>父母編號椅貼／親友編號椅貼／新人編號椅貼</td><td>各88組</td><td>—</td><td>對應座位，見「座位對照表」</td></tr>
 <tr><td></td><td>編號手舉牌（單／雙各9張）</td><td>18張</td><td>—</td><td>新人指引組使用，不固定於場地</td></tr>
-<tr><td></td><td>花博平面圖</td><td>2座</td><td>晉姍</td><td>入口兩側，標示吸菸區＋洗手間</td></tr>
+<tr><td></td><td>花博平面圖</td><td>2座</td><td><span style="background:#E65100;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">晉姍</span></td><td>入口兩側，標示吸菸區＋洗手間</td></tr>
 
-<tr><th colspan="5">拍照區／貴賓媒體｜負責：靜俞</th></tr>
-<tr><td></td><td class="risk">⚠拍照手拿牌（囍字／鑽戒／Yes!，各2個）</td><td class="risk">3款×2</td><td class="risk">靜俞</td><td class="risk">放置於拍照背板處（不放舞台）</td></tr>
+<tr><th colspan="5">拍照區／貴賓媒體｜負責：<span style="background:#7B1FA2;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">靜俞</span></th></tr>
+<tr><td></td><td class="risk">⚠拍照手拿牌（囍字／鑽戒／Yes!，各2個）</td><td class="risk">3款×2</td><td class="risk"><span style="background:#7B1FA2;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">靜俞</span></td><td class="risk">放置於拍照背板處（不放舞台）</td></tr>
 <tr><td></td><td>貴賓椅貼</td><td>1式</td><td>雙號區貼紙人員</td><td>舞台左手邊座位，隨雙號區椅貼一併處理</td></tr>
 
-<tr><th colspan="5">休息區／梳化區／更衣室｜負責：定瀚</th></tr>
-<tr><td class="team">休息區</td><td>新人休息區立牌（單／雙，雙箭頭指引）</td><td>各1</td><td>杜杜、定瀚</td><td>休息區入口，右單左雙</td></tr>
-<tr><td></td><td>雙面三角桌牌（每桌4對編號）</td><td>單雙各11張</td><td>定瀚</td><td>新人休息區各桌，對應桌號</td></tr>
-<tr><td></td><td>貴賓休息區立牌</td><td>1</td><td>杜杜、定瀚</td><td>貴賓休息室</td></tr>
-<tr><td></td><td>新人梳化區立牌</td><td>1</td><td>杜杜、定瀚</td><td>梳化區入口</td></tr>
+<tr><th colspan="5">休息區／梳化區／更衣室｜負責：<span style="background:#0288D1;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">定瀚</span></th></tr>
+<tr><td class="team">休息區</td><td>新人休息區立牌（單／雙，雙箭頭指引）</td><td>各1</td><td><span style="background:#00838F;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">杜杜</span>、<span style="background:#0288D1;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">定瀚</span></td><td>休息區入口，右單左雙</td></tr>
+<tr><td></td><td>雙面三角桌牌（每桌4對編號）</td><td>單雙各11張</td><td><span style="background:#0288D1;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">定瀚</span></td><td>新人休息區各桌，對應桌號</td></tr>
+<tr><td></td><td>貴賓休息區立牌</td><td>1</td><td><span style="background:#00838F;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">杜杜</span>、<span style="background:#0288D1;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">定瀚</span></td><td>貴賓休息室</td></tr>
+<tr><td></td><td>新人梳化區立牌</td><td>1</td><td><span style="background:#00838F;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">杜杜</span>、<span style="background:#0288D1;color:#fff;font-weight:600;padding:1px 4px;border-radius:3px;">定瀚</span></td><td>梳化區入口</td></tr>
 </table>
 
 
@@ -1792,6 +1779,7 @@ function filterBriefingTeam(){
 function collectPersonItems(person){
   const rows = document.querySelectorAll('#mainTable tbody tr');
   const out = [];
+  const isLeader = LEADERS.includes(person);
   rows.forEach(r=>{
     const people = (r.getAttribute('data-people')||'');
     const personOK = personMatchesData(people, person);
@@ -1809,13 +1797,19 @@ function collectPersonItems(person){
       text: li.textContent.trim(),
       html: li.innerHTML.trim()
     }));
-    const mine = [];
-    liPairs.forEach(({text, html})=>{
-      const own = extractOwnBullet(text, person);
-      if(own){ mine.push(own); }
-      else if(matchesPerson(text, person)){ mine.push(html); }
-    });
-    const action = (mine.length>0 ? mine : liPairs.map(p=>p.html)).join('；');
+    let action;
+    if(isLeader){
+      // 組長看的是整組在這個時間點要做什麼、要注意什麼，顯示完整內容，不篩選成「自己的那句」
+      action = liPairs.map(p=>p.html).join('；');
+    } else {
+      const mine = [];
+      liPairs.forEach(({text, html})=>{
+        const own = extractOwnBullet(text, person);
+        if(own){ mine.push(own); }
+        else if(matchesPerson(text, person)){ mine.push(html); }
+      });
+      action = (mine.length>0 ? mine : liPairs.map(p=>p.html)).join('；');
+    }
     if(time) out.push({time, loc, task, action, neededItems});
   });
   return out;
@@ -1833,6 +1827,7 @@ function getAllIndividualPersonValues(){
 }
 function buildPersonalPageHTML(person){
   const label = personLabel(person);
+  const isLeader = LEADERS.includes(person);
   const items = collectPersonItems(person);
   let body;
   if(items.length===0){
@@ -1844,7 +1839,7 @@ function buildPersonalPageHTML(person){
         <div class="p-body">
           <div class="p-loc">${it.loc}</div>
           <div class="p-task">${it.task}</div>
-          <div class="p-action">你要做：${it.action}</div>
+          <div class="p-action">${isLeader ? '你的組要做：' : '你要做：'}${it.action}</div>
           ${it.neededItems ? `<div class="p-items">需要物品：${it.neededItems}</div>` : ''}
         </div>
       </div>`).join('');
